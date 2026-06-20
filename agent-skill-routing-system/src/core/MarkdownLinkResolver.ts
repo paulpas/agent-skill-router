@@ -520,12 +520,12 @@ export class MarkdownLinkResolver {
     // Strip navigation/boilerplate elements
     text = this.stripBoilerplate(text);
 
-    // Convert to text
-    text = text.split(/<h1[^>]*>(.*?)<\/h1>/gi).join('\n# $1\n');
-    text = text.split(/<h2[^>]*>(.*?)<\/h2>/gi).join('\n## $1\n');
-    text = text.split(/<h3[^>]*>(.*?)<\/h3>/gi).join('\n### $1\n');
-    text = text.split(/<p[^>]*>(.*?)<\/p>/gi).join('\n$1\n\n');
-    text = text.split(/<li[^>]*>(.*?)<\/li>/gi).join('- $1\n');
+    // Convert to text — use .replace() with callback so $1 backreferences work
+    text = text.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '\n# $1\n');
+    text = text.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '\n## $1\n');
+    text = text.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '\n### $1\n');
+    text = text.replace(/<p[^>]*>(.*?)<\/p>/gi, '\n$1\n\n');
+    text = text.replace(/<li[^>]*>(.*?)<\/li>/gi, '- $1\n');
     text = text.split(/<br\s*\/?>/gi).join('\n');
     text = text.split(/<[^>]+>/g).join('');
 
@@ -567,12 +567,12 @@ export class MarkdownLinkResolver {
     // Strip navigation/boilerplate elements
     text = this.stripBoilerplate(text);
 
-    // Convert common HTML elements to markdown-like format
-    text = text.split(/<h1[^>]*>(.*?)<\/h1>/gi).join('\n# $1\n');
-    text = text.split(/<h2[^>]*>(.*?)<\/h2>/gi).join('\n## $1\n');
-    text = text.split(/<h3[^>]*>(.*?)<\/h3>/gi).join('\n### $1\n');
-    text = text.split(/<p[^>]*>(.*?)<\/p>/gi).join('\n$1\n\n');
-    text = text.split(/<li[^>]*>(.*?)<\/li>/gi).join('- $1\n');
+    // Convert common HTML elements to markdown-like format — .replace() preserves capture groups
+    text = text.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '\n# $1\n');
+    text = text.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '\n## $1\n');
+    text = text.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '\n### $1\n');
+    text = text.replace(/<p[^>]*>(.*?)<\/p>/gi, '\n$1\n\n');
+    text = text.replace(/<li[^>]*>(.*?)<\/li>/gi, '- $1\n');
     text = text.split(/<br\s*\/?>/gi).join('\n');
     text = text.split(/<[^>]+>/g).join(''); // Remove remaining tags
 
