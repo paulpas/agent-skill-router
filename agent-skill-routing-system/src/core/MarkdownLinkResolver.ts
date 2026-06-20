@@ -483,13 +483,23 @@ export class MarkdownLinkResolver {
     * site-level navigation menus, sidebars, and footers rather than useful content.
     */
    private stripBoilerplate(html: string): string {
-     let text = html;
-     text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
-     text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
-     text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
-     text = text.split(/<aside[\s\S]*?<\/aside>/gi).join('');
-     return text;
-   }
+      let text = html;
+
+      // Strip named semantic HTML elements (primary navigation/boilerplate)
+      text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
+      text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
+      text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
+      text = text.split(/<aside[\s\S]*?<\/aside>/gi).join('');
+
+      // Strip common noise div patterns that contain sidebar/toc/related content
+      text = text.split(/<div\s+[^>]*class=["'][^"']*sidebar[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+      text = text.split(/<div\s+[^>]*id=["']toc["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+      text = text.split(/<div\s+[^>]*class=["'][^"']*related[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+      text = text.split(/<div\s+[^>]*class=["'][^"']*widget[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+      text = text.split(/<div\s+[^>]*class=["'][^"']*nav[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+
+      return text;
+    }
 
    /**
     * Extract meaningful content from HTML, targeting a character limit.
@@ -598,21 +608,44 @@ export class MarkdownLinkResolver {
    * Extract skill context from transformed content for semantic queries.
    * Uses title + description + first 500 chars of content.
    */
-  private extractSkillContext(content: string): string {
-    const lines = content.split('\n').filter(l => l.trim().length > 0);
-    
-    // Extract first heading as title
-    const titleMatch = lines.find(l => l.startsWith('#'));
-    const title = titleMatch ? titleMatch.replace(/^#+\s*/, '') : '';
-    
-    // Extract first paragraph as description
-    const firstParagraph = lines.find(l => !l.startsWith('#') && l.trim().length > 20) || '';
-    
-    // First 500 chars of content
-    const contentPreview = content.substring(0, 500);
-    
-    return [title, firstParagraph, contentPreview].filter(Boolean).join(' ').trim();
-  }
+   private extractSkillContext(content: string): string {
+     const lines = content.split('\n').filter(l => l.trim().length > 0);
+
+     // Find first H1 heading as the page title
+     const h1Match = lines.find(l => /^# /.test(l));
+     const title = h1Match ? h1Match.replace(/^#\s+/, '').trim() : '';
+
+     // Extract paragraphs that come AFTER the H1 heading (not before) to avoid sidebar contamination
+     let firstParagraph = '';
+     if (h1Match) {
+       const h1Index = lines.indexOf(h1Match);
+       // Find first non-heading, non-empty line after H1
+       for (let i = h1Index + 1; i < lines.length; i++) {
+         const line = lines[i];
+         if (!line.startsWith('#') && line.trim().length > 20) {
+           firstParagraph = line.trim();
+           break;
+         }
+       }
+     } else {
+       // Fallback: no H1 found, use the original logic
+       firstParagraph = lines.find(l => !l.startsWith('#') && l.trim().length > 20) || '';
+     }
+
+     // Extract a representative content block starting from H1 (not from arbitrary early noise)
+     let contentBlock = '';
+     if (h1Match) {
+       const h1Index = lines.indexOf(h1Match);
+       const afterH1 = lines.slice(h1Index).join('\n');
+       // Take up to ~500 chars starting from H1
+       contentBlock = afterH1.length > 500 ? afterH1.substring(0, 500) : afterH1;
+     } else {
+       // Fallback: use first 500 chars of full content
+       contentBlock = content.substring(0, 500);
+     }
+
+     return [title, firstParagraph, contentBlock].filter(Boolean).join(' ').trim();
+   }
 
   /**
    * Resolve external content using semantic chunking and retrieval.
@@ -636,6 +669,16 @@ export class MarkdownLinkResolver {
       return null;
     }
 
+    // DEBUG: Log chunk count for verification
+    if (this.debugContent) {
+      const sampleHeading = chunks.slice(0, 3).map(c => c.headingPath.join(' > ')).join(', ');
+      this.logger.info('Semantic resolution started', {
+        url,
+        totalChunks: chunks.length,
+        sampleHeadings: sampleHeading || '(none)',
+      });
+    }
+
     try {
       // Step 2: Embed chunks (in-memory)
       const embeddedChunks = await this.embedder.embedChunks(chunks);
@@ -650,6 +693,27 @@ export class MarkdownLinkResolver {
         this.config.semanticTopK ?? 3,
         this.config.semanticSimilarityThreshold ?? 0.3
       );
+
+      // DEBUG: Log semantic filter effectiveness for verification
+      if (this.debugContent) {
+        const scored = embeddedChunks.map(ec => ({
+          result: ec,
+          similarity: this.cosineSimilarity(queryEmbedding, ec.embedding),
+        }));
+
+        this.logger.info('Semantic filter results', {
+          url,
+          totalChunks: chunks.length,
+          passedThreshold: relevantChunks.length,
+          discarded: chunks.length - relevantChunks.length,
+          threshold: this.config.semanticSimilarityThreshold ?? 0.3,
+          topK: this.config.semanticTopK ?? 3,
+          topSimilarities: scored.sort((a, b) => b.similarity - a.similarity).slice(0, 5).map(s => ({
+            heading: s.result.chunk.headingPath.join(' > '),
+            similarity: parseFloat(s.similarity.toFixed(4)),
+          })),
+        });
+      }
 
       // Step 5: Clear in-memory embeddings
       this.embedder.clearCache();
