@@ -42,6 +42,10 @@ export class MarkdownLinkResolver {
   private chunker: ExternalContentChunker;
   private embedder: ExternalContentEmbedder | null;
 
+  private get debugContent(): boolean {
+    return process.env.DEBUG_ROUTING_CONTENT === 'true';
+  }
+
   constructor(config: LinkResolverConfig, logger: Logger, embeddingService?: EmbeddingService) {
     this.config = config;
     this.logger = logger;
@@ -163,6 +167,17 @@ export class MarkdownLinkResolver {
     const content = await this.readLocalFile(resolvedPath);
     if (content === null) return null;
 
+    this.logger.info('Local link resolved', { path: resolvedPath, size: content.length });
+
+    if (this.debugContent) {
+      const previewText = content.substring(0, 1000);
+      this.logger.info('Local link full body', {
+        path: resolvedPath,
+        size: content.length,
+        preview: previewText,
+      });
+    }
+
     // Mark as visited to prevent circular references
     this.visitedPaths.add(resolvedPath);
 
@@ -241,8 +256,27 @@ export class MarkdownLinkResolver {
       return null;
     }
 
+    // Log what was actually retrieved before transformation
+    this.logger.info('External content retrieved', {
+      url,
+      size: rawContent.length,
+      mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static'
+    });
+
     // Step 2: Transform content to text
     const transformed = this.transformExternalContent(rawContent, url);
+
+    if (this.debugContent) {
+      // Log the extracted plain text after HTML stripping — what actually gets injected into the prompt
+      const previewText = transformed.substring(0, 1000);
+      this.logger.info('External content transformed', {
+        url,
+        rawSize: rawContent.length,
+        transformedSize: transformed.length,
+        mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static',
+        preview: previewText,
+      });
+    }
 
     // Step 3: Check resolution mode for semantic retrieval
     if (this.config.resolutionMode === 'semantic' && this.embedder) {
@@ -258,6 +292,14 @@ export class MarkdownLinkResolver {
     const maxBytes = (this.config.maxExternalSizeKb ?? 10) * 1024;
     if (transformed.length <= maxBytes) {
       // Under threshold - inline as-is
+      if (this.debugContent) {
+        this.logger.info('External content injected (inline)', {
+          url,
+          size: transformed.length,
+          mode: 'inline',
+          preview: transformed.substring(0, 1000),
+        });
+      }
       return this.formatReference(`External: ${url}`, transformed, url);
     }
 
@@ -265,18 +307,45 @@ export class MarkdownLinkResolver {
     if (this.config.compressionMode === 'skip') {
       // Skip compression - truncate instead
       const truncated = transformed.substring(0, maxBytes) + '\n\n... [content truncated - exceeds size limit]';
+      if (this.debugContent) {
+        this.logger.info('External content injected (truncated)', {
+          url,
+          originalSize: transformed.length,
+          finalSize: truncated.length,
+          mode: 'truncated',
+          preview: truncated.substring(0, 1000),
+        });
+      }
       return this.formatReference(`External: ${url}`, truncated, url);
     }
 
     // Step 6: LLM compression
     const compressed = await this.compressExternalContent(transformed, url);
     if (compressed !== null) {
+      if (this.debugContent) {
+        this.logger.info('External content injected (compressed)', {
+          url,
+          originalSize: transformed.length,
+          finalSize: compressed.length,
+          mode: 'llm-compressed',
+          preview: compressed.substring(0, 1000),
+        });
+      }
       return this.formatReference(`External: ${url}`, compressed, url);
     }
 
     // Step 7: LLM compression failed - fallback to truncation
     this.logger.warn('LLM compression failed, falling back to truncation', { url, size: transformed.length });
     const truncated = transformed.substring(0, maxBytes) + '\n\n... [content truncated - LLM compression failed]';
+    if (this.debugContent) {
+      this.logger.info('External content injected (fallback truncated)', {
+        url,
+        originalSize: transformed.length,
+        finalSize: truncated.length,
+        mode: 'llm-fail-truncated',
+        preview: truncated.substring(0, 1000),
+      });
+    }
     return this.formatReference(`External: ${url}`, truncated, url);
   }
 
@@ -302,6 +371,7 @@ export class MarkdownLinkResolver {
 
       // 8MB hard limit as safety net
       const text = await response.text();
+      this.logger.info('External page fetched', { url, size: text.length });
       if (text.length > 8_000_000) {
         this.logger.warn('External content exceeds 8MB hard limit, skipping', { url, size: text.length });
         return null;
@@ -355,6 +425,7 @@ export class MarkdownLinkResolver {
 
         // Extract rendered HTML
         const html = await page.content();
+        this.logger.info('JS-rendered page fetched', { url, size: html.length });
 
         // 8MB hard limit
         if (html.length > 8_000_000) {
@@ -464,6 +535,11 @@ export class MarkdownLinkResolver {
     // Remove script and style tags with content
     text = text.split(/<script[\s\S]*?<\/script>/gi).join('');
     text = text.split(/<style[\s\S]*?<\/style>/gi).join('');
+
+    // NEW: Remove navigation, footer, and header elements to strip site boilerplate noise
+    text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
+    text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
+    text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
 
     // Convert common HTML elements to markdown-like format
     text = text.split(/<h1[^>]*>(.*?)<\/h1>/gi).join('\n# $1\n');
