@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-06-14T16:07:51.021315Z",
-  "totalSkills": 1291,
+  "generatedAt": "2026-07-01T22:43:36.813782Z",
+  "totalSkills": 1292,
   "domains": {
     "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
     "cncf": 178,
-    "coding": 593,
+    "coding": 594,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -28,7 +28,7 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 862,
+    "implementation": 863,
     "orchestration": 238,
     "reference": 182,
     "information": 1,
@@ -18089,6 +18089,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/mailgun-api/SKILL.md"
+    },
+    {
+      "name": "maintainability-first-code-review",
+      "domain": "coding",
+      "description": "Run a strict maintainability-first code review focused on file size limits, code structure, spaghetti detection, and code judo restructuring to prevent structural decay.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "analysis",
+      "triggers": [
+        "maintainability review",
+        "code structure review",
+        "spaghetti code detection",
+        "1000 line rule",
+        "code judo",
+        "thin abstraction detection",
+        "layer integrity",
+        "ad-hoc conditionals"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "architectural-review",
+        "software-maintainability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/maintainability-first-code-review/SKILL.md"
     },
     {
       "name": "make",
