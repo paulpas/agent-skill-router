@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,286 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,287 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,286 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,287 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,9 +312,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-06-14 16:07:53 UTC  
-> **Total skills:** 1286  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1286 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-07-01 17:42:39 UTC  
+> **Total skills:** 1287  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1287 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -872,7 +872,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (595 skills)
+### Coding (596 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1230,6 +1230,7 @@ MIT — All skills are freely available and redistributable.
 | [llm-function-calling](skills/coding/llm-function-calling/SKILL.md) | Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use. | function calling, tool use, structured output, json schema, llm api, pydantic validation, tool definition, how do i make an llm call code [tactical, diagnostic, generation] |
 | [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. | mage, magefile, go build tool, mg package, main.go targets, how do i write build scripts in go, golang build automation, type-safe makefile [tactical, generation] |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. | mailgun, mailgun api, send email, email validation, email routing, transactional email, inbound email, mailgun python [tactical, generation] |
+| [maintainability-first-code-review](skills/coding/maintainability-first-code-review/SKILL.md) | Run a strict maintainability-first code review focused on file size limits, code structure, spaghetti detection, and code judo restructuring to prevent structural decay. | maintainability review, code structure review, spaghetti code detection, 1000 line rule, code judo, thin abstraction detection, layer integrity, ad-hoc conditionals |
 | [make](skills/coding/make/SKILL.md) | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | make, build system, makefile, compilation, incremental build, build automation, justfile, phony targets [tactical, generation] |
 | [makefile](skills/coding/makefile/SKILL.md) | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | makefile, make, build automation, phony targets, pattern rules, build system, make command, cross-platform make [tactical, generation] |
 | [mapbox-api](skills/coding/mapbox-api/SKILL.md) | Implements Mapbox API integration (Geocoding, Directions, Maps, Search, using mapbox-sdk Python SDK with access token authentication, forward/reverse geocoding, route calculation, static maps, isochrones, map tiles, and Mapbox REST API patterns. | mapbox, mapbox api, mapbox-sdk, mapbox geocoding, mapbox directions, mapbox static maps, mapbox isochrones, how do i integrate with mapbox static maps [tactical, generation] |
@@ -1759,7 +1760,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (857 skills)
+### Implementation (Build Features) (858 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2253,6 +2254,7 @@ MIT — All skills are freely available and redistributable.
 | [llm-function-calling](skills/coding/llm-function-calling/SKILL.md) | Coding | Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use. |
 | [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Coding | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Coding | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. |
+| [maintainability-first-code-review](skills/coding/maintainability-first-code-review/SKILL.md) | Coding | Run a strict maintainability-first code review focused on file size limits, code structure, spaghetti detection, and code judo restructuring to prevent structural decay. |
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds. |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. |
@@ -3838,6 +3840,7 @@ MIT — All skills are freely available and redistributable.
 | [m365-agents-ts](skills/agent/m365-agents-ts/SKILL.md) | Agent | Implements intelligent m365 agents ts with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Coding | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. | Implementation |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Coding | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. | Implementation |
+| [maintainability-first-code-review](skills/coding/maintainability-first-code-review/SKILL.md) | Coding | Run a strict maintainability-first code review focused on file size limits, code structure, spaghetti detection, and code judo restructuring to prevent structural decay. | Implementation |
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | Implementation |
 | [make-automation](skills/agent/make-automation/SKILL.md) | Agent | Implements intelligent make automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds. | Implementation |
