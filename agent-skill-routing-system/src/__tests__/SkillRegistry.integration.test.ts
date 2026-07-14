@@ -6,6 +6,7 @@ import { SkillRegistry } from '../core/SkillRegistry';
 describe('SkillRegistry Integration', () => {
   let skillsDir: string;
   let registry: SkillRegistry;
+  let additionalRegistries: SkillRegistry[] = [];
 
   beforeEach(() => {
     // Create temp skills directory
@@ -49,7 +50,14 @@ This is a test skill for integration testing.
   });
 
   afterEach(async () => {
-    // Clean up
+    // Shutdown main registry and any additional registries created in tests
+    registry.shutdown();
+    for (const additionalRegistry of additionalRegistries) {
+      additionalRegistry.shutdown();
+    }
+    additionalRegistries = [];
+
+    // Clean up filesystem
     if (fs.existsSync(skillsDir)) {
       fs.rmSync(skillsDir, { recursive: true, force: true });
     }
@@ -183,19 +191,20 @@ See the [pattern reference](references/patterns.md) for details.
 `
       );
 
-      // Create registry with link following enabled
-      const linkRegistry = new SkillRegistry({
-        skillsDirectory: skillsDir,
-        generateEmbeddings: false,
-        compressionLevel: 0,
-        markdownLinkFollowing: {
-          enabled: true,
-          allowExternalLinks: false,
-          maxDepth: 2,
-        },
-      });
+       // Create registry with link following enabled
+       const linkRegistry = new SkillRegistry({
+         skillsDirectory: skillsDir,
+         generateEmbeddings: false,
+         compressionLevel: 0,
+         markdownLinkFollowing: {
+           enabled: true,
+           allowExternalLinks: false,
+           maxDepth: 2,
+         },
+       });
+       additionalRegistries.push(linkRegistry);
 
-      await linkRegistry.loadSkills();
+       await linkRegistry.loadSkills();
       const content = await linkRegistry.getSkillContent('test-skill-link-resolve');
 
       expect(content).toContain('## 📎 Reference: pattern reference');
@@ -309,18 +318,19 @@ See the [evil](../../etc/passwd) for details.
 `
       );
 
-      const linkRegistry = new SkillRegistry({
-        skillsDirectory: skillsDir,
-        generateEmbeddings: false,
-        compressionLevel: 0,
-        markdownLinkFollowing: {
-          enabled: true,
-          allowExternalLinks: false,
-          maxDepth: 2,
-        },
-      });
+       const linkRegistry = new SkillRegistry({
+         skillsDirectory: skillsDir,
+         generateEmbeddings: false,
+         compressionLevel: 0,
+         markdownLinkFollowing: {
+           enabled: true,
+           allowExternalLinks: false,
+           maxDepth: 2,
+         },
+       });
+       additionalRegistries.push(linkRegistry);
 
-      await linkRegistry.loadSkills();
+       await linkRegistry.loadSkills();
       const content = await linkRegistry.getSkillContent('test-skill-link-traversal');
 
       // Path traversal link should remain unchanged (blocked)

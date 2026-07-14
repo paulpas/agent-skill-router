@@ -16,7 +16,10 @@ describe('DiskCompressionCache', () => {
   });
 
   afterEach(async () => {
-    // Clean up
+    // Shutdown cache to cleanup timers and prevent async warnings
+    cache.shutdown();
+
+    // Clean up filesystem
     if (fs.existsSync(cacheDir)) {
       fs.rmSync(cacheDir, { recursive: true, force: true });
     }

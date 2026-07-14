@@ -677,6 +677,25 @@ return metadata;
   }
 
   /**
+   * Shutdown: clear flush timer and flush any pending data
+   * MUST be called during test cleanup to prevent open handle warnings
+   */
+  shutdown(): void {
+    // Guard: timer already cleared
+    if (!this.flushTimer) {
+      this.logger.debug('Flush timer already cleared');
+      return;
+    }
+
+    // Clear the pending flush timer
+    clearTimeout(this.flushTimer);
+    this.flushTimer = null;
+    this.flushScheduled = false;
+
+    this.logger.info('DiskCompressionCache shutdown complete');
+  }
+
+  /**
    * Get stats for monitoring
    */
   getStats(): {

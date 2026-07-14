@@ -69,7 +69,7 @@ export class DomainRegistry {
         .filter((entry) => entry.isDirectory())
         .map((entry) => entry.name)
         .sort();
-      this.logger.info('Discovered domains', { domains: domainDirs });
+      this.logger.debug('Discovered domains', { domains: domainDirs });
       return Promise.resolve(domainDirs);
     } catch (error) {
       this.logger.error('Failed to discover domains', {

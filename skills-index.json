@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-06-04T23:32:33.978109Z",
-  "totalSkills": 1230,
+  "generatedAt": "2026-07-14T16:08:37.774240Z",
+  "totalSkills": 1311,
   "domains": {
-    "agent": 290,
+    "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
-    "cncf": 178,
-    "coding": 576,
+    "cncf": 197,
+    "coding": 594,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -16,7 +16,7 @@
     "go": 13,
     "java": 1,
     "kotlin": 1,
-    "linux": 21,
+    "linux": 24,
     "maker": 3,
     "networking": 1,
     "payments": 5,
@@ -25,16 +25,41 @@
     "security": 5,
     "software": 3,
     "trading": 94,
-    "writing": 4
+    "writing": 5
   },
   "roles": {
+    "implementation": 883,
     "orchestration": 238,
-    "implementation": 806,
-    "reference": 177,
+    "reference": 181,
     "information": 1,
     "review": 8
   },
   "skills": [
+    {
+      "name": "a2a-communication",
+      "domain": "agent",
+      "description": "Implements Google's Agent-to-Agent (A2A) protocol for cross-framework agent communication using HTTP-based JSON-RPC 2.0 with agent card discovery, SSE streaming, and secure multi-agent interoperability patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "A2A",
+        "agent to agent",
+        "cross-framework communication",
+        "JSON-RPC",
+        "agent card",
+        "SSE streaming",
+        "how do i connect agents",
+        "Google A2A protocol"
+      ],
+      "relatedSkills": [
+        "multi-agent-collaboration",
+        "mcp-integration",
+        "routing-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/a2a-communication/SKILL.md"
+    },
     {
       "name": "abl-v10-learning",
       "domain": "programming",
@@ -128,24 +153,6 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/acceptance-orchestrator/SKILL.md"
-    },
-    {
-      "name": "accessibility-in-i18n-and-l10n",
-      "domain": "coding",
-      "description": "Implements accessibility strategies to ensure user-friendly software aligned with WCAG standards in internationalization and localization contexts.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "accessibility",
-        "i18n",
-        "l10n",
-        "WCAG compliance",
-        "diverse user experience"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.1",
-      "source": "skills/coding/accessibility-in-i18n-and-l10n/SKILL.md"
     },
     {
       "name": "address-github-comments",
@@ -345,6 +352,30 @@
       "source": "skills/agent/agent-debugging/SKILL.md"
     },
     {
+      "name": "agent-engineering-practices",
+      "domain": "agent",
+      "description": "Applies traditional software engineering rigor to AI agents through checkpoint/rollback state management, modular architecture, structured observability logging, and least-privilege permissions for production-grade reliability.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "engineering reliable agents",
+        "checkpoint rollback",
+        "structured logging observability",
+        "modular agent architecture",
+        "least privilege permissions",
+        "how do i make agents production ready",
+        "fault tolerance agents"
+      ],
+      "relatedSkills": [
+        "guardrails-safety",
+        "exception-handling-recovery",
+        "agent-observability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-engineering-practices/SKILL.md"
+    },
+    {
       "name": "agent-evaluation",
       "domain": "agent",
       "description": "Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -392,6 +423,30 @@
       "source": "skills/coding/agent-evaluation-testing/SKILL.md"
     },
     {
+      "name": "agent-knowledge-graph",
+      "domain": "agent",
+      "description": "Constructs agent-centric knowledge graphs representing tools, capabilities, and their relationships for intelligent tool discovery during planning.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "knowledge graph",
+        "tool registry",
+        "capability graph",
+        "agent tools",
+        "graph traversal",
+        "how do i discover tools for agents",
+        "Neo4j agent memory"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "mcp-integration",
+        "knowledge-graph-construction"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-knowledge-graph/SKILL.md"
+    },
+    {
       "name": "agent-manager-skill",
       "domain": "agent",
       "description": "Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -414,6 +469,30 @@
       "source": "skills/agent/agent-manager-skill/SKILL.md"
     },
     {
+      "name": "agent-maturity-levels",
+      "domain": "agent",
+      "description": "Provides a four-level maturity model (Core Reasoning → Connected Solver → Strategic Problem-Solver → Collaborative Multi-Agent) for assessing and planning agent architecture investments based on capability requirements.",
+      "role": "reference",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "agent maturity model",
+        "level 0 to level 3 agents",
+        "agent architecture assessment",
+        "capability progression",
+        "context engineering",
+        "multi-agent complexity",
+        "how do i assess my agent level"
+      ],
+      "relatedSkills": [
+        "agent-architecture-patterns",
+        "multi-agent-collaboration",
+        "memory-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-maturity-levels/SKILL.md"
+    },
+    {
       "name": "agent-memory-systems",
       "domain": "agent",
       "description": "Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -434,6 +513,57 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-memory-systems/SKILL.md"
+    },
+    {
+      "name": "agent-memory-systems",
+      "domain": "coding",
+      "description": "Implements memory systems for LLM agents including conversation buffers, windowed context, bounded model context management, and vector store-backed long-term memory retrieval with embeddings.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "memory systems",
+        "conversation buffer",
+        "windowed memory",
+        "long-term memory",
+        "vector store embeddings",
+        "context management",
+        "conversation history",
+        "how do i manage agent memory"
+      ],
+      "relatedSkills": [
+        "agent-tool-calling-architecture",
+        "agent-planning-reasoning",
+        "langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-memory-systems/SKILL.md"
+    },
+    {
+      "name": "agent-multi-agent-orchestration",
+      "domain": "coding",
+      "description": "Implements multi-agent orchestration patterns (CrewAI sequential crews, AutoGen group chat, supervisor-worker hierarchy, task guardrails) to coordinate specialized agents on complex workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-agent orchestration",
+        "crew ai",
+        "autogen group chat",
+        "supervisor worker pattern",
+        "agent delegation",
+        "sequential crew",
+        "how do i coordinate multiple agents",
+        "agent team coordination"
+      ],
+      "relatedSkills": [
+        "agent-tool-calling-architecture",
+        "agent-memory-systems",
+        "agent-planning-reasoning",
+        "rag-pipeline-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-multi-agent-orchestration/SKILL.md"
     },
     {
       "name": "agent-observability",
@@ -459,6 +589,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-observability/SKILL.md"
+    },
+    {
+      "name": "agent-planning-reasoning",
+      "domain": "coding",
+      "description": "Implements planning and reasoning patterns for LLM agents including ReAct loops with native tool calling, modern LangGraph state graphs, and self-reflection quality evaluation loops.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "planning patterns",
+        "reasoning",
+        "ReAct loop",
+        "self-reflection",
+        "chain of thought",
+        "tool loop",
+        "iterative planning",
+        "how do i implement ReAct"
+      ],
+      "relatedSkills": [
+        "agent-tool-calling-architecture",
+        "agent-memory-systems",
+        "langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-planning-reasoning/SKILL.md"
     },
     {
       "name": "agent-reliability-engineering",
@@ -534,6 +689,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-security-guardrails/SKILL.md"
+    },
+    {
+      "name": "agent-tool-calling-architecture",
+      "domain": "coding",
+      "description": "Implements tool calling architecture (Pydantic schemas, function-to-schema conversion, output parsing with error recovery, parallel execution with fallback chains) for LLM agents in Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "tool calling",
+        "function calling",
+        "tool use architecture",
+        "pydantic schema",
+        "output parsing",
+        "error recovery",
+        "tool fallback chain",
+        "how do i make my agent use tools"
+      ],
+      "relatedSkills": [
+        "agent-memory-systems",
+        "agent-planning-reasoning",
+        "langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-tool-calling-architecture/SKILL.md"
     },
     {
       "name": "agentic-evaluation",
@@ -3018,6 +3198,29 @@
       "source": "skills/coding/autogen-conversational-patterns/SKILL.md"
     },
     {
+      "name": "autonomous-coding-lifecycle",
+      "domain": "agent",
+      "description": "Manages the complete autonomous coding lifecycle from code generation through self-review, test validation, failure repair, and deployment with state-machine orchestration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "autonomous coding",
+        "code generation testing fix",
+        "coding lifecycle",
+        "AI refactoring",
+        "how do i automate the full coding workflow",
+        "test-driven code generation"
+      ],
+      "relatedSkills": [
+        "coding-agent-frameworks",
+        "cli-agent-workflows",
+        "tool-use-function-calling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/autonomous-coding-lifecycle/SKILL.md"
+    },
+    {
       "name": "aws-auto-scaling",
       "domain": "cncf",
       "description": "\"Configures automatic scaling of compute resources (EC2, RDS, DynamoDB\" Lambda) based on demand metrics with scaling policies and lifecycle hooks.",
@@ -4801,6 +5004,30 @@
       "source": "skills/coding/braintree-api/SKILL.md"
     },
     {
+      "name": "budget-aware-cost-management",
+      "domain": "agent",
+      "description": "Implements session-level budget quotas, cost monitoring with threshold alerts, and ROI tracking to enforce AI agent spending limits and optimize return on investment.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "analysis",
+      "triggers": [
+        "budget quota",
+        "cost monitoring",
+        "token budget",
+        "spending limits",
+        "ROI tracking",
+        "AI cost optimization",
+        "how do i control agent spending"
+      ],
+      "relatedSkills": [
+        "resource-optimization",
+        "goal-setting-monitoring",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/budget-aware-cost-management/SKILL.md"
+    },
+    {
       "name": "build",
       "domain": "agent",
       "description": "Implements intelligent build with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -5589,6 +5816,31 @@
       "source": "skills/coding/clean-architecture/SKILL.md"
     },
     {
+      "name": "cli-agent-workflows",
+      "domain": "agent",
+      "description": "Implements CLI agent workflows (terminal interaction, file operations, code generation from design specs, MCP bridging) for building command-line AI assistants and developer tooling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "CLI agent",
+        "Gemini CLI",
+        "terminal automation",
+        "command-line assistant",
+        "MCP bridging",
+        "how do i build a CLI AI tool",
+        "developer agent",
+        "stdin/stdout streaming"
+      ],
+      "relatedSkills": [
+        "mcp-integration",
+        "tool-use-function-calling",
+        "coding-agent-frameworks"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/cli-agent-workflows/SKILL.md"
+    },
+    {
       "name": "clickup-api",
       "domain": "coding",
       "description": "Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk.",
@@ -6009,91 +6261,6 @@
       "source": "skills/coding/code-review/SKILL.md"
     },
     {
-      "name": "code-review-atomic",
-      "domain": "coding",
-      "description": "Implements a structured approach to code reviews that enhances quality, performance, and knowledge sharing among team members.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review",
-        "peer review",
-        "quality assurance",
-        "code quality"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-atomic/SKILL.md"
-    },
-    {
-      "name": "code-review-best-practices",
-      "domain": "coding",
-      "description": "Implements best practices for conducting effective code reviews to enhance quality, collaboration, and knowledge sharing in teams.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review practices",
-        "peer review",
-        "collaboration",
-        "quality assurance"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-best-practices/SKILL.md"
-    },
-    {
-      "name": "code-review-correctness",
-      "domain": "coding",
-      "description": "Implements structured approaches to ensure code correctness through robust review practices, emphasizing testing and continual improvement.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review",
-        "correctness",
-        "software reliability",
-        "bug prevention"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-correctness/SKILL.md"
-    },
-    {
-      "name": "code-review-edge-case-handling",
-      "domain": "coding",
-      "description": "Implements strategies to identify and address edge cases in code reviews to enhance software robustness and reliability.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "edge case handling",
-        "software robustness",
-        "boundary testing",
-        "performance testing"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-edge-case-handling/SKILL.md"
-    },
-    {
-      "name": "code-review-skills",
-      "domain": "coding",
-      "description": "Implements skills and strategies to enhance the effectiveness of code reviews, promoting quality, collaboration, and knowledge sharing within development teams.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review skills",
-        "peer review",
-        "quality assurance",
-        "knowledge sharing"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-skills/SKILL.md"
-    },
-    {
       "name": "code-validation",
       "domain": "coding",
       "description": "Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions",
@@ -6115,6 +6282,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/code-validation/SKILL.md"
+    },
+    {
+      "name": "coding-agent-frameworks",
+      "domain": "agent",
+      "description": "Implements autonomous coding agent frameworks (automated refactoring, test generation, deployment pipeline management) for AI-augmented software development with 30%+ code generation targets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "coding agent",
+        "automated refactoring",
+        "test generation",
+        "deployment automation",
+        "AI developer",
+        "how do i automate software development",
+        "legacy modernization"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "cli-agent-workflows",
+        "git-pr-workflows-onboard",
+        "subagent-driven-development",
+        "code-correctness-verifier"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/coding-agent-frameworks/SKILL.md"
     },
     {
       "name": "cohere-api",
@@ -6814,6 +7007,31 @@
       "source": "skills/cncf/coredns/SKILL.md"
     },
     {
+      "name": "corosync",
+      "domain": "linux",
+      "description": "Configures Corosync Cluster Engine v3.x messaging layer including totem protocol, quorum models, nodelist management, knet/udpu transports, and security for Pacemaker HA clusters.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "corosync",
+        "totem protocol",
+        "quorum management",
+        "cluster messaging",
+        "knet transport",
+        "udpu unicast",
+        "nodelist configuration",
+        "qdevice"
+      ],
+      "relatedSkills": [
+        "pacemaker",
+        "linux-services",
+        "networking"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/corosync/SKILL.md"
+    },
+    {
       "name": "cortex",
       "domain": "cncf",
       "description": "\"Cortex in Monitoring & Observability - distributed, horizontally scalable\" Prometheus system",
@@ -7183,24 +7401,6 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/cubefs/SKILL.md"
-    },
-    {
-      "name": "cultural-adaptability-in-software",
-      "domain": "coding",
-      "description": "Implements strategies for adapting software development to diverse cultural contexts to enhance user experience and inclusivity.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "cultural adaptability",
-        "localization",
-        "i18n",
-        "user experience",
-        "software design"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.1",
-      "source": "skills/coding/cultural-adaptability-in-software/SKILL.md"
     },
     {
       "name": "cve-dependency-management",
@@ -8387,6 +8587,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/deduplication-patterns/SKILL.md"
+    },
+    {
+      "name": "deep-research-workflows",
+      "domain": "agent",
+      "description": "Orchestrates iterative autonomous research workflows combining multi-query exploration, gap analysis, follow-up refinement, and structured synthesis within configurable time budgets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "deep research",
+        "iterative search",
+        "gap analysis",
+        "research synthesis",
+        "OpenAI Deep Research",
+        "Google DeepSearch",
+        "time budget research",
+        "how do i automate thorough research workflows"
+      ],
+      "relatedSkills": [
+        "exploration-discovery",
+        "reasoning-techniques",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/deep-research-workflows/SKILL.md"
     },
     {
       "name": "dependency-graph-builder",
@@ -10946,6 +11171,30 @@
       "source": "skills/coding/dsl-engineering/SKILL.md"
     },
     {
+      "name": "dual-provider-reasoning-routing",
+      "domain": "agent",
+      "description": "Routes reasoning workloads between multiple LLM providers based on task complexity, cost constraints, and latency requirements with real-time fallback chains.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "dual provider routing",
+        "multi-provider LLM",
+        "model routing",
+        "Gemini Claude routing",
+        "cost-performance analysis",
+        "how do i route between LLM providers",
+        "fallback chain"
+      ],
+      "relatedSkills": [
+        "resource-optimization",
+        "reasoning-engine-internals",
+        "budget-aware-cost-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/dual-provider-reasoning-routing/SKILL.md"
+    },
+    {
       "name": "durable-execution",
       "domain": "agent",
       "description": "Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks.",
@@ -11398,6 +11647,55 @@
       "source": "skills/cncf/etcd/SKILL.md"
     },
     {
+      "name": "evaluation-monitoring",
+      "domain": "agent",
+      "description": "Continuously monitors agent performance in production through token tracking, LLM-as-a-Judge evaluation, A/B testing for improvements, drift detection, anomaly detection, and trajectory analysis with structured feedback loops.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "evaluation",
+        "LLM as judge",
+        "A/B testing agents",
+        "drift detection",
+        "anomaly detection",
+        "trajectory analysis",
+        "how do i monitor agent performance",
+        "token tracking"
+      ],
+      "relatedSkills": [
+        "reflection-loop",
+        "goal-setting-monitoring",
+        "rag-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/evaluation-monitoring/SKILL.md"
+    },
+    {
+      "name": "evaluation-rubrics-scored-review",
+      "domain": "agent",
+      "description": "Implements evaluation rubric design (multi-criteria scoring, Elo-based ranking, peer-review simulation) for quantitative assessment of AI agent outputs without ground truth labels.",
+      "role": "implementation",
+      "scope": "review",
+      "outputFormat": "analysis",
+      "triggers": [
+        "evaluation rubrics",
+        "Elo ranking",
+        "peer review simulation",
+        "scored review",
+        "quality criteria design",
+        "inter-rater reliability",
+        "Agent Laboratory"
+      ],
+      "relatedSkills": [
+        "evaluation-monitoring",
+        "agentic-evaluation",
+        "self-critique-engine"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/evaluation-rubrics-scored-review/SKILL.md"
+    },
+    {
       "name": "event-bus",
       "domain": "coding",
       "description": "\"Async pub/sub event bus with typed events, mixed sync/async dispatch\" and singleton initialization for trading systems",
@@ -11594,6 +11892,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/eventual-consistency-patterns/SKILL.md"
+    },
+    {
+      "name": "exception-handling-recovery",
+      "domain": "agent",
+      "description": "Implements agent resilience patterns including retry logic with exponential backoff, fallback handler chains, state rollback, graceful degradation, and error escalation to maintain reliability under failure conditions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "exception handling",
+        "retry logic",
+        "fallback handlers",
+        "state rollback",
+        "graceful degradation",
+        "error recovery",
+        "how do i make agents resilient",
+        "ADK fallback"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "planning-patterns",
+        "agent-architecture-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/exception-handling-recovery/SKILL.md"
     },
     {
       "name": "exchange-ccxt-patterns",
@@ -11963,6 +12286,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/execution-vwap/SKILL.md"
+    },
+    {
+      "name": "exploration-discovery",
+      "domain": "agent",
+      "description": "Implements proactive agent exploration patterns for discovering unknown opportunities, generating hypotheses, designing experiments, and sharing findings through autonomous research loops beyond predefined optimization targets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "exploration",
+        "discovery",
+        "hypothesis generation",
+        "experimental design",
+        "autonomous research",
+        "how do i make agents explore",
+        "Agent Laboratory",
+        "Co-Scientist"
+      ],
+      "relatedSkills": [
+        "multi-agent-collaboration",
+        "learning-adaptation",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/exploration-discovery/SKILL.md"
     },
     {
       "name": "expression-engine",
@@ -12902,6 +13250,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/framework-selection/SKILL.md"
+    },
+    {
+      "name": "framework-selection-matrix",
+      "domain": "agent",
+      "description": "Provides a decision matrix for selecting between agentic frameworks (LangChain, LangGraph, Google ADK, CrewAI) based on capability requirements, ecosystem fit, and production readiness.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "framework selection",
+        "LangChain vs LangGraph",
+        "Google ADK",
+        "CrewAI",
+        "agent framework comparison",
+        "how do i choose an agent framework",
+        "LCEL pipeline"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-collaboration",
+        "routing-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/framework-selection-matrix/SKILL.md"
     },
     {
       "name": "framework-sourcing-strategy",
@@ -14215,6 +14587,31 @@
       "source": "skills/go/go-error-handling/SKILL.md"
     },
     {
+      "name": "goal-setting-monitoring",
+      "domain": "agent",
+      "description": "Implements goal-oriented agent architectures with objective definition, LLM-based success criteria evaluation, iterative progress tracking, and max-iteration bounded refinement loops for proactive autonomous systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "goal setting",
+        "objective tracking",
+        "success criteria",
+        "progress monitoring",
+        "how do i set agent goals",
+        "autonomous objectives",
+        "goal evaluation",
+        "iterative refinement"
+      ],
+      "relatedSkills": [
+        "planning-patterns",
+        "multi-agent-orchestration",
+        "closed-loop-delivery"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/goal-setting-monitoring/SKILL.md"
+    },
+    {
       "name": "goal-to-milestones",
       "domain": "agent",
       "description": "Implements intelligent goal to milestones with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -14782,6 +15179,56 @@
       "source": "skills/linux/grub-uefi-bootloader/SKILL.md"
     },
     {
+      "name": "guardrails-safety",
+      "domain": "agent",
+      "description": "Protects agent systems from harmful outputs through behavioral constraints, input validation and sanitization, jailbreaking defenses, structured output enforcement, the Principle of Least Privilege, and fault-tolerant state management for safe autonomous operation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "guardrails",
+        "safety patterns",
+        "input validation",
+        "jailbreaking defenses",
+        "content filtering",
+        "least privilege",
+        "how do i protect agents from harm"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "exception-handling-recovery",
+        "agentic-evaluation",
+        "agent-security-guardrails"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/guardrails-safety/SKILL.md"
+    },
+    {
+      "name": "gui-agent-interaction",
+      "domain": "agent",
+      "description": "Implements GUI agent interaction patterns (screen vision recognition, UI element detection, automated mouse/keyboard execution) for operating desktop and web applications without APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gui agent",
+        "screen vision",
+        "UI automation",
+        "Project Mariner",
+        "desktop automation",
+        "how do i automate clicking buttons",
+        "visual agent",
+        "computer vision UI"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "coding-agent-frameworks",
+        "mcp-integration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/gui-agent-interaction/SKILL.md"
+    },
+    {
       "name": "harbor",
       "domain": "cncf",
       "description": "\"Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management.\"",
@@ -15167,6 +15614,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/huggingface-api/SKILL.md"
+    },
+    {
+      "name": "human-in-the-loop",
+      "domain": "agent",
+      "description": "Integrates human oversight into AI agent workflows for high-stakes decisions through approval gates, feedback loops for RLHF, escalation policies, and decision augmentation patterns that balance automation with accountability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "human in the loop",
+        "human oversight",
+        "approval gates",
+        "RLHF feedback",
+        "escalation policy",
+        "decision augmentation",
+        "how do i add human review",
+        "high-stakes AI decisions"
+      ],
+      "relatedSkills": [
+        "exception-handling-recovery",
+        "tool-use-function-calling",
+        "goal-setting-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/human-in-the-loop/SKILL.md"
     },
     {
       "name": "humanizer",
@@ -15734,24 +16206,6 @@
       "source": "skills/coding/interface-segregation-principle/SKILL.md"
     },
     {
-      "name": "internationalization-localization-best-practices",
-      "domain": "coding",
-      "description": "Implements best practices for internationalization and localization of software to ensure global usability and compliance with cultural preferences.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "localization",
-        "internationalization",
-        "i18n",
-        "l10n",
-        "user experience"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.1",
-      "source": "skills/coding/internationalization-localization-best-practices/SKILL.md"
-    },
-    {
       "name": "issues",
       "domain": "agent",
       "description": "Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -15815,6 +16269,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/iterate-pr/SKILL.md"
+    },
+    {
+      "name": "iterative-prompt-refinement",
+      "domain": "agent",
+      "description": "Implements systematic prompt evolution through baseline generation, structured evaluation against rubrics, targeted revision, and regression validation to continuously improve prompt quality.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt refinement",
+        "prompt iteration",
+        "prompt versioning",
+        "A/B testing prompts",
+        "prompt evaluation",
+        "prompt quality",
+        "how do i improve my prompts"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "evaluation-monitoring",
+        "structured-output-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/iterative-prompt-refinement/SKILL.md"
     },
     {
       "name": "jaeger-reference",
@@ -16428,6 +16906,30 @@
       "source": "skills/cncf/knative/SKILL.md"
     },
     {
+      "name": "knowledge-graph-construction",
+      "domain": "agent",
+      "description": "Implements knowledge graph construction (entity extraction, relationship mapping, graph database storage) and Graph-RAG integration for enterprise AI agents with structured reasoning over connected data.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "knowledge graph",
+        "Neo4j",
+        "GraphRAG",
+        "entity extraction",
+        "relationship mapping",
+        "how do i build a knowledge graph for AI",
+        "multi-hop queries"
+      ],
+      "relatedSkills": [
+        "rag-patterns",
+        "mcp-integration",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/knowledge-graph-construction/SKILL.md"
+    },
+    {
       "name": "knowledge-transfer-methods",
       "domain": "coding",
       "description": "Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency.",
@@ -16674,6 +17176,29 @@
       "source": "skills/cncf/kubernetes-api-patterns/SKILL.md"
     },
     {
+      "name": "kubernetes-configmap",
+      "domain": "cncf",
+      "description": "Implements v1 ConfigMap manifests for injecting configuration data into pods via environment variables, volume mounts, and command-line arguments.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "configuration injection",
+        "env variable",
+        "volume mount",
+        "key-value data",
+        "v1 core",
+        "configmap"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-secrets",
+        "cncf/kubernetes-deployment",
+        "cncf/kubernetes-statefulset"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-configmap/SKILL.md"
+    },
+    {
       "name": "kubernetes-crds-management",
       "domain": "coding",
       "description": "Manages Kubernetes Custom Resource Definitions, including creation, updates, and best practices for usage.",
@@ -16741,6 +17266,30 @@
       "source": "skills/agent/kubernetes-deployment/SKILL.md"
     },
     {
+      "name": "kubernetes-deployment",
+      "domain": "cncf",
+      "description": "Implements apps/v1 Deployment YAML manifests with rolling update strategies, replica scaling, and rollback procedures for stateless application workloads.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rolling update",
+        "replica count",
+        "deployment strategy",
+        "rollback",
+        "apps/v1",
+        "deployment rollout",
+        "kubernetes deployment"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-deployment",
+        "cncf/kubernetes-services-management",
+        "cncf/kubernetes-configmap"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-deployment/SKILL.md"
+    },
+    {
       "name": "kubernetes-deployment-patterns",
       "domain": "coding",
       "description": "Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation.",
@@ -16768,29 +17317,53 @@
     {
       "name": "kubernetes-ingress",
       "domain": "cncf",
-      "description": "Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration.",
-      "role": "reference",
-      "scope": "infrastructure",
-      "outputFormat": "manifests",
+      "description": "Implements networking.k8s.io/v1 Ingress resources with HTTP/HTTPS routing, TLS termination, path-based routing, and ingress controller configuration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
       "triggers": [
-        "ingress",
-        "kubernetes ingress",
-        "ingress controller",
-        "host-based routing",
+        "http routing",
+        "tls termination",
+        "ingress class",
         "path-based routing",
-        "TLS termination",
-        "cert-manager",
-        "external access routing"
+        "networking.k8s.io",
+        "ingress controller",
+        "load balancing"
       ],
       "relatedSkills": [
-        "cncf-kubernetes",
-        "cncf-cert-manager",
-        "cncf-traefik",
-        "cncf-network-policies",
-        "cncf-service-mesh"
+        "cncf/kubernetes-networkpolicy",
+        "cncf/kubernetes-services-management",
+        "cncf/cilium"
       ],
       "version": "1.0.0",
       "source": "skills/cncf/kubernetes-ingress/SKILL.md"
+    },
+    {
+      "name": "kubernetes-istio",
+      "domain": "cncf",
+      "description": "Implements Istio service mesh patterns (sidecar injection, traffic splitting, circuit breaking, retries, and mTLS) for advanced traffic management and zero-downtime deployments in Kubernetes.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "service mesh",
+        "istio",
+        "sidecar injection",
+        "traffic splitting",
+        "canary deployment",
+        "circuit breaker",
+        "zero-downtime deployment",
+        "envoy proxy"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-ingress",
+        "cncf/kubernetes-deployment",
+        "cncf/kubernetes-statefulset",
+        "cncf/kubernetes-networkpolicy",
+        "cncf/kubernetes-services-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-istio/SKILL.md"
     },
     {
       "name": "kubernetes-monitoring-logging",
@@ -16809,6 +17382,79 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/kubernetes-monitoring-logging/SKILL.md"
+    },
+    {
+      "name": "kubernetes-networkpolicy",
+      "domain": "cncf",
+      "description": "Implements networking.k8s.io/v1 NetworkPolicy resources with ingress and egress rules, pod selector targeting, and network segmentation for microservice isolation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pod isolation",
+        "ingress egress rules",
+        "network segmentation",
+        "pod selector",
+        "networking.k8s.io",
+        "networkpolicy",
+        "firewall"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-ingress",
+        "cncf/cilium",
+        "cncf/open-policy-agent-opa"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-networkpolicy/SKILL.md"
+    },
+    {
+      "name": "kubernetes-persistentvolume",
+      "domain": "cncf",
+      "description": "Implements v1 PersistentVolume, StorageClass, and PersistentVolumeClaim manifests with static/dynamic provisioning, access modes, and reclaim policies for Kubernetes storage.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "static provisioning",
+        "dynamic provisioning",
+        "storage class",
+        "access modes",
+        "reclaim policy",
+        "pv",
+        "pvc",
+        "storage.k8s.io"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-statefulset",
+        "cncf/kubernetes-deployment",
+        "cncf/crossplane"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-persistentvolume/SKILL.md"
+    },
+    {
+      "name": "kubernetes-rbac",
+      "domain": "cncf",
+      "description": "Implements rbac.authorization.k8s.io/v1 Role, ClusterRole, RoleBinding, and ClusterRoleBinding manifests with least privilege access control for Kubernetes resources.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "least privilege",
+        "role binding",
+        "clusterrole",
+        "service account",
+        "rbac.authorization.k8s.io",
+        "namespace permissions",
+        "access control"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-deployment",
+        "cncf/kyverno-pod-security-baseline",
+        "cncf/open-policy-agent-opa"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-rbac/SKILL.md"
     },
     {
       "name": "kubernetes-resource-tuning",
@@ -16851,6 +17497,29 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/kubernetes-services-management/SKILL.md"
+    },
+    {
+      "name": "kubernetes-statefulset",
+      "domain": "cncf",
+      "description": "Implements apps/v1 StatefulSet manifests with stable network identities, ordered pod lifecycle, and persistent volume claim automation for stateful workloads.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "stateful workload",
+        "stable network identity",
+        "persistent volume claim",
+        "ordered scaling",
+        "apps/v1",
+        "statefulset"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-persistentvolume",
+        "cncf/kubernetes-services-management",
+        "cncf/kubernetes-configmap"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-statefulset/SKILL.md"
     },
     {
       "name": "kubescape",
@@ -16951,6 +17620,283 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/kyverno/SKILL.md"
+    },
+    {
+      "name": "kyverno-cleanup-policies",
+      "domain": "cncf",
+      "description": "Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno cleanup policies",
+        "ClusterCleanupPolicy",
+        "garbage collection",
+        "resource cleanup",
+        "automated deletion",
+        "scheduled cleanup",
+        "kyverno v2 cleanup",
+        "deletion propagation"
+      ],
+      "relatedSkills": [
+        "kyverno-mutate-patterns",
+        "kyverno-policy-report-override"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-cleanup-policies/SKILL.md"
+    },
+    {
+      "name": "kyverno-exemptions-management",
+      "domain": "cncf",
+      "description": "Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno exemptions",
+        "PolicyException",
+        "policy exemption",
+        "serviceAccount exemption",
+        "role exemption",
+        "PSS exception",
+        "kyverno policy bypass"
+      ],
+      "relatedSkills": [
+        "kyverno-pod-security-baseline",
+        "kyverno-pod-security-restricted",
+        "kyverno-policy-report-override"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-exemptions-management/SKILL.md"
+    },
+    {
+      "name": "kyverno-image-registry-validation",
+      "domain": "cncf",
+      "description": "Validates container images from approved registries with allowed tags using Kyverno verifyImages rules and image digest mutation to prevent unapproved or latest-tagged images.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "image validation",
+        "container registry",
+        "approved images",
+        "image digest",
+        "tag policy",
+        "image scanning",
+        "registry allowlist"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-resource-quota-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-image-registry-validation/SKILL.md"
+    },
+    {
+      "name": "kyverno-label-enforcement",
+      "domain": "cncf",
+      "description": "Enforces required labels on Pods and Namespaces using Kyverno validate rules with pattern matching and CEL expressions for compliance tracking.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno label enforcement",
+        "required labels",
+        "namespace labels",
+        "pod labels",
+        "label validation",
+        "kubecost labels",
+        "compliance labels"
+      ],
+      "relatedSkills": [
+        "kyverno-mutate-patterns",
+        "kyverno-resource-quota-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-label-enforcement/SKILL.md"
+    },
+    {
+      "name": "kyverno-mutate-patterns",
+      "domain": "cncf",
+      "description": "Mutates Kubernetes resources at admission using patchStrategicMerge, patchesJson6902, and set operations to inject labels, sidecars, and default configurations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno mutate rules",
+        "patch strategic merge",
+        "resource mutation",
+        "inject sidecar",
+        "patch pod",
+        "kyverno mutation",
+        "patch json 6902"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-label-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-mutate-patterns/SKILL.md"
+    },
+    {
+      "name": "kyverno-network-policy-generation",
+      "domain": "cncf",
+      "description": "Generates default-deny and allowlist NetworkPolicy resources for Kubernetes namespaces using Kyverno generate rules to enforce network segmentation and zero-trust isolation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno network policy",
+        "default deny network policy",
+        "generate network policy",
+        "network segmentation",
+        "podSelector",
+        "ingress egress rules",
+        "network isolation"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-mutate-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-network-policy-generation/SKILL.md"
+    },
+    {
+      "name": "kyverno-pod-security-baseline",
+      "domain": "cncf",
+      "description": "Implements Kyverno podSecurity rules to enforce the Kubernetes Pod Security Standards baseline profile across namespaces in a cluster.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "pod security baseline",
+        "PSS baseline",
+        "kubernetes pod security",
+        "container runtime policies",
+        "privileged container prevention",
+        "baseline profile enforcement",
+        "kubelet pod security"
+      ],
+      "relatedSkills": [
+        "kyverno-pod-security-baseline",
+        "kyverno-pod-security-restricted"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-pod-security-baseline/SKILL.md"
+    },
+    {
+      "name": "kyverno-pod-security-restricted",
+      "domain": "cncf",
+      "description": "Enforces Kubernetes Pod Security Standards restricted profile using Kyverno podSecurity rules to prevent privileged containers, enforce runAsNonRoot, and require capability drops.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "pod security restricted",
+        "PSS restricted",
+        "runAsNonRoot",
+        "capabilities drop",
+        "privileged pod prevention",
+        "restricted profile",
+        "hardening pod"
+      ],
+      "relatedSkills": [
+        "kyverno-pod-security-baseline",
+        "kyverno-exemptions-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-pod-security-restricted/SKILL.md"
+    },
+    {
+      "name": "kyverno-policy-generation",
+      "domain": "cncf",
+      "description": "Implements Kyverno generate rules to automatically create or modify Kubernetes resources (ResourceQuota, LimitRange, NetworkPolicy) on namespace creation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno generate rules",
+        "resource generation",
+        "generatePresence",
+        "generationKey",
+        "clusterpolicy generate",
+        "automatic resource provisioning",
+        "kyverno sync rules"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-resource-quota-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-policy-generation/SKILL.md"
+    },
+    {
+      "name": "kyverno-policy-report-override",
+      "domain": "cncf",
+      "description": "Manages PolicyReport overrides using Kyverno's failureActionOverrides, report configuration, and CEL-based conditions to customize compliance reporting per resource.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno report override",
+        "PolicyReport override",
+        "failureActionOverrides",
+        "report result override",
+        "kyverno compliance reporting",
+        "policy report management"
+      ],
+      "relatedSkills": [
+        "kyverno-exemptions-management",
+        "kyverno-cleanup-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-policy-report-override/SKILL.md"
+    },
+    {
+      "name": "kyverno-resource-quota-validation",
+      "domain": "cncf",
+      "description": "Validates Kubernetes pod resource requests and limits using Kyverno ClusterPolicy rules to enforce namespace quota compliance and prevent resource starvation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "resource quota validation",
+        "limit range",
+        "pod resource limits",
+        "CPU memory validation",
+        "namespace quota",
+        "resource constraints",
+        "container resource requests limits"
+      ],
+      "relatedSkills": [
+        "kyverno-label-enforcement",
+        "kyverno-secret-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-resource-quota-validation/SKILL.md"
+    },
+    {
+      "name": "kyverno-secret-validation",
+      "domain": "cncf",
+      "description": "Validates Kubernetes Secrets meet security requirements by checking secret types, enforcing labeling standards, and preventing legacy service-account-token usage.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "secret validation",
+        "Kubernetes secrets",
+        "deny service account token",
+        "secret type validation",
+        "secret security",
+        "secret labeling",
+        "legacy token detection"
+      ],
+      "relatedSkills": [
+        "kyverno-resource-quota-validation",
+        "kyverno-image-registry-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-secret-validation/SKILL.md"
     },
     {
       "name": "lambda-lang",
@@ -17099,6 +18045,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/language-family-idioms/SKILL.md"
+    },
+    {
+      "name": "learning-adaptation",
+      "domain": "agent",
+      "description": "Enables agents to improve through experience using reinforcement learning patterns (PPO, DPO, RLHF) and knowledge base RAG for continuous self-improvement and adaptive behavior across sessions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reinforcement learning",
+        "PPO",
+        "DPO",
+        "RLHF",
+        "self-improvement",
+        "how do i make agents learn",
+        "SICA",
+        "AlphaEvolve"
+      ],
+      "relatedSkills": [
+        "memory-management",
+        "rag-patterns",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/learning-adaptation/SKILL.md"
     },
     {
       "name": "license-compliance-and-open-source-policy",
@@ -17564,6 +18535,31 @@
       "source": "skills/coding/mailgun-api/SKILL.md"
     },
     {
+      "name": "maintainability-first-code-review",
+      "domain": "coding",
+      "description": "Run a strict maintainability-first code review focused on file size limits, code structure, spaghetti detection, and code judo restructuring to prevent structural decay.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "analysis",
+      "triggers": [
+        "maintainability review",
+        "code structure review",
+        "spaghetti code detection",
+        "1000 line rule",
+        "code judo",
+        "thin abstraction detection",
+        "layer integrity",
+        "ad-hoc conditionals"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "architectural-review",
+        "software-maintainability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/maintainability-first-code-review/SKILL.md"
+    },
+    {
       "name": "make",
       "domain": "coding",
       "description": "Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction.",
@@ -17801,6 +18797,30 @@
       "source": "skills/coding/marketo-api/SKILL.md"
     },
     {
+      "name": "mass-framework",
+      "domain": "agent",
+      "description": "Automates multi-agent system design through three-stage optimization (block-level prompt tuning, influence-weighted topology search, workflow-level joint optimization) to discover optimal agent configurations and interactions.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "code",
+      "triggers": [
+        "MASS framework",
+        "multi-agent system search",
+        "topology optimization",
+        "influence-weighted search",
+        "MAS design automation",
+        "how do i auto-optimize multi-agent systems",
+        "block-level prompt tuning"
+      ],
+      "relatedSkills": [
+        "multi-agent-collaboration",
+        "routing-patterns",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/mass-framework/SKILL.md"
+    },
+    {
       "name": "maven-build-system",
       "domain": "coding",
       "description": "Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects.",
@@ -17893,6 +18913,31 @@
       "source": "skills/agent/mcp-builder-ms/SKILL.md"
     },
     {
+      "name": "mcp-integration",
+      "domain": "agent",
+      "description": "Integrates the Model Context Protocol (MCP) standard for LLM tool discovery and interaction, implementing MCP client-server architecture with stdio/HTTP transport, tool/resource/prompt types, and FastMCP SDK patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "MCP",
+        "Model Context Protocol",
+        "tool discovery",
+        "FastMCP",
+        "stdio transport",
+        "SSE transport",
+        "MCP server",
+        "how do i standardize tool access"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "a2a-communication",
+        "prompt-chaining"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/mcp-integration/SKILL.md"
+    },
+    {
       "name": "mcp-protocol",
       "domain": "coding",
       "description": "Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration.",
@@ -17942,6 +18987,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/memoization-cache-patterns/SKILL.md"
+    },
+    {
+      "name": "memory-management",
+      "domain": "agent",
+      "description": "Manages agent memory across short-term (conversation buffers), long-term (vector stores, persistent databases), and procedural (learned patterns) layers to maintain stateful context across extended agent interactions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "memory management",
+        "conversation buffer",
+        "long-term memory",
+        "vector store",
+        "context persistence",
+        "how do i maintain agent state",
+        "BaseStore",
+        "SessionService"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "rag-patterns",
+        "learning-adaptation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/memory-management/SKILL.md"
     },
     {
       "name": "memory-management-and-concurrency",
@@ -18912,6 +19982,32 @@
       "source": "skills/agent/multi-advisor/SKILL.md"
     },
     {
+      "name": "multi-agent-collaboration",
+      "domain": "agent",
+      "description": "Orchestrates multiple specialized agents in concert using hierarchical, parallel, and sequential topologies (parent-child, debate/consensus, expert teams, sequential handoffs) to solve complex problems that exceed single-agent capability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-agent",
+        "agent collaboration",
+        "expert teams",
+        "sequential handoffs",
+        "parallel agents",
+        "parent child agents",
+        "debate consensus",
+        "how do i orchestrate multiple agents"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "routing-patterns",
+        "planning-patterns",
+        "parallelization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/multi-agent-collaboration/SKILL.md"
+    },
+    {
       "name": "multi-agent-orchestration",
       "domain": "agent",
       "description": "Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination.",
@@ -18979,6 +20075,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/multi-agent-task-orchestrator/SKILL.md"
+    },
+    {
+      "name": "multi-platform-agent-deployment",
+      "domain": "agent",
+      "description": "Deploys and orchestrates an identical agent across multiple execution environments (CLI, web UI, API, chat platforms) with shared knowledge base and behavioral consistency.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-platform deployment",
+        "agent deployment",
+        "CLI web API chatbot",
+        "agent adapter",
+        "how do i deploy agents to multiple platforms",
+        "multi-environment agent"
+      ],
+      "relatedSkills": [
+        "cli-agent-workflows",
+        "gui-agent-interaction",
+        "mcp-integration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/multi-platform-agent-deployment/SKILL.md"
     },
     {
       "name": "multi-skill-executor",
@@ -19971,6 +21090,30 @@
       "source": "skills/cncf/opencost/SKILL.md"
     },
     {
+      "name": "openedge-replication",
+      "domain": "linux",
+      "description": "Implements three-tier replication architecture (DRBD+AI, ZFS+AI, AI-only rsync) for Progress OpenEdge 12.x databases without OER license.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "manifests",
+      "triggers": [
+        "openedge replication",
+        "DRBD",
+        "ZFS snapshot",
+        "AI shipping",
+        "failover runbook",
+        "rfutil roll-forward",
+        "keepalived VIP"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "storage-architecture",
+        "shell-process-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/openedge-replication/SKILL.md"
+    },
+    {
       "name": "openfeature",
       "domain": "cncf",
       "description": "\"OpenFeature in Feature Flagging - cloud native architecture, patterns\" pitfalls, and best practices",
@@ -20476,6 +21619,31 @@
       "source": "skills/coding/output-sanitization/SKILL.md"
     },
     {
+      "name": "pacemaker",
+      "domain": "linux",
+      "description": "Manages Pacemaker HA clusters with pcs and crmsh for resource provisioning, constraints, STONITH fencing, quorum configuration, and cluster lifecycle operations on two-node and multi-node setups.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "pacemaker",
+        "pcs command",
+        "crmsh",
+        "cluster resource",
+        "STONITH fencing",
+        "CIB configuration",
+        "quorum management",
+        "promotable clone"
+      ],
+      "relatedSkills": [
+        "corosync",
+        "linux-services",
+        "storage-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/pacemaker/SKILL.md"
+    },
+    {
       "name": "package-ecosystem-navigator",
       "domain": "coding",
       "description": "Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, Go modules) with health assessment, dependency auditing, registry configuration, and cross-platform migration strategies for making informed packaging decisions.",
@@ -20700,6 +21868,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/parallel-skill-runner/SKILL.md"
+    },
+    {
+      "name": "parallelization",
+      "domain": "agent",
+      "description": "Implements concurrent task execution patterns (parallel branches, fan-out/fan-in, multi-API calls, multi-modal processing) to reduce total agent processing time through independent subtask parallelism.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "parallelization",
+        "concurrent execution",
+        "fan-out fan-in",
+        "parallel branches",
+        "multi-API calls",
+        "how do i run tasks in parallel",
+        "RunnableParallel"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-orchestration",
+        "langgraph"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/parallelization/SKILL.md"
     },
     {
       "name": "paypal-api",
@@ -21234,6 +22426,31 @@
       "source": "skills/coding/planetscale-sdk/SKILL.md"
     },
     {
+      "name": "planning-patterns",
+      "domain": "agent",
+      "description": "Implements multi-step plan generation, iterative refinement, and dynamic task decomposition for proactive agent execution with self-correction.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "planning",
+        "multi-step plan",
+        "task decomposition",
+        "iterative refinement",
+        "dynamic planning",
+        "how do i plan complex tasks",
+        "CrewAI workflow",
+        "Google DeepResearch"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-orchestration",
+        "planning-with-files"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/planning-patterns/SKILL.md"
+    },
+    {
       "name": "planning-reasoning",
       "domain": "agent",
       "description": "Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification.",
@@ -21677,6 +22894,31 @@
       "source": "skills/cncf/prometheus/SKILL.md"
     },
     {
+      "name": "prompt-chaining",
+      "domain": "agent",
+      "description": "Implements sequential prompt chaining patterns (linear LCEL pipelines, LangGraph stateful flows, Google ADK primitives) to decompose complex reasoning into reliable multi-step agent workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt chaining",
+        "sequential prompts",
+        "LCEL pipeline",
+        "LangGraph state",
+        "multi-step reasoning",
+        "chain of prompts",
+        "how do i break down complex tasks",
+        "pipeline pattern"
+      ],
+      "relatedSkills": [
+        "framework-orchestration-routing",
+        "dispatching-parallel-agents",
+        "multi-agent-orchestration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/prompt-chaining/SKILL.md"
+    },
+    {
       "name": "prompt-engineer",
       "domain": "agent",
       "description": "Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -21745,6 +22987,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/prompt-engineering-patterns/SKILL.md"
+    },
+    {
+      "name": "prompt-engineering-patterns-v2",
+      "domain": "agent",
+      "description": "Implements advanced prompt engineering techniques (zero-shot/one-shot design, verb-based instructions, structured output, evaluation rubrics) for maximizing LLM response quality.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "zero-shot prompting",
+        "one-shot prompting",
+        "verb-based instructions",
+        "structured output",
+        "evaluation rubrics",
+        "how do i design better prompts",
+        "prompt optimization",
+        "few-shot prompting"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "reflection-loop",
+        "ai-llm-agentic-tooling-langchain-langgraph"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/prompt-engineering-patterns-v2/SKILL.md"
     },
     {
       "name": "prompt-optimization",
@@ -22198,6 +23465,56 @@
       "source": "skills/agent/rag-implementation/SKILL.md"
     },
     {
+      "name": "rag-patterns",
+      "domain": "agent",
+      "description": "Implements Retrieval-Augmented Generation patterns (chunking strategies, embedding-based vector search, semantic vs keyword retrieval, RAG pipelines) to ground LLM outputs in authoritative external knowledge sources.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "RAG",
+        "retrieval augmented generation",
+        "vector search",
+        "semantic search",
+        "chunking strategies",
+        "embeddings",
+        "knowledge retrieval",
+        "how do i ground LLM outputs in facts"
+      ],
+      "relatedSkills": [
+        "memory-management",
+        "prompt-chaining",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/rag-patterns/SKILL.md"
+    },
+    {
+      "name": "rag-pipeline-architecture",
+      "domain": "coding",
+      "description": "Implements production-quality RAG pipelines combining semantic document chunking, hybrid BM25+vector search, cross-encoder and LLM-based re-ranking, and reciprocal rank fusion for maximum retrieval quality.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rag pipeline",
+        "retrieval augmented generation",
+        "semantic chunking",
+        "hybrid search",
+        "BM25",
+        "cross-encoder rerank",
+        "vector store embeddings",
+        "how do i build a RAG system"
+      ],
+      "relatedSkills": [
+        "agent-memory-systems",
+        "agent-tool-calling-architecture",
+        "prometheus-querying"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rag-pipeline-architecture/SKILL.md"
+    },
+    {
       "name": "rag-pipelines",
       "domain": "agent",
       "description": "Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation.",
@@ -22246,6 +23563,315 @@
       "source": "skills/maker/rapid-prototyping-workflow/SKILL.md"
     },
     {
+      "name": "react-advanced-patterns",
+      "domain": "coding",
+      "description": "Implements advanced React patterns including render props, higher-order components, custom hooks composition, portals, error boundaries, and ref forwarding for complex component architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react advanced",
+        "custom hooks",
+        "error boundary",
+        "react portal",
+        "hoc",
+        "forward ref",
+        "render props"
+      ],
+      "relatedSkills": [
+        "react-composition-patterns",
+        "react-rerender-optimization",
+        "react-client-data-fetching"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-advanced-patterns/SKILL.md"
+    },
+    {
+      "name": "react-async-waterfalls",
+      "domain": "coding",
+      "description": "Eliminates async request waterfalls in React applications by parallelizing data fetching, hoisting fetches to route and page level, and using streaming SSR with Suspense boundaries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react waterfall",
+        "async waterfall",
+        "data fetching",
+        "promise all",
+        "parallel fetch",
+        "react suspense",
+        "streaming ssr"
+      ],
+      "relatedSkills": [
+        "react-server-performance",
+        "react-client-data-fetching",
+        "react-rerender-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-async-waterfalls/SKILL.md"
+    },
+    {
+      "name": "react-bundle-size",
+      "domain": "coding",
+      "description": "Optimizes JavaScript bundle size in React applications through route-level code splitting, tree shaking configuration, granular imports, dynamic imports, and CI bundle size budgets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bundle size",
+        "code splitting",
+        "react bundle",
+        "tree shaking",
+        "dynamic import",
+        "react lazy",
+        "bundle analyzer"
+      ],
+      "relatedSkills": [
+        "react-server-performance",
+        "react-async-waterfalls",
+        "react-rerender-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-bundle-size/SKILL.md"
+    },
+    {
+      "name": "react-client-data-fetching",
+      "domain": "coding",
+      "description": "Implements efficient client-side data fetching in React using TanStack Query with proper caching, stale time configuration, error boundaries, optimistic updates, and query key conventions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "client data fetching",
+        "tanstack query",
+        "react query",
+        "swr",
+        "data fetching",
+        "optimistic update",
+        "query key"
+      ],
+      "relatedSkills": [
+        "react-async-waterfalls",
+        "react-server-performance",
+        "react-rerender-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-client-data-fetching/SKILL.md"
+    },
+    {
+      "name": "react-composition-patterns",
+      "domain": "coding",
+      "description": "Implements React composition patterns including compound components, state lifting, polymorphic components, slot-based layouts, and variant-driven designs for reusable component APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react composition",
+        "compound components",
+        "react patterns",
+        "polymorphic components",
+        "slot pattern",
+        "component API",
+        "composition vs inheritance"
+      ],
+      "relatedSkills": [
+        "react-async-waterfalls",
+        "react-rerender-optimization",
+        "react-server-performance"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-composition-patterns/SKILL.md"
+    },
+    {
+      "name": "react-js-performance",
+      "domain": "coding",
+      "description": "Optimizes JavaScript execution performance in React applications through efficient event handling, debouncing/throttling, Web Worker offloading, and DOM operation reduction.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react performance",
+        "javascript optimization",
+        "debounce",
+        "throttle",
+        "web worker",
+        "event delegation",
+        "main thread"
+      ],
+      "relatedSkills": [
+        "react-rerender-optimization",
+        "react-server-performance",
+        "react-bundle-size"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-js-performance/SKILL.md"
+    },
+    {
+      "name": "react-native-animation",
+      "domain": "coding",
+      "description": "Implements smooth, performant animations in React Native using Reanimated for UI thread animations, Animated API with native driver, gesture-driven interactions, and layout animations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native animation",
+        "reanimated",
+        "native animation",
+        "gesture animation",
+        "layout animation",
+        "ui thread animation",
+        "animated api"
+      ],
+      "relatedSkills": [
+        "react-native-list-performance",
+        "react-native-navigation",
+        "react-native-ui-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-animation/SKILL.md"
+    },
+    {
+      "name": "react-native-list-performance",
+      "domain": "coding",
+      "description": "Optimizes React Native FlatList and SectionList performance through windowing, item memoization, getItemLayout, and efficient rendering strategies for smooth scrolling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "flatlist performance",
+        "react native list",
+        "list optimization",
+        "scroll performance",
+        "windowing",
+        "getItemLayout",
+        "flashlist"
+      ],
+      "relatedSkills": [
+        "react-native-animation",
+        "react-native-navigation",
+        "react-native-ui-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-list-performance/SKILL.md"
+    },
+    {
+      "name": "react-native-monorepo-config",
+      "domain": "coding",
+      "description": "Configures React Native projects in monorepo environments using npm/yarn workspaces, Metro bundler, shared packages, and cross-platform module resolution.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native monorepo",
+        "metro config",
+        "yarn workspaces",
+        "shared packages",
+        "react native config",
+        "monorepo setup",
+        "cross-platform"
+      ],
+      "relatedSkills": [
+        "react-native-state-management",
+        "react-native-rendering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-monorepo-config/SKILL.md"
+    },
+    {
+      "name": "react-native-navigation",
+      "domain": "coding",
+      "description": "Implements navigation in React Native using React Navigation with type-safe TypeScript configuration, deep linking, screen lifecycle management, and performance optimization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react navigation",
+        "react native navigation",
+        "stack navigator",
+        "tab navigator",
+        "deep linking",
+        "screen navigation",
+        "navigation typescript"
+      ],
+      "relatedSkills": [
+        "react-native-animation",
+        "react-native-list-performance",
+        "react-native-ui-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-navigation/SKILL.md"
+    },
+    {
+      "name": "react-native-rendering",
+      "domain": "coding",
+      "description": "Optimizes React Native component rendering through virtualization, memoization, image optimization, and efficient component architecture for mobile performance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native rendering",
+        "component optimization",
+        "native performance",
+        "image optimization",
+        "react memo",
+        "view nesting",
+        "flipper profiling"
+      ],
+      "relatedSkills": [
+        "react-native-state-management",
+        "vercel-optimize"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-rendering/SKILL.md"
+    },
+    {
+      "name": "react-native-state-management",
+      "domain": "coding",
+      "description": "Manages application state in React Native using Context API, Zustand, Redux Toolkit, and Jotai with proper persistence, middleware, and re-render optimization for mobile.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native state",
+        "state management",
+        "zustand",
+        "redux toolkit",
+        "jotai",
+        "asyncstorage",
+        "react native data"
+      ],
+      "relatedSkills": [
+        "react-native-rendering",
+        "react-native-monorepo-config"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-state-management/SKILL.md"
+    },
+    {
+      "name": "react-native-ui-patterns",
+      "domain": "coding",
+      "description": "Implements responsive, accessible, and consistent UI components in React Native using Flexbox layouts, theme systems with dark mode support, platform-specific styling, and safe area handling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native ui",
+        "react native styling",
+        "responsive layout",
+        "dark mode",
+        "flexbox",
+        "safe area",
+        "platform specific"
+      ],
+      "relatedSkills": [
+        "react-native-animation",
+        "react-native-navigation",
+        "react-native-list-performance"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-ui-patterns/SKILL.md"
+    },
+    {
       "name": "react-nextjs-development",
       "domain": "agent",
       "description": "Implements intelligent react nextjs development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -22266,6 +23892,128 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/react-nextjs-development/SKILL.md"
+    },
+    {
+      "name": "react-rerender-optimization",
+      "domain": "coding",
+      "description": "Reduces unnecessary React component re-renders using targeted memoization (React.memo, useMemo, useCallback), stable key props for list rendering, atomic state management, and context value stabilization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react rerender",
+        "memoization",
+        "react memo",
+        "useMemo",
+        "useCallback",
+        "render optimization",
+        "avoid rerender"
+      ],
+      "relatedSkills": [
+        "react-client-data-fetching",
+        "react-async-waterfalls",
+        "react-composition-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-rerender-optimization/SKILL.md"
+    },
+    {
+      "name": "react-server-performance",
+      "domain": "coding",
+      "description": "Optimizes React server rendering performance using Server Components, streaming SSR with Suspense boundaries, React.cache deduplication, static generation, and ISR caching strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "server components",
+        "react server",
+        "streaming ssr",
+        "server rendering",
+        "next.js server",
+        "isr",
+        "static generation"
+      ],
+      "relatedSkills": [
+        "react-async-waterfalls",
+        "react-client-data-fetching",
+        "react-bundle-size"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-server-performance/SKILL.md"
+    },
+    {
+      "name": "react-view-transitions",
+      "domain": "coding",
+      "description": "Implements smooth page transitions and element animations using the View Transition API in React applications with CSS animation recipes and progressive enhancement.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "view transition",
+        "view transition api",
+        "react navigation",
+        "page transition",
+        "route transition",
+        "css animation",
+        "spa transition"
+      ],
+      "relatedSkills": [
+        "css-architecture",
+        "frontend-philosophy",
+        "design-systems"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-view-transitions/SKILL.md"
+    },
+    {
+      "name": "reasoning-engine-internals",
+      "domain": "agent",
+      "description": "Implements dual-provider reasoning architecture (Gemini + Claude orchestration), cross-model reasoning pipelines, token budget management, and AI-assisted development velocity tracking for production AI systems.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "analysis",
+      "triggers": [
+        "dual provider reasoning",
+        "cross-model orchestration",
+        "Gemini Claude routing",
+        "reasoning engine",
+        "token budget management",
+        "AI development velocity",
+        "how do i combine multiple LLMs"
+      ],
+      "relatedSkills": [
+        "resource-optimization",
+        "reasoning-techniques",
+        "agent-context-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/reasoning-engine-internals/SKILL.md"
+    },
+    {
+      "name": "reasoning-techniques",
+      "domain": "agent",
+      "description": "Implements advanced reasoning methodologies (Chain-of-Thought, Tree-of-Thoughts, ReAct, Self-Correction, Graph of Debates, Program-Aided LLMs) for multi-step problem-solving in complex agent tasks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reasoning techniques",
+        "chain of thought",
+        "tree of thoughts",
+        "ReAct",
+        "self-correction",
+        "program-aided LLMs",
+        "how do i improve agent reasoning",
+        "GoD"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "reflection-loop",
+        "planning-patterns",
+        "multi-agent-collaboration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/reasoning-techniques/SKILL.md"
     },
     {
       "name": "recallmax",
@@ -22428,6 +24176,32 @@
       "source": "skills/coding/reference-operators/SKILL.md"
     },
     {
+      "name": "reflection-loop",
+      "domain": "agent",
+      "description": "Implements self-correction feedback loops (execution → evaluation/critique → refinement) to iteratively improve agent outputs through producer-critic collaboration and automated quality gates.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reflection",
+        "self-correction",
+        "critic agent",
+        "feedback loop",
+        "producer-critic",
+        "quality gate",
+        "how do i improve agent output",
+        "iterative refinement"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "agentic-evaluation",
+        "self-critique-engine",
+        "tool-use-function-calling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/reflection-loop/SKILL.md"
+    },
+    {
       "name": "regression-detector",
       "domain": "agent",
       "description": "Implements intelligent regression detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -22567,6 +24341,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/resource-management/SKILL.md"
+    },
+    {
+      "name": "resource-optimization",
+      "domain": "agent",
+      "description": "Dynamically routes agent work based on cost, budget constraints, latency requirements, and query complexity using LLM-driven model selection with feedback-loop optimization for efficient resource utilization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "resource optimization",
+        "model routing",
+        "cost-aware agents",
+        "budget constraints",
+        "latency optimization",
+        "query complexity",
+        "how do i optimize agent costs",
+        "feedback-driven optimization"
+      ],
+      "relatedSkills": [
+        "routing-patterns",
+        "parallelization",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/resource-optimization/SKILL.md"
     },
     {
       "name": "resource-optimizer",
@@ -23097,6 +24896,30 @@
       "source": "skills/cncf/rook/SKILL.md"
     },
     {
+      "name": "routing-patterns",
+      "domain": "agent",
+      "description": "Implements intent-based routing patterns (LLM classifiers, node transitions, computational graphs) to dispatch queries to specialized sub-agents with fallback chains and confidence scoring.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "routing",
+        "intent classification",
+        "sub-agent dispatch",
+        "node transitions",
+        "computational graph",
+        "how do i route queries",
+        "query router"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-collaboration",
+        "parallelization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/routing-patterns/SKILL.md"
+    },
+    {
       "name": "runtime-ecosystem-selection",
       "domain": "coding",
       "description": "Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems.",
@@ -23470,9 +25293,9 @@
       "name": "security-owasp-top-10",
       "domain": "coding",
       "description": "Provides an in-depth analysis of the OWASP Top 10 vulnerabilities, along with strategies to mitigate them effectively in software applications.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
+      "role": "reference",
+      "scope": "review",
+      "outputFormat": "report",
       "triggers": [
         "OWASP",
         "security vulnerabilities",
@@ -26005,6 +27828,30 @@
       "source": "skills/coding/structured-logging/SKILL.md"
     },
     {
+      "name": "structured-output-enforcement",
+      "domain": "agent",
+      "description": "Enforces deterministic agent output using JSON Schema, Pydantic models, and LLM-native format constraints to guarantee downstream consumers receive valid structured data.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "structured output",
+        "JSON Schema",
+        "Pydantic validation",
+        "deterministic output",
+        "format constraints",
+        "output parser",
+        "how do i guarantee valid agent output"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "prompt-engineering-patterns-v2",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/structured-output-enforcement/SKILL.md"
+    },
+    {
       "name": "structured-output-validation",
       "domain": "agent",
       "description": "Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication.",
@@ -26326,6 +28173,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/task-intelligence/SKILL.md"
+    },
+    {
+      "name": "task-prioritization",
+      "domain": "agent",
+      "description": "Enables agents to rank and schedule tasks by urgency, importance, dependencies, and resource cost using priority matrices, dynamic re-prioritization, and dependency-aware scheduling for optimal execution order.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "task prioritization",
+        "priority ranking",
+        "urgency assessment",
+        "dependency scheduling",
+        "dynamic reprioritization",
+        "how do i prioritize tasks",
+        "P0 P1 P2",
+        "project management agent"
+      ],
+      "relatedSkills": [
+        "planning-patterns",
+        "multi-agent-collaboration",
+        "resource-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/task-prioritization/SKILL.md"
     },
     {
       "name": "technical-cycle-analysis",
@@ -27242,24 +29114,24 @@
     {
       "name": "tool-use-function-calling",
       "domain": "agent",
-      "description": "Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration.",
+      "description": "Implements agent tool use and function calling patterns (@tool decorators, CrewAI tools, Google ADK built-in tools) to enable agents with real-time external data access, API operations, calculations, and code execution.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "tool calling",
-        "function calling",
-        "Pydantic tools",
-        "LangChain tools",
         "tool use",
-        "parallel execution",
-        "fallback chain",
-        "typed tools"
+        "function calling",
+        "@tool decorator",
+        "external tools",
+        "API integration",
+        "how do i give agents tools",
+        "vertex extensions",
+        "CrewAI tools"
       ],
       "relatedSkills": [
-        "memory-systems",
-        "planning-reasoning",
-        "multi-agent-orchestration"
+        "prompt-chaining",
+        "reflection-loop",
+        "ai-llm-agentic-tooling-mcp"
       ],
       "version": "1.0.0",
       "source": "skills/agent/tool-use-function-calling/SKILL.md"
@@ -27661,6 +29533,30 @@
       "source": "skills/coding/vault-api/SKILL.md"
     },
     {
+      "name": "verb-based-instruction-design",
+      "domain": "agent",
+      "description": "Decomposes agent instructions into action verbs with explicit success criteria per verb class to eliminate ambiguity and ensure LLMs correctly interpret intended operations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "verb-based instructions",
+        "action verbs",
+        "prompt semantics",
+        "instruction design",
+        "ambiguous verbs",
+        "how do i write clear prompts",
+        "precise instructions"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "prompt-engineering-patterns-v2",
+        "iterative-prompt-refinement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/verb-based-instruction-design/SKILL.md"
+    },
+    {
       "name": "vercel-api",
       "domain": "coding",
       "description": "Integrates Vercel services (Deployments, Projects, Edge Functions, Domains, Analytics) using the Vercel REST API and Python SDK with token-based authentication and deployment automation patterns.",
@@ -27683,6 +29579,99 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/vercel-api/SKILL.md"
+    },
+    {
+      "name": "vercel-cli-token-deploy",
+      "domain": "coding",
+      "description": "Deploys projects to Vercel using the Vercel CLI with token-based authentication for CI/CD environments, preview deployments, and production releases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel cli",
+        "vercel token",
+        "vercel deploy",
+        "vercel ci/cd",
+        "token-based deployment",
+        "vercel automation",
+        "deploy to vercel"
+      ],
+      "relatedSkills": [
+        "vercel-deploy",
+        "vercel-api",
+        "ci-cd-pipeline-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-cli-token-deploy/SKILL.md"
+    },
+    {
+      "name": "vercel-deploy",
+      "domain": "coding",
+      "description": "Deploys frontend applications to Vercel with preview deployments, production releases, and environment-specific configuration management via Git integration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel deploy",
+        "vercel deployment",
+        "deploy to vercel",
+        "vercel hosting",
+        "vercel preview",
+        "vercel production",
+        "frontend deployment"
+      ],
+      "relatedSkills": [
+        "vercel-cli-token-deploy",
+        "vercel-api",
+        "ci-cd-pipeline-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-deploy/SKILL.md"
+    },
+    {
+      "name": "vercel-optimize",
+      "domain": "coding",
+      "description": "Optimizes Vercel-deployed applications for cost, performance, and reliability through cold start mitigation, caching strategy, edge function optimization, bundle auditing, and monitoring.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel optimize",
+        "vercel performance",
+        "cold start",
+        "vercel caching",
+        "vercel analytics",
+        "edge functions",
+        "vercel cost"
+      ],
+      "relatedSkills": [
+        "react-native-rendering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-optimize/SKILL.md"
+    },
+    {
+      "name": "vercel-writing-guidelines",
+      "domain": "writing",
+      "description": "Enforces clear, concise, and user-focused writing guidelines covering tone, grammar, structure, formatting, and inclusive language for technical documentation and product copy.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "writing guidelines",
+        "technical writing",
+        "documentation style",
+        "content guidelines",
+        "writing style guide",
+        "developer documentation",
+        "api docs"
+      ],
+      "relatedSkills": [
+        "technical-documentation",
+        "humanizer"
+      ],
+      "version": "1.0.0",
+      "source": "skills/writing/vercel-writing-guidelines/SKILL.md"
     },
     {
       "name": "verification-before-completion",
@@ -27983,6 +29972,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/web-applications/SKILL.md"
+    },
+    {
+      "name": "web-interface-guidelines",
+      "domain": "coding",
+      "description": "Applies comprehensive web interface design guidelines covering layout, typography, color, accessibility, responsive design, and UX patterns for consistent, user-friendly interfaces.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "guidance",
+      "triggers": [
+        "web design",
+        "ui guidelines",
+        "interface design",
+        "ux patterns",
+        "accessibility",
+        "responsive design",
+        "wcag"
+      ],
+      "relatedSkills": [
+        "css-architecture",
+        "design-systems",
+        "frontend-philosophy",
+        "react-view-transitions"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/web-interface-guidelines/SKILL.md"
     },
     {
       "name": "web-security-testing",

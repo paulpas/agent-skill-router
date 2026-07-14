@@ -28,6 +28,7 @@ import { ArchetypeRankingBoost } from './ArchetypeRankingBoost';
 import { AntiTriggerScorer } from './AntiTriggerScorer';
 import { ValidationError } from './AppError';
 import { IntentDecomposer } from '../retrieval/IntentDecomposer';
+import AttributionFooter, { SkillAttribution } from '../utils/AttributionFooter';
 
 /**
  * Hybrid retrieval weight configuration for the Router.
@@ -442,6 +443,55 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       }
 
       response.scoreExplanations = explanations;
+    }
+
+    // Generate attribution footer (Phase 1)
+    if (filteredSkills.length > 0) {
+      try {
+        // Collect full skill metadata for footer generation
+        const skillAttributions: SkillAttribution[] = [];
+        
+        for (const selectedSkill of filteredSkills) {
+          const skillDef = this.skillRegistry.getSkill(selectedSkill.name);
+          
+          if (!skillDef) {
+            this.logger.warn('Skill metadata not found for attribution footer', {
+              skillName: selectedSkill.name,
+              taskId,
+            });
+            continue;
+          }
+          
+          const { metadata } = skillDef;
+          skillAttributions.push({
+            name: metadata.name,
+            domain: metadata.category,
+            description: metadata.description,
+          });
+        }
+        
+        // Generate footer only if we have skill metadata
+        if (skillAttributions.length > 0) {
+          const footer = AttributionFooter.generate({
+            skills: skillAttributions,
+            format: 'markdown',
+          });
+          
+          response.attributionFooter = footer;
+          this.logger.debug('Attribution footer generated', {
+            taskId,
+            skillCount: skillAttributions.length,
+            footerLength: footer.length,
+          });
+        }
+      } catch (error) {
+        // Gracefully skip footer on any error
+        this.logger.warn('Failed to generate attribution footer', {
+          taskId,
+          error: error instanceof Error ? error.message : String(error),
+        });
+        // Do not propagate error - footer is optional
+      }
     }
 
     this.logger.info('Routing completed', {

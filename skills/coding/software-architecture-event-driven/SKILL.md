@@ -1,24 +1,30 @@
 ---
-
-
-
-
 name: software-architecture-event-driven
-description: Implements event-driven architecture, detailing event sourcing, message brokers, and consumer strategies for handling events efficiently.
+description: Implements event-driven architecture, detailing event sourcing, message
+  brokers, and consumer strategies for handling events efficiently.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
   triggers: event-driven, event sourcing, message broker, event-driven patterns
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: software-architecture-microservices, software-architecture-monolith, software-architecture-hexagonal
-
-
-
-
+  related-skills: software-architecture-microservices, software-architecture-monolith,
+    software-architecture-hexagonal
 ---
 
 
@@ -122,14 +128,3 @@ class EventSourcedOrder:
 - Create complex event chains that are hard to manage.
 - Ignore the order of events if it’s significant to business logic.
 
----
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
-
-- [Microsoft Azure — Event-Driven Architecture Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-driven-design)
-- [Martin Fowler — Publish Subscribe Messaging](https://martinfowler.com/articles/pubSub.html)
-- [Event Sourcing Pattern by Martin Fowler](https://martinfowler.com/eaaDev/EventSourcing.html)
-- [Apache Kafka — Event Streaming Platform Documentation](https://kafka.apache.org/documentation/)
-- [AWS EventBridge — Serverless Event-Driven Architecture](https://aws.amazon.com/eventbridge/)

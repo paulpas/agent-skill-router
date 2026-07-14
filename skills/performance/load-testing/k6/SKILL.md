@@ -67,18 +67,76 @@ K6 is known for its performance and ease of integration with modern development 
 Yes, K6 can integrate with various monitoring solutions (e.g., Grafana) to visualize load testing data and gain insights into system performance.
 
 By implementing effective load testing with K6, teams can ensure their applications perform optimally under expected workloads, thus enhancing application reliability and user satisfaction over time.
+
+---
+
+## Implementation Patterns
+
+### Advanced K6 Script with Thresholds and Stages
+
+A more realistic load test with parameterized options, multi-stage ramp profiles, thresholds, and response checks:
+
+```javascript
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+import { Rate, Trend } from 'k6/metrics';
+
+export const options = {
+  stages: [
+    { duration: '2m', target: 50 },   // ramp up to 50 VUs
+    { duration: '5m', target: 50 },   // sustain at 50 VUs
+    { duration: '2m', target: 100 },  // ramp up to 100 VUs
+    { duration: '5m', target: 100 },  // sustain at 100 VUs
+    { duration: '2m', target: 0 },    // ramp down to 0 VUs
+  ],
+  thresholds: {
+    http_req_duration: ['p(95)<2000', 'p(99)<5000'],
+    http_req_failed: ['rate<0.05'],
+  },
+};
+
+export default function () {
+  const params = {
+    headers: { 'Content-Type': 'application/json' },
+  };
+
+  const loginRes = http.post(
+    'https://test-api.example.com/login',
+    JSON.stringify({ username: `user_${__VU}`, password: 'test' }),
+    params,
+  );
+  check(loginRes, {
+    'login succeeded': (r) => r.status === 200,
+    'token received': (r) => r.json('token') !== undefined,
+  });
+
+  sleep(__ITER % 3 === 0 ? 2 : 1);
+
+  const searchRes = http.get(
+    `https://test-api.example.com/search?q=product_${__ITER % 10}`,
+    params,
+  );
+  check(searchRes, {
+    'search returned results': (r) => r.status === 200,
+    'response under 500ms': (r) => r.timings.duration < 500,
+  });
+
+  sleep(1);
+}
+```
+
 ---
 
 ## Constraints
 
 ### MUST DO
-- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
-- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
-- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
-- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+- Define realistic load profiles using `stages` or `scenarios` to simulate real user traffic patterns
+- Set explicit `thresholds` for request duration, error rate, and throughput to define pass/fail criteria
+- Parameterize the target URL and virtual user count via environment variables or `--env` flags
+- Run a quick smoke test (1-2 VUs) before executing full-scale load tests to validate the script
 
 ### MUST NOT DO
-- Do not silently swallow exceptions — always log or propagate errors with meaningful context
-- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
-- Never use hardcoded credentials, API keys, or secrets in source code
-- Do not bypass input validation for perceived performance gains
+- Do not run load tests against production systems without explicit authorization and monitoring in place
+- Avoid testing with only one endpoint — realistic tests cover multiple user journeys and API calls
+- Never ignore HTTP failures or timeouts during test runs; investigate and fix before accepting results
+- Do not use hardcoded authentication tokens that may expire mid-test — implement token refresh logic

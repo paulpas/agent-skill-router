@@ -188,6 +188,42 @@ function routerSkillUrl(name) {
   return new URL(`/skill/${encodeURIComponent(name)}`, ROUTER_BASE_URL).toString();
 }
 
+// ── Domain extraction ───────────────────────────────────────────────────────
+
+/**
+ * Extract domain from SKILL.md content by parsing YAML frontmatter.
+ * Returns domain name like 'go', 'coding', 'trading', etc.
+ */
+function extractDomainFromContent(content) {
+  if (!content) return null;
+  
+  // Extract YAML frontmatter (between --- delimiters)
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return null;
+  
+  const frontmatter = match[1];
+  
+  // Look for: metadata.domain: value (YAML format)
+  const domainMatch = frontmatter.match(/metadata:\s*\n(?:[\s\S]*?\n)*\s+domain:\s*([^\n]+)/);
+  if (domainMatch) {
+    return domainMatch[1].trim().replace(/^['"]|['"]$/g, ''); // Remove quotes if present
+  }
+  
+  return null;
+}
+
+/**
+ * Format domain context for display (converts snake-case/kebab-case to title case).
+ * Examples: 'go' -> '[Go]', 'trading' -> '[Trading]', 'cloud-native' -> '[Cloud Native]'
+ */
+function formatDomainLabel(domain) {
+  if (!domain) return '';
+  return '[' + domain
+    .split(/[-_]/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ') + ']';
+}
+
 // ── skill-router-api.md sync ────────────────────────────────────────────────
 
 async function syncApiDoc() {
@@ -240,6 +276,16 @@ async function handleRouteToSkill(args) {
   }
 
   const selectedSkills = response.body && response.body.selectedSkills;
+  const attributionFooter = response.body && response.body.attributionFooter;
+
+  // DEBUG: Log what we received from the router
+  log('DEBUG', '[ROUTER RESPONSE] received from /route', {
+    hasAttributionFooter: !!attributionFooter,
+    attributionFooterLength: attributionFooter ? attributionFooter.length : 0,
+    attributionFooterPreview: attributionFooter ? attributionFooter.substring(0, 100) : null,
+    selectedSkillsCount: selectedSkills ? selectedSkills.length : 0,
+  });
+
   if (!selectedSkills || selectedSkills.length === 0) {
     log('WARN', 'no skills matched', { task });
     return { content: [{ type: 'text', text: 'No matching skills found for this task.' }] };
@@ -249,29 +295,34 @@ async function handleRouteToSkill(args) {
     selectedSkills.map(async (skill) => {
       const name = skill.name || skill.id || String(skill);
       let content = null;
+      let domain = null;
       try {
         content = await httpGetText(routerSkillUrl(name));
-        log('DEBUG', '[ON-DEMAND] served via router', { skill: name });
+        domain = extractDomainFromContent(content);
+        log('DEBUG', '[ON-DEMAND] served via router', { skill: name, domain });
       } catch (_) {
         if (SKILLS_BASE_DIR) {
           const filePath = path.join(SKILLS_BASE_DIR, name, 'SKILL.md');
           try {
             content = fs.readFileSync(filePath, 'utf8');
-            log('DEBUG', '[ON-DEMAND] served from disk fallback', { skill: name, path: filePath });
+            domain = extractDomainFromContent(content);
+            log('DEBUG', '[ON-DEMAND] served from disk fallback', { skill: name, path: filePath, domain });
           } catch (_2) {
             content = null;
           }
         }
       }
-      return { name, content, score: skill.score ?? null };
+      return { name, content, domain, score: skill.score ?? null };
     })
   );
 
   const loaded = skillResults.filter((r) => r.content !== null);
   const names = loaded.map((r) => r.name);
+  const domains = loaded.map((r) => r.domain || 'unknown').filter((d, i, arr) => arr.indexOf(d) === i);
 
   log('INFO', '[SKILL ACCESS] skills resolved', {
     loaded: names,
+    domains: domains,
     total: selectedSkills.length,
     missing: skillResults.filter((r) => r.content === null).map((r) => r.name),
   });
@@ -282,11 +333,39 @@ async function handleRouteToSkill(args) {
     return { content: [{ type: 'text', text: desc }] };
   }
 
-  const body = loaded
-    .map((r) => `# Skill: ${r.name}\n\n${r.content}`)
+  let body = loaded
+    .map((r) => {
+      const domainLabel = r.domain ? ` ${formatDomainLabel(r.domain)}` : '';
+      return `# ${r.name}${domainLabel}\n\n${r.content}`;
+    })
     .join('\n\n---\n\n');
 
-  return { content: [{ type: 'text', text: body }] };
+  // Append attribution footer if available
+  if (attributionFooter) {
+    body += '\n\n---\n\n' + attributionFooter;
+    log('DEBUG', '[ATTRIBUTION] footer appended to response', {
+      skillCount: loaded.length,
+      footerLength: attributionFooter.length,
+    });
+  }
+
+  // DEBUG: Capture actual response body before returning
+  log('DEBUG', '[MCP RESPONSE BODY] start', {
+    preview: body.substring(0, 300),
+    totalLength: body.length,
+  });
+  log('DEBUG', '[MCP RESPONSE BODY] end', {
+    preview: body.substring(Math.max(0, body.length - 300)),
+  });
+
+  const mcpResponse = { content: [{ type: 'text', text: body }] };
+  log('DEBUG', '[MCP RESPONSE] complete JSON structure', {
+    contentType: mcpResponse.content[0].type,
+    textFieldLength: mcpResponse.content[0].text.length,
+    hasAttributionFooter: body.includes('Assisted by') || body.includes('externally-sourced') || body.includes('Skills Used'),
+  });
+
+  return mcpResponse;
 }
 
 async function handleListSkills() {

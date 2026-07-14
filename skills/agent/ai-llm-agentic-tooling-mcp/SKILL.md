@@ -1,24 +1,28 @@
 ---
-
-
-
-
 name: ai-llm-agentic-tooling-mcp
-description: Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating effective management of servers, clients, tools, resources, and prompts.
+description: Implements best practices for applying the Model Context Protocol (MCP)
+  in AI/LLM environments, facilitating effective management of servers, clients, tools,
+  resources, and prompts.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
   triggers: mcp, model context protocol, server management, client management, resources
+  archetypes:
+  - tactical
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   related-skills: ai-llm-agentic-tooling-langchain-langgraph
-
-
-
-
 ---
 
 
@@ -110,24 +114,3 @@ class AdvancedModelContext(ModelContext):
 - Validate all context objects to ensure they adhere to expected formats and types.
 
 
----
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
-
-- [Model Context Protocol Specification](<https://modelcontextprotocol.io/specification>)
-- [MCP GitHub Repository](<https://github.com/modelcontextprotocol/specification>)
-- [Anthropic MCP Documentation](<https://docs.anthropic.com/en/docs/model-context-protocol>)
-- [Claude API Reference](<https://docs.anthropic.com/en/api/getting-started>)
-- [LLM Agent Patterns (Survey Paper)](<https://arxiv.org/abs/2308.11432>)
----
-## Constraints
-
-### MUST DO
-- Regularly review and optimize context management practices to enhance performance.
-- Include logging for context updates and state changes to facilitate troubleshooting.
-
-### MUST NOT DO
-- Allow context bloat; clear unused or outdated context entries regularly.
-- Skip context validation checks before executing actions; enforce strict type and format checks.

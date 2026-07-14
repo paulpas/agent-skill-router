@@ -1,24 +1,30 @@
 ---
-
-
-
-
 name: software-architecture-monolith
-description: Guides the design and implementation of monolithic architecture, focusing on best practices and pitfalls in monolithic systems.
+description: Guides the design and implementation of monolithic architecture, focusing
+  on best practices and pitfalls in monolithic systems.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
   triggers: monolith, monolithic architecture, monolith design, monolith patterns
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: software-architecture-microservices, software-architecture-event-driven, software-architecture-hexagonal
-
-
-
-
+  related-skills: software-architecture-microservices, software-architecture-event-driven,
+    software-architecture-hexagonal
 ---
 
 
@@ -203,18 +209,3 @@ class OrderService:
 - Keep architecture well-documented.
 - Separate concerns via modules within the monolith.
 
----
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
-
-- [Martin Fowler — Monolithic Application](https://martinfowler.com/bliki/MonolithicApplication.html)
-- [Modular Monolith Architecture by Microsoft](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/modular-monolith)
-- [Monolith First — Why Start with a Monolith by ThoughtWorks](https://www.thoughtworks.com/radar/techniques/monolith-first)
-- [Martin Fowler — Microservices vs Monoliths](https://martinfowler.com/articles/microservices.html)
-- [IBM — Monolithic Architecture: Pros, Cons & Migration Strategies](https://www.ibm.com/topics/monolithic-architecture)
-
-### MUST NOT DO
-- Allow unregulated dependencies between modules.
-- Ignore performance metrics as the application grows.

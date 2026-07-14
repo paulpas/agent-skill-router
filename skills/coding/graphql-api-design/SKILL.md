@@ -1,24 +1,30 @@
 ---
-
-
-
-
 name: graphql-api-design
-description: Implements best practices for designing GraphQL APIs, focusing on schema design, query optimization, and resolver implementation.
+description: Implements best practices for designing GraphQL APIs, focusing on schema
+  design, query optimization, and resolver implementation.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: graphql, api design, schema definition, resolver implementation, query optimization, documentation
+  triggers: graphql, api design, schema definition, resolver implementation, query
+    optimization, documentation
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   related-skills: coding-api-best-practices, coding-error-handling
-
-
-
-
 ---
 
 
@@ -98,70 +104,3 @@ const resolvers = {
 - [ ] Handle errors and edge cases gracefully.
 - [ ] Document the API with tools like GraphiQL.
 
----
-
-## When to Use
-Use this skill when:
-- Designing or implementing a new GraphQL API.
-- Optimizing queries for performance.
-- Educating team members on GraphQL best practices.
-
----
-
-## When NOT to Use
-Avoid this skill for:
-- RESTful API designs without necessary adaptations.
-- Non-GraphQL related architecture tasks.
-
----
-
-## Core Workflow
-1. **Define Schema** — Model the data types and structure of the API.
-2. **Implement Resolvers** — Write resolvers that interact with your data sources.
-3. **Optimize Queries** — Analyze and improve the efficiency of GraphQL queries and mutations.
-4. **Testing & Validation** — Ensure the API is tested against expected outputs.
-5. **Documentation** — Generate documentation automatically using GraphQL tools.
-
----
-
-## Implementation Patterns
-### Pattern 1: Schema Definition
-```graphql
-type Resource {
-    id: ID!
-    name: String!
-}
-```
-
-### Pattern 2: Resolver Function
-```python
-def resolve_resources(parent, args, context):
-    return get_all_resources()
-```
-
----
-
-## Constraints
-
-### MUST DO
-- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
-- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
-- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
-- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
-
-### MUST NOT DO
-- Do not silently swallow exceptions — always log or propagate errors with meaningful context
-- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
-- Never use hardcoded credentials, API keys, or secrets in source code
-- Do not bypass input validation for perceived performance gains
-
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
-
-- [GraphQL Official — How GraphQL Works](https://graphql.org/learn/)
-- [Hasura — Learn GraphQL](https://hasura.io/learn/graphql/)
-- [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
-- [GraphQL Yoga — Server Implementation Guide](https://the-guild.dev/graphql/yoga-server)
-- [GraphiQL IDE Usage and Schema Browsing](https://github.com/graphql/graphiql)

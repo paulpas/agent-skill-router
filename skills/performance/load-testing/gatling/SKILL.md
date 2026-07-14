@@ -76,18 +76,84 @@ Gatling is often preferred for its excellent performance, powerful scripting cap
 Follow the official documentation to install Gatling, set up your testing environment, and begin writing scenarios.
 
 By following structured load testing practices with Gatling, organizations can significantly enhance application reliability and performance under varying load conditions, thus assuring positive user experiences even during peak demand periods.
+
+---
+
+## Implementation Patterns
+
+### Advanced Gatling Simulation with Feeders, Checks, and Realistic Pacing
+
+A production-grade simulation using CSV feeders, dynamic token extraction, multi-step user journeys, and realistic think time:
+
+```scala
+import io.gatling.core.Predef._
+import io.gatling.http.Predef._
+import scala.concurrent.duration._
+
+class AdvancedSimulation extends Simulation {
+  val httpProtocol = http
+    .baseUrl("https://api.example.com")
+    .acceptHeader("application/json")
+    .contentTypeHeader("application/json")
+    .userAgentHeader("Gatling-Performance-Test")
+
+  val userFeeder = csv("users.csv").circular
+  val productFeeder = Iterator.continually(Map(
+    "productId" -> (scala.util.Random.nextInt(1000) + 1)
+  ))
+
+  val scn = scenario("Full User Journey")
+    .feed(userFeeder)
+    .exec(http("Login")
+      .post("/auth/login")
+      .body(StringBody("""{"username":"${username}","password":"${password}"}"""))
+      .check(
+        status.is(200),
+        jsonPath("$.token").saveAs("authToken")
+      ))
+    .pause(2, 5)  // realistic think time between 2-5 seconds
+    .exec(http("Browse Products")
+      .get("/products")
+      .header("Authorization", "Bearer ${authToken}")
+      .check(
+        status.is(200),
+        jsonPath("$.products[*]").count.gt(0)
+      ))
+    .pause(1, 3)
+    .repeat(3) {
+      feed(productFeeder)
+        .exec(http("View Product Details")
+          .get("/products/${productId}")
+          .header("Authorization", "Bearer ${authToken}")
+          .check(
+            status.is(200),
+            jsonPath("$.name").exists
+          ))
+        .pause(1, 2)
+    }
+
+  setUp(
+    scn.inject(
+      rampUsers(10).during(10.seconds),
+      constantUsersPerSec(5).during(60.seconds),
+      stressPeakUsers(50).during(30.seconds)
+    )
+  ).protocols(httpProtocol)
+}
+```
+
 ---
 
 ## Constraints
 
 ### MUST DO
-- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
-- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
-- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
-- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+- Design scenarios that reflect real user behavior — include think time (`pause`), navigation paths, and conditional logic
+- Use `feeders` (CSV, JSON, Iterator) to parameterize test data and avoid cache-biased results
+- Organize simulations with clear `setUp` injection profiles: `rampUsers`, `constantUsersPerSec`, or `stressPeakUsers`
+- Enable `reports` and use Gatling's HTML dashboard to analyze response time percentiles, throughput, and errors
 
 ### MUST NOT DO
-- Do not silently swallow exceptions — always log or propagate errors with meaningful context
-- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
-- Never use hardcoded credentials, API keys, or secrets in source code
-- Do not bypass input validation for perceived performance gains
+- Do not run simulations without first validating the scenario with `--dry-run` or a single-user run
+- Avoid using hardcoded credentials or tokens — parameterize authentication data through feeders or environment variables
+- Never ignore `checks` on responses; every request should validate status, headers, or body to ensure correctness
+- Do not test against production infrastructure without coordinating with the operations team and having rollback plans

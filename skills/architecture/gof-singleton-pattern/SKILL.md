@@ -1,24 +1,26 @@
 ---
-
-
-
-
 name: gof-singleton-pattern
-description: Implements the Singleton design pattern ensuring a class has only one instance while providing a global point of access to it.
+description: Implements the Singleton design pattern ensuring a class has only one
+  instance while providing a global point of access to it.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: architecture
   triggers: singleton pattern, ensure single instance, global access, gof patterns
+  archetypes:
+  - educational
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   related-skills: gof-factory-pattern, gof-strategy-pattern
-
-
-
-
 ---
 
 
@@ -118,14 +120,3 @@ func main() {
 - Allow public instantiation of the class.
 - Create new instances within your application logic directly.
 
----
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
-
-- [Refactoring.Guru — Singleton Pattern](https://refactoring.guru/design-patterns/singleton)
-- [GoF Design Patterns (Gamma et al.) — Addison-Wesley](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
-- [Martin Fowler — Singleton Anti-Pattern](https://martinfowler.com/bliki/Singleton.html)
-- [Python Singleton Pattern (Real Python)](https://realpython.com/python-singleton/)
-- [Java Singleton Best Practices (Baeldung)](https://www.baeldung.com/java-singleton-declaration)

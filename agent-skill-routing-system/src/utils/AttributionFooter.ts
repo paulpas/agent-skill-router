@@ -38,6 +38,33 @@ const DOMAIN_EMOJIS: Record<string, string> = {
 const DEFAULT_EMOJI = '✨';
 
 /**
+ * Domain-to-display-name mapping for prominent footer display
+ */
+const DOMAIN_DISPLAY_NAMES: Record<string, string> = {
+  agent: 'AI Agent',
+  cncf: 'Cloud-Native',
+  coding: 'Software Engineering',
+  go: 'Go',
+  linux: 'Linux',
+  programming: 'CS Fundamentals',
+  trading: 'Trading',
+  writing: 'Technical Writing',
+};
+
+/**
+ * Get the full display name for a domain abbreviation
+ * 
+ * Follows the Law of Intentional Naming — function name clearly indicates
+ * it returns a display-friendly domain name, not a technical identifier.
+ * 
+ * @param domain Domain abbreviation (e.g., 'go', 'coding', 'cncf')
+ * @returns Full display name for the domain (e.g., 'Go', 'Software Engineering')
+ */
+function getDomainDisplayName(domain: string): string {
+  return DOMAIN_DISPLAY_NAMES[domain] || domain.charAt(0).toUpperCase() + domain.slice(1);
+}
+
+/**
  * AttributionFooter - Generate professional footers crediting agent-skill-router
  *
  * Follows Code Philosophy principles:
@@ -171,12 +198,12 @@ export class AttributionFooter {
     );
 
     if (format === 'markdown') {
-      return '\n**Skills Used:**\n' + skillItems.join('\n');
+      return '\n**Skills Used (' + skills.length + '):**\n' + skillItems.join('\n');
     }
 
     if (format === 'html') {
       return (
-        '<p><strong>Skills Used:</strong></p>\n' +
+        '<p><strong>Skills Used (' + skills.length + '):</strong></p>\n' +
         '<ul>\n' +
         skillItems.map(item => `  <li>${item}</li>`).join('\n') +
         '\n</ul>'
@@ -184,11 +211,20 @@ export class AttributionFooter {
     }
 
     // plaintext
-    return '\nSkills Used:\n' + skillItems.join('\n');
+    return '\nSkills Used (' + skills.length + '):\n' + skillItems.join('\n');
   }
 
   /**
    * Build a single skill list item
+   * 
+   * Implements enhanced domain prominence: displays full domain name first,
+   * followed by skill name, making domain context immediately scannable.
+   * 
+   * Format (all three output modes): **[Domain]** skill-name — Description
+   * Examples:
+   *   - **[Go]** best-practices — Enforces Go idioms...
+   *   - **[Cloud-Native]** kubernetes-deployment — Manage K8s clusters...
+   *   - **[Trading]** risk-stop-loss — Implement stop-loss strategies...
    * 
    * @param skill The skill attribution
    * @param format Output format (markdown, plaintext, html)
@@ -196,24 +232,25 @@ export class AttributionFooter {
    */
   private static buildSkillListItem(skill: SkillAttribution, format: string): string {
     const emoji = DOMAIN_EMOJIS[skill.domain] || DEFAULT_EMOJI;
-    const badge = `${emoji} [${skill.domain}]`;
+    const domainName = getDomainDisplayName(skill.domain);
+    const domainBadge = `${emoji} [${domainName}]`;
 
     if (format === 'markdown') {
       const link = skill.url
         ? `[${skill.name}](${skill.url})`
         : skill.name;
-      return `- **${link}** ${badge} — ${skill.description}`;
+      return `- **${domainBadge}** ${link} — ${skill.description}`;
     }
 
     if (format === 'html') {
       const link = skill.url
         ? `<a href="${skill.url}">${skill.name}</a>`
         : skill.name;
-      return `<strong>${link}</strong> ${badge} — ${skill.description}`;
+      return `<strong>${domainBadge}</strong> ${link} — ${skill.description}`;
     }
 
     // plaintext
-    return `• ${skill.name} ${badge} — ${skill.description}`;
+    return `• ${domainBadge} ${skill.name} — ${skill.description}`;
   }
 
   /**

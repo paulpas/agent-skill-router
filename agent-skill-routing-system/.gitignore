@@ -1,2 +1,8 @@
 src/__tests__/.cache-test-*
 src/__tests__/.e2e-test-*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/

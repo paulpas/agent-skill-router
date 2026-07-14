@@ -1,24 +1,26 @@
 ---
-
-
-
-
 name: solid-ocp-pattern
-description: Implements the Open/Closed Principle (OCP) from SOLID design principles, allowing classes to be open for extension but closed for modification.
+description: Implements the Open/Closed Principle (OCP) from SOLID design principles,
+  allowing classes to be open for extension but closed for modification.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: architecture
   triggers: open closed principle, solid principles, extend, modify
+  archetypes:
+  - educational
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: solid-srp-pattern, 
-
-
-
-
+  related-skills: solid-srp-pattern,
 ---
 
 
@@ -131,14 +133,3 @@ func main() {
 - Modify existing classes directly for new functionality.
 - Break the existing interface contract when implementing new features.
 
----
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
-
-- [Wikipedia — Open/Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
-- [Refactoring.Guru — SOLID Overview](https://refactoring.guru/design-principles/solid)
-- [Martin Fowler — Polymorphism & OCP](https://martinfowler.com/bliki/DependencyInversion.html)
-- [Clean Architecture (Robert C. Martin)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [SOLID Principles in Practice (Real Python)](https://realpython.com/solid-principles-python/)

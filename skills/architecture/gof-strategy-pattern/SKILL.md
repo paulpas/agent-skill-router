@@ -1,24 +1,27 @@
 ---
-
-
-
-
 name: gof-strategy-pattern
-description: Implements the Strategy design pattern allowing the definition of a family of algorithms, encapsulating each one, and making them interchangeable.
+description: Implements the Strategy design pattern allowing the definition of a family
+  of algorithms, encapsulating each one, and making them interchangeable.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: architecture
-  triggers: strategy pattern, encapsulate algorithms, interchangeable algorithms, gof patterns
+  triggers: strategy pattern, encapsulate algorithms, interchangeable algorithms,
+    gof patterns
+  archetypes:
+  - educational
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: gof-factory-pattern, 
-
-
-
-
+  related-skills: gof-factory-pattern,
 ---
 
 
@@ -138,14 +141,3 @@ func main() {
 - Coupling algorithms within the context class itself.
 - Hardcoding specific strategy instantiation within client code.
 
----
-
-## Live References
-
-> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
-
-- [Refactoring.Guru — Strategy Pattern](https://refactoring.guru/design-patterns/strategy)
-- [GoF Design Patterns (Gamma et al.) — Addison-Wesley](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
-- [Strategy Pattern in Python (Real Python)](https://realpython.com/strategy-pattern-python/)
-- [Martin Fowler — Strategy Pattern](https://martinfowler.com/articles/nonOOlisp.html)
-- [Java Strategy Pattern (Baeldung)](https://www.baeldung.com/java-strategy-pattern)

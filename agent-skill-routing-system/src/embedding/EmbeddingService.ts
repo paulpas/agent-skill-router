@@ -26,6 +26,19 @@ const EMBEDDING_PROMPT_TEMPLATE =
   'Example format: [0.123, -0.456, 0.789, ...]';
 
 /**
+ * Maximum character length for a single text input to the embedding API.
+ * OpenAI's text-embedding models have an 8192 token limit (~32KB max), but
+ * we cap at 4000 characters to leave safe margin for token overhead and
+ * multi-language content. Text exceeding this is truncated with a warning.
+ */
+const MAX_TEXT_LENGTH = 4_000;
+
+/**
+ * Preview length used when logging truncated text to keep log lines readable.
+ */
+const PREVIEW_LENGTH = 120;
+
+/**
  * Result of batch embedding generation with token information
  */
 interface EmbeddingsWithTokens {
@@ -133,7 +146,7 @@ export class EmbeddingService {
       await Promise.all(readPromises);
 
       if (loaded > 0) {
-        this.logger.info('[CACHE] Loaded embeddings from disk', { count: loaded, dir: cacheDir });
+        this.logger.debug('[CACHE] Loaded embeddings from disk', { count: loaded, dir: cacheDir });
       }
     } catch {
       // cache dir doesn't exist yet — that's fine
@@ -261,7 +274,7 @@ export class EmbeddingService {
 
     if (results.length > 0 || uncachedTexts.length > 0) {
       const hits = batch.length - uncachedTexts.length;
-      this.logger.info('[CACHE] batch embeddings', {
+      this.logger.debug('[CACHE] batch embeddings', {
         total: batch.length,
         hits,
         misses: uncachedTexts.length,
@@ -312,6 +325,17 @@ export class EmbeddingService {
       return this.generateEmbeddingFromEmulation(text);
     }
 
+    // Defensive truncation: cap text at MAX_TEXT_LENGTH to prevent API errors.
+    const safeText = text.length > MAX_TEXT_LENGTH
+      ? (() => {
+          this.logger.debug(
+            `[TRUNCATED] Single text exceeds max length (${text.length} > ${MAX_TEXT_LENGTH} chars). Truncated to ${MAX_TEXT_LENGTH}.`,
+            { textPreview: text.slice(0, PREVIEW_LENGTH) },
+          );
+          return text.slice(0, MAX_TEXT_LENGTH);
+        })()
+      : text;
+
     try {
       const baseUrl = this.config.provider === 'llamacpp'
         ? this.config.llamacppBaseUrl
@@ -327,7 +351,7 @@ export class EmbeddingService {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({ model: this.config.model, input: text }),
+        body: JSON.stringify({ model: this.config.model, input: safeText }),
       });
 
       if (!response.ok) {
@@ -338,16 +362,16 @@ export class EmbeddingService {
       const data = await response.json() as { data: { embedding: number[] }[]; usage?: { prompt_tokens?: number; input_tokens?: number } };
       const embedding = data.data[0].embedding;
       const inputTokens = data.usage?.input_tokens ?? data.usage?.prompt_tokens;
-      return { 
-        embedding, 
-        dimensions: embedding.length, 
+      return {
+        embedding,
+        dimensions: embedding.length,
         model: this.config.model,
         inputTokens: typeof inputTokens === 'number' ? inputTokens : undefined
       };
     } catch (error) {
       // If API fails, generate a deterministic placeholder embedding
       // This allows the system to work without API keys for testing
-      this.logger.warn('Failed to generate embedding, using placeholder', {
+      this.logger.debug('Failed to generate embedding, using placeholder', {
         provider: this.config.provider,
         error: error instanceof Error ? error.message : String(error),
       });
@@ -365,26 +389,43 @@ export class EmbeddingService {
   /**
     * Generate embeddings from API in batch (OpenAI or llama.cpp)
     */
-   private async generateEmbeddingsFromAPI(
-     texts: string[]
-   ): Promise<EmbeddingsWithTokens> {
-     try {
-       const baseUrl = this.config.provider === 'llamacpp'
-         ? this.config.llamacppBaseUrl
-         : resolveOpenAIBase();
+  private async generateEmbeddingsFromAPI(
+      texts: string[]
+    ): Promise<EmbeddingsWithTokens> {
+      try {
+        // Defensive truncation: cap each text at MAX_TEXT_LENGTH to prevent
+        // "maximum input length" API errors. One oversized entry should not
+        // fail the entire batch — truncated entries still produce embeddings.
+        const safeTexts: string[] = [];
+        for (let i = 0; i < texts.length; i++) {
+          const text = texts[i];
+          if (text.length > MAX_TEXT_LENGTH) {
+            this.logger.debug(
+              `[TRUNCATED] Text ${i + 1}/${texts.length} exceeds max length (${text.length} > ${MAX_TEXT_LENGTH} chars). Truncated to ${MAX_TEXT_LENGTH}.`,
+              { textPreview: text.slice(0, PREVIEW_LENGTH) },
+            );
+            safeTexts.push(text.slice(0, MAX_TEXT_LENGTH));
+          } else {
+            safeTexts.push(text);
+          }
+        }
 
-       const apiKey = this.config.provider === 'llamacpp'
-         ? (this.config.apiKey || 'no-key')
-         : this.config.apiKey;
+        const baseUrl = this.config.provider === 'llamacpp'
+          ? this.config.llamacppBaseUrl
+          : resolveOpenAIBase();
 
-       const response = await fetch(`${baseUrl}/v1/embeddings`, {
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/json',
-           'Authorization': `Bearer ${apiKey}`,
-         },
-         body: JSON.stringify({ model: this.config.model, input: texts }),
-       });
+        const apiKey = this.config.provider === 'llamacpp'
+          ? (this.config.apiKey || 'no-key')
+          : this.config.apiKey;
+
+        const response = await fetch(`${baseUrl}/v1/embeddings`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({ model: this.config.model, input: safeTexts }),
+        });
 
        if (!response.ok) {
          const errorData = await response.text();
@@ -409,11 +450,11 @@ export class EmbeddingService {
          inputTokens: tokensPerText,
        };
      } catch (error) {
-       this.logger.warn('Failed to generate batch embeddings from API', {
-         provider: this.config.provider,
-         error: error instanceof Error ? error.message : String(error),
-         count: texts.length,
-       });
+        this.logger.debug('Failed to generate batch embeddings from API', {
+          provider: this.config.provider,
+          error: error instanceof Error ? error.message : String(error),
+          count: texts.length,
+        });
 
        const placeholders = texts.map((text) => this.generatePlaceholderEmbedding(text));
        return {

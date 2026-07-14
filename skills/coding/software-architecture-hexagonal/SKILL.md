@@ -1,24 +1,30 @@
 ---
-
-
-
-
 name: software-architecture-hexagonal
-description: Guides the implementation of hexagonal (ports and adapters) architecture, focusing on best practices for decoupling business logic from external concerns.
+description: Guides the implementation of hexagonal (ports and adapters) architecture,
+  focusing on best practices for decoupling business logic from external concerns.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
   triggers: hexagonal architecture, ports and adapters, hexagonal design patterns
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: software-architecture-microservices, software-architecture-monolith, software-architecture-event-driven
-
-
-
-
+  related-skills: software-architecture-microservices, software-architecture-monolith,
+    software-architecture-event-driven
 ---
 
 
