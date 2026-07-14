@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-01T22:43:36.813782Z",
-  "totalSkills": 1292,
+  "generatedAt": "2026-07-14T14:25:05.386846Z",
+  "totalSkills": 1304,
   "domains": {
     "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
-    "cncf": 178,
+    "cncf": 190,
     "coding": 594,
     "commerce": 1,
     "communications": 3,
@@ -28,7 +28,7 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 863,
+    "implementation": 875,
     "orchestration": 238,
     "reference": 182,
     "information": 1,
@@ -17453,6 +17453,283 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/kyverno/SKILL.md"
+    },
+    {
+      "name": "kyverno-cleanup-policies",
+      "domain": "cncf",
+      "description": "Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno cleanup policies",
+        "ClusterCleanupPolicy",
+        "garbage collection",
+        "resource cleanup",
+        "automated deletion",
+        "scheduled cleanup",
+        "kyverno v2 cleanup",
+        "deletion propagation"
+      ],
+      "relatedSkills": [
+        "kyverno-mutate-patterns",
+        "kyverno-policy-report-override"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-cleanup-policies/SKILL.md"
+    },
+    {
+      "name": "kyverno-exemptions-management",
+      "domain": "cncf",
+      "description": "Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno exemptions",
+        "PolicyException",
+        "policy exemption",
+        "serviceAccount exemption",
+        "role exemption",
+        "PSS exception",
+        "kyverno policy bypass"
+      ],
+      "relatedSkills": [
+        "kyverno-pod-security-baseline",
+        "kyverno-pod-security-restricted",
+        "kyverno-policy-report-override"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-exemptions-management/SKILL.md"
+    },
+    {
+      "name": "kyverno-image-registry-validation",
+      "domain": "cncf",
+      "description": "Validates container images from approved registries with allowed tags using Kyverno verifyImages rules and image digest mutation to prevent unapproved or latest-tagged images.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "image validation",
+        "container registry",
+        "approved images",
+        "image digest",
+        "tag policy",
+        "image scanning",
+        "registry allowlist"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-resource-quota-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-image-registry-validation/SKILL.md"
+    },
+    {
+      "name": "kyverno-label-enforcement",
+      "domain": "cncf",
+      "description": "Enforces required labels on Pods and Namespaces using Kyverno validate rules with pattern matching and CEL expressions for compliance tracking.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno label enforcement",
+        "required labels",
+        "namespace labels",
+        "pod labels",
+        "label validation",
+        "kubecost labels",
+        "compliance labels"
+      ],
+      "relatedSkills": [
+        "kyverno-mutate-patterns",
+        "kyverno-resource-quota-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-label-enforcement/SKILL.md"
+    },
+    {
+      "name": "kyverno-mutate-patterns",
+      "domain": "cncf",
+      "description": "Mutates Kubernetes resources at admission using patchStrategicMerge, patchesJson6902, and set operations to inject labels, sidecars, and default configurations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno mutate rules",
+        "patch strategic merge",
+        "resource mutation",
+        "inject sidecar",
+        "patch pod",
+        "kyverno mutation",
+        "patch json 6902"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-label-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-mutate-patterns/SKILL.md"
+    },
+    {
+      "name": "kyverno-network-policy-generation",
+      "domain": "cncf",
+      "description": "Generates default-deny and allowlist NetworkPolicy resources for Kubernetes namespaces using Kyverno generate rules to enforce network segmentation and zero-trust isolation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno network policy",
+        "default deny network policy",
+        "generate network policy",
+        "network segmentation",
+        "podSelector",
+        "ingress egress rules",
+        "network isolation"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-mutate-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-network-policy-generation/SKILL.md"
+    },
+    {
+      "name": "kyverno-pod-security-baseline",
+      "domain": "cncf",
+      "description": "Implements Kyverno podSecurity rules to enforce the Kubernetes Pod Security Standards baseline profile across namespaces in a cluster.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "pod security baseline",
+        "PSS baseline",
+        "kubernetes pod security",
+        "container runtime policies",
+        "privileged container prevention",
+        "baseline profile enforcement",
+        "kubelet pod security"
+      ],
+      "relatedSkills": [
+        "kyverno-pod-security-baseline",
+        "kyverno-pod-security-restricted"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-pod-security-baseline/SKILL.md"
+    },
+    {
+      "name": "kyverno-pod-security-restricted",
+      "domain": "cncf",
+      "description": "Enforces Kubernetes Pod Security Standards restricted profile using Kyverno podSecurity rules to prevent privileged containers, enforce runAsNonRoot, and require capability drops.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "pod security restricted",
+        "PSS restricted",
+        "runAsNonRoot",
+        "capabilities drop",
+        "privileged pod prevention",
+        "restricted profile",
+        "hardening pod"
+      ],
+      "relatedSkills": [
+        "kyverno-pod-security-baseline",
+        "kyverno-exemptions-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-pod-security-restricted/SKILL.md"
+    },
+    {
+      "name": "kyverno-policy-generation",
+      "domain": "cncf",
+      "description": "Implements Kyverno generate rules to automatically create or modify Kubernetes resources (ResourceQuota, LimitRange, NetworkPolicy) on namespace creation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno generate rules",
+        "resource generation",
+        "generatePresence",
+        "generationKey",
+        "clusterpolicy generate",
+        "automatic resource provisioning",
+        "kyverno sync rules"
+      ],
+      "relatedSkills": [
+        "kyverno-policy-generation",
+        "kyverno-resource-quota-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-policy-generation/SKILL.md"
+    },
+    {
+      "name": "kyverno-policy-report-override",
+      "domain": "cncf",
+      "description": "Manages PolicyReport overrides using Kyverno's failureActionOverrides, report configuration, and CEL-based conditions to customize compliance reporting per resource.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "kyverno report override",
+        "PolicyReport override",
+        "failureActionOverrides",
+        "report result override",
+        "kyverno compliance reporting",
+        "policy report management"
+      ],
+      "relatedSkills": [
+        "kyverno-exemptions-management",
+        "kyverno-cleanup-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-policy-report-override/SKILL.md"
+    },
+    {
+      "name": "kyverno-resource-quota-validation",
+      "domain": "cncf",
+      "description": "Validates Kubernetes pod resource requests and limits using Kyverno ClusterPolicy rules to enforce namespace quota compliance and prevent resource starvation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "resource quota validation",
+        "limit range",
+        "pod resource limits",
+        "CPU memory validation",
+        "namespace quota",
+        "resource constraints",
+        "container resource requests limits"
+      ],
+      "relatedSkills": [
+        "kyverno-label-enforcement",
+        "kyverno-secret-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-resource-quota-validation/SKILL.md"
+    },
+    {
+      "name": "kyverno-secret-validation",
+      "domain": "cncf",
+      "description": "Validates Kubernetes Secrets meet security requirements by checking secret types, enforcing labeling standards, and preventing legacy service-account-token usage.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "secret validation",
+        "Kubernetes secrets",
+        "deny service account token",
+        "secret type validation",
+        "secret security",
+        "secret labeling",
+        "legacy token detection"
+      ],
+      "relatedSkills": [
+        "kyverno-resource-quota-validation",
+        "kyverno-image-registry-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kyverno-secret-validation/SKILL.md"
     },
     {
       "name": "lambda-lang",
