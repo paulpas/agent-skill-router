@@ -29,7 +29,7 @@
 FROM node:24-alpine AS builder
 WORKDIR /app
 COPY package*.json tsconfig.json ./
-RUN npm ci
+RUN npm install
 COPY src/ ./src/
 RUN npm run build
 
@@ -69,7 +69,7 @@ RUN adduser -D -s /bin/sh appuser && \
 COPY --from=builder /app/dist ./dist
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 COPY samples/ ./samples/
 
 # Environment configuration
