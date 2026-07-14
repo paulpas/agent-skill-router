@@ -1,60 +1,42 @@
 ---
-
-
-
-
 name: kubernetes-ingress
-description: Configures Kubernetes Ingress resources for external HTTP/HTTPS routing,
-  TLS termination, host-based and path-based routing, with Nginx and Traefik controller
-  integration.
+description: Implements networking.k8s.io/v1 Ingress resources with HTTP/HTTPS routing, TLS termination, path-based routing, and ingress controller configuration.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: cncf
-  triggers: ingress, kubernetes ingress, ingress controller, host-based routing, path-based routing, TLS termination, cert-manager, external access routing
+  triggers: http routing, tls termination, ingress class, path-based routing, networking.k8s.io, ingress controller, load balancing
   archetypes:
-  - educational
-  - strategic
+    - tactical
+    - generation
   anti_triggers:
-  - brainstorming
-  - vague ideation
-  - non-containerized architecture
+    - pod isolation
+    - ingress egress rules
+    - network segmentation
   response_profile:
-    verbosity: medium
-    directive_strength: low
-    abstraction_level: strategic
-  role: reference
-  scope: infrastructure
-  output-format: manifests
-  content-types:
-  - guidance
-  - examples
-  - do-dont
-  - config
-  related-skills: cncf-kubernetes,cncf-cert-manager,cncf-traefik,cncf-network-policies,cncf-service-mesh
-
-
-
-
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
+  role: implementation
+  scope: implementation
+  output-format: code
+  content-types: [code, guidance, config, do-dont]
+  related-skills: cncf/kubernetes-networkpolicy, cncf/kubernetes-services-management, cncf/cilium
 ---
 
+# Kubernetes Ingress Manager
 
-
-
-# Kubernetes Ingress Configuration
-
-Configures Kubernetes Ingress resources to route external HTTP and HTTPS traffic to internal Services. Manages TLS termination, host-based routing, path-based routing, and controller-specific annotations for production-grade external access patterns across Nginx, Traefik, and cloud-provider ingress controllers.
+Implements networking.k8s.io/v1 Ingress resources for HTTP/HTTPS traffic routing, TLS certificate termination, path-based routing, and ingress controller configuration. When loaded, the model generates production-grade Ingress manifests with proper annotations, TLS configuration, and backend service references.
 
 ## TL;DR Checklist
 
-- [ ] Define an Ingress class annotation (`kubernetes.io/ingress.class` or `ingressClassName`) to bind your Ingress resource
-- [ ] Always specify TLS secrets for HTTPS endpoints — never rely on implicit HTTP-only routing in production
-- [ ] Use `pathType: Prefix` for path prefixes and `pathType: Exact` for precise path matching — never omit `pathType` (it is required since Kubernetes 1.19)
-- [ ] Set a default backend (`spec.defaultBackend`) to handle unmatched requests gracefully
-- [ ] Configure cert-manager annotations for automatic TLS certificate provisioning with Let's Encrypt
-- [ ] Use controller-specific annotations for rate limiting, authentication, and custom headers
-- [ ] Validate the resulting Ingress object with `kubectl describe ingress <name>` before relying on it
+- [ ] Use `networking.k8s.io/v1` API version — never `extensions/v1beta1`
+- [ ] Specify `ingressClassName` explicitly — do not rely on the default class annotation
+- [ ] Configure TLS with valid certificate secrets for every HTTPS rule
+- [ ] Define path-based routing with `pathType: Prefix` or `pathType: Exact` as appropriate
+- [ ] Always create a Service for each Ingress backend — never reference a Deployment directly
+- [ ] Validate ingress controller compatibility (nginx, contour, istio, envoy) before applying annotations
 
 ---
 
@@ -62,12 +44,11 @@ Configures Kubernetes Ingress resources to route external HTTP and HTTPS traffic
 
 Use this skill when:
 
-- Exposing multiple HTTP/HTTPS Services through a single external IP address in a Kubernetes cluster
-- Routing traffic to different backend Services based on hostname (e.g., `api.example.com` vs `app.example.com`)
-- Terminating TLS at the ingress layer and forwarding plaintext or re-encrypted traffic to backends
-- Implementing path-based routing where `/api/*` goes to one Service and `/*` goes to another
-- Integrating cert-manager for automated certificate issuance and renewal
-- Configuring rate limiting, IP whitelisting, or authentication at the edge before requests reach application pods
+- Routing external HTTP/HTTPS traffic to Kubernetes Services based on host or path
+- Implementing TLS termination at the Ingress level for multiple services
+- Setting up path-based routing to serve multiple applications from a single IP address
+- Configuring rewrite rules, redirects, or header modifications at the ingress layer
+- Managing SSL certificates from cert-manager for automated HTTPS
 
 ---
 
@@ -75,198 +56,54 @@ Use this skill when:
 
 Avoid this skill for:
 
-- TCP/UDP load balancing — use a Kubernetes `Service` of type `LoadBalancer` or `NodePort` instead
-- Non-HTTP protocols (gRPC over HTTP/2 can use Ingress, but raw gRPC should use gRPC-specific annotations or a Service Mesh)
-- When you need fine-grained service-to-service communication inside the cluster — use internal `ClusterIP` Services or a Service Mesh instead
-- When the Gateway API is preferred by your platform team — consider Gateway API for newer clusters running Kubernetes 1.22+
-- As a substitute for NetworkPolicies — Ingress only handles L7 HTTP routing, not network-level access control
+- TCP/UDP non-HTTP services — use a regular Service with type LoadBalancer or NodePort
+- Internal microservice-to-microservice communication — use ClusterIP Services
+- Fine-grained network-level firewall rules — use `kubernetes-networkpolicy` instead
+- Service mesh traffic management (canary, circuit breaking, retries) — use `kubernetes-istio` instead
+- Non-Kubernetes ingress management — use external load balancers directly
 
 ---
 
 ## Core Workflow
 
-1. **Select the Ingress Controller** — Choose an ingress controller compatible with your cluster's requirements: nginx (most feature-rich with annotations), Traefik (modern, built-in dashboard), cloud-provider LB controllers (AWS ALB, GCP Compute LB, Azure Application Gateway). **Checkpoint:** Verify the controller is installed and running in your cluster before creating Ingress resources — an Ingress resource without a matching controller does nothing.
+1. **Select Ingress Controller** — Choose the ingress controller deployment (nginx, contour, istio envoy, envoy gateway) and identify its supported annotations. **Checkpoint:** Each controller uses different annotation syntax — verify controller compatibility before writing annotations.
 
-2. **Define the Ingress Resource** — Create an `Ingress` YAML manifest with: `apiVersion: networking.k8s.io/v1`, an `ingressClassName` field to select the controller, a list of rules mapping hostnames and paths to Services, and TLS configuration referencing secrets containing your certificates. **Checkpoint:** Every rule must specify a `pathType` (`Exact`, `Prefix`, or `ImplementationSpecific`) — this field became required in Kubernetes 1.19.
+2. **Define Ingress Resource** — Create an `networking.k8s.io/v1` Ingress with `ingressClassName`, rules for host/path routing, and TLS configuration. **Checkpoint:** Every path rule must reference a valid Service name and port number.
 
-3. **Configure TLS Termination** — Add TLS entries that map hostnames to Kubernetes Secret names holding the certificate and private key. Certificates can be managed manually (`kubectl create secret tls`) or automatically via cert-manager annotations like `cert-manager.io/cluster-issuer: letsencrypt-prod`. **Checkpoint:** All hosts referenced in rules should also appear in at least one TLS entry to prevent HTTP fallback in production environments.
+3. **Configure TLS Termination** — Add TLS rules referencing secret names that contain `tls.crt` and `tls.key`. Ensure cert-manager is configured to provision certificates. **Checkpoint:** The TLS secret must exist in the same namespace as the Ingress, or the rule will be ignored.
 
-4. **Apply Controller-Specific Annotations** — Add annotations for your chosen controller: Nginx uses `nginx.ingress.kubernetes.io/*` prefixes (e.g., `rate-limit`, `auth-url`, `rewrite-target`), Traefik uses `traefik.ingress.kubernetes.io/*` or middleware CRDs, cloud providers use provider-specific annotations like `service.beta.kubernetes.io/aws-load-balancer-ssl-cert`. **Checkpoint:** Annotations are controller-specific — applying Nginx annotations on a Traefik-managed Ingress resource has no effect and may cause confusion.
+4. **Set Path Types** — Choose `pathType: Exact` for precise URL matching, `pathType: Prefix` for prefix-based routing, or `pathType: ImplementationSpecific` for controller-dependent behavior. **Checkpoint:** Never mix `Exact` and `Prefix` rules for the same path — the API server will reject conflicting rules.
 
-5. **Validate and Test** — Run `kubectl describe ingress <name>` to verify the controller has accepted the resource, check `kubectl get events -n <namespace>` for any warnings or errors, and test routing with `curl -k https://<host>` against the external IP assigned by your controller. **Checkpoint:** If the Ingress shows `<pending>` in the ADDRESS column, the controller is not running or not configured to watch your namespace.
+5. **Apply and Validate** — Apply the Ingress manifest and verify the ingress controller creates the corresponding backend configuration. **Checkpoint:** Run `kubectl describe ingress <name>` and confirm the `Address` field is populated and rules are accepted.
 
----
-
-## Implementation Patterns / Reference Guide
-
-### Pattern 1: Basic Host-Based Routing with TLS (Nginx)
-
-This is the foundational pattern — routing based on hostname with automatic TLS termination using cert-manager. Every production Ingress should follow this structure.
-
-```yaml
-# Complete Nginx Ingress with host-based routing and cert-manager TLS
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: api-gateway-ingress
-  namespace: production
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      add_header X-Content-Type-Options "nosniff" always;
-      add_header X-Frame-Options "SAMEORIGIN" always;
-spec:
-  ingressClassName: nginx
-  tls:
-    - hosts:
-        - api.example.com
-      secretName: api-example-com-tls
-  rules:
-    - host: api.example.com
-      http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: api-server
-                port:
-                  number: 80
-```
-
-**Key design decisions in this manifest:**
-- `ingressClassName: nginx` explicitly selects the Nginx controller — avoids ambiguity when multiple controllers are installed.
-- `ssl-redirect: "true"` ensures all HTTP requests are redirected to HTTPS, a security baseline for production.
-- The TLS secret is provisioned by cert-manager's ClusterIssuer, so no manual certificate management is needed.
-- `pathType: Prefix` matches the path and all sub-paths — use `Exact` when you need precise path matching.
-
-### Pattern 2: Path-Based Routing with Nginx Annotations (BAD vs. GOOD)
-
-Incorrect path configuration leads to routing conflicts, unexpected request drops, or security bypasses. This pattern demonstrates the correct approach versus common mistakes.
-
-```yaml
-# ❌ BAD — multiple Prefix paths at different levels cause routing conflicts;
-# missing SSL redirect allows unencrypted traffic; no default backend returns 503 on unmatched requests.
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: bad-example
-spec:
-  rules:
-    - host: app.example.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend
-                port: { number: 80 }
-          # CONFLICT: this Prefix rule will never match because the above "/" prefix is broader
-          - path: /dashboard
-            pathType: Prefix
-            backend:
-              service:
-                name: dashboard-service
-                port: { number: 80 }
-
-# ✅ GOOD — explicit path ordering with Exact matches for specific routes and Prefix for catch-all;
-# includes SSL redirect, default backend, rate limiting, and proper controller annotations.
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: app-example-ingress
-  namespace: production
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/limit-rps: "100"
-    nginx.ingress.kubernetes.io/limit-burst-multiplier: "1.5"
-spec:
-  ingressClassName: nginx
-  tls:
-    - hosts:
-        - app.example.com
-      secretName: app-example-com-tls
-  defaultBackend:
-    service:
-      name: maintenance-page
-      port:
-        number: 80
-  rules:
-    - host: app.example.com
-      http:
-        paths:
-          - path: /api
-            pathType: Exact
-            backend:
-              service:
-                name: api-service
-                port:
-                  number: 8080
-          - path: /dashboard
-            pathType: Exact
-            backend:
-              service:
-                name: dashboard-service
-                port:
-                  number: 80
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend-service
-                port:
-                  number: 80
-```
-
-**Why the GOOD example works:**
-- `Exact` path types prevent routing conflicts — `/api` matches only that exact path, and `/dashboard` is guaranteed to be handled before the catch-all `/` rule.
-- A `defaultBackend` handles requests that don't match any rule, returning a friendly maintenance page instead of a raw 503.
-- Rate limiting annotations protect backend services from abuse at the ingress layer.
-
-### Pattern 3: Multi-Host Ingress with cert-manager Integration
-
-For production environments, use cert-manager's ClusterIssuer to automate certificate provisioning across multiple hosts in a single Ingress resource.
-
-```yaml
-# cert-manager ClusterIssuer for Let's Encrypt (production profile)
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: letsencrypt-prod
-spec:
-  acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: certs@example.com
-    privateKeySecretRef:
-      name: letsencrypt-prod-key
-    solvers:
-      - http01:
-          ingress:
-            class: nginx
+6. **Verify End-to-End Routing** — Test each path and host rule with curl or a browser to confirm correct backend routing. **Checkpoint:** Check the ingress controller's access logs to verify requests reach the expected backend service.
 
 ---
-# Ingress resource that references the ClusterIssuer via annotation
+
+## Implementation Patterns
+
+### Pattern 1: Complete Ingress with TLS and Path-Based Routing
+
+A production-grade Ingress routing multiple applications through a single ingress class with TLS termination.
+
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: multi-host-ingress
+  name: multi-app-ingress
   namespace: production
   annotations:
-    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
         - app.example.com
         - api.example.com
-      secretName: multi-host-tls
+      secretName: app-tls-cert
   rules:
     - host: app.example.com
       http:
@@ -278,17 +115,81 @@ spec:
                 name: web-frontend
                 port:
                   number: 80
+          - path: /admin
+            pathType: Prefix
+            backend:
+              service:
+                name: admin-panel
+                port:
+                  number: 8080
+          - path: /api/v1
+            pathType: Prefix
+            backend:
+              service:
+                name: api-gateway
+                port:
+                  number: 443
     - host: api.example.com
       http:
         paths:
-          - path: /v1
+          - path: /
             pathType: Prefix
+            backend:
+              service:
+                name: api-gateway
+                port:
+                  number: 443
+```
+
+### Pattern 2: Ingress Annotations and Path Types (BAD vs GOOD)
+
+Misusing annotations or path types is the most common Ingress error.
+
+```yaml
+# ❌ BAD: Using deprecated extensions/v1beta1 API — removed in Kubernetes 1.22+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx  # ← Deprecated annotation, use ingressClassName
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /api
+            backend:
+              serviceName: api-gateway   # ← Field removed in v1
+              servicePort: 443           # ← Field removed in v1
+
+# ❌ BAD: Conflicting path types for the same path
+spec:
+  rules:
+    - host: app.example.com
+      http:
+        paths:
+          - path: /api
+            pathType: Exact            # ← Exact does not cover /api/anything
             backend:
               service:
                 name: api-v1
                 port:
                   number: 8080
-          - path: /v2
+          - path: /api
+            pathType: Prefix           # ← Conflicts with the Exact rule above
+            backend:
+              service:
+                name: api-v2
+                port:
+                  number: 8080
+
+# ✅ GOOD: Explicit ingressClassName, compatible path types, v1 API
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: app.example.com
+      http:
+        paths:
+          - path: /api
             pathType: Prefix
             backend:
               service:
@@ -297,56 +198,86 @@ spec:
                   number: 8080
 ```
 
-**How cert-manager integration works:**
-- The `cert-manager.io/cluster-issuer` annotation tells cert-manager to provision a TLS secret for every host listed in the `tls` section.
-- cert-manager uses the HTTP-01 challenge by temporarily creating an Ingress resource in the `cert-manager` namespace to prove domain ownership.
-- The resulting secret is automatically created and updated — no manual certificate management needed.
-- Certificate renewal happens automatically before expiration (typically 60 days before the 90-day Let's Encrypt validity period).
+### Pattern 3: TLS and Certificate Management
 
----
+TLS configuration with cert-manager integration for automated certificate provisioning.
 
-## Controller Comparison Matrix
+```yaml
+# ClusterIssuer for Let's Encrypt (create once per cluster)
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: admin@example.com
+    privateKeySecretRef:
+      name: letsencrypt-prod-key
+    solvers:
+      - http01:
+          ingress:
+            class: nginx
 
-| Feature | nginx-ingress | Traefik | AWS ALB | GCP LB | Azure App Gateway |
-|---------|---------------|---------|---------|--------|--------------------|
-| **Path-based routing** | Full regex support | Full (middleware) | Basic Prefix/Exact | Full | Basic |
-| **TLS termination** | Manual or cert-manager | Manual or cert-manager | Managed via AWS ACM | GCP managed certs | Managed via Azure |
-| **Rate limiting** | Built-in annotation | RateLimit middleware | Via WAF | Via Cloud Armor | Built-in policy |
-| **Authentication** | Auth snippet annotation | OAuth/Bearer middleware | ALB auth (deprecated) | IAP integration | AAD Pod Identity |
-| **HTTP/2 support** | Yes (TLS required) | Yes (TLS required) | Yes | Yes | Yes |
-| **WebSocket support** | Automatic | Automatic | Requires annotation | Automatic | Requires annotation |
-| **Custom headers** | config-snippet annotation | Middleware chain | Limited | Via annotations | Policy-based |
-| **Multi-tenant** | Namespace-aware | Labels/Selectors | Shared cluster | Shared cluster | Namespace-aware |
+# Ingress referencing the cert-manager managed TLS secret
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: secure-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - secure.example.com
+      secretName: secure-tls-cert
+  rules:
+    - host: secure.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: secure-backend
+                port:
+                  number: 80
+```
 
 ---
 
 ## Constraints
 
 ### MUST DO
-- Always specify `ingressClassName` to explicitly select the ingress controller — omitting it causes unpredictable behavior when multiple controllers are installed in the same cluster
-- Use `pathType: Prefix` for prefix matching and `pathType: Exact` for precise path matching — never omit `pathType` as it is a required field since Kubernetes 1.19
-- Configure TLS for all production hostnames — use cert-manager annotations to automate certificate provisioning rather than managing TLS secrets manually
-- Set a `defaultBackend` to handle unmatched requests gracefully instead of returning raw HTTP 503 errors from the controller
-- Include `nginx.ingress.kubernetes.io/ssl-redirect: "true"` (or equivalent for your controller) in production environments to enforce HTTPS on all routes
+- Always use `networking.k8s.io/v1` API version — never `extensions/v1beta1` (removed in Kubernetes 1.22+)
+- Set `ingressClassName` explicitly in the spec — do not rely on the deprecated `kubernetes.io/ingress.class` annotation
+- Reference a Service name and port number in every backend path — never reference a Deployment directly
+- Configure `tls` with a valid secret name that contains `tls.crt` and `tls.key` certificates
+- Set `ssl-redirect: "true"` annotation when TLS is configured to enforce HTTPS
+- Use `pathType: Prefix` for general routing and `pathType: Exact` only for specific URL matches
+- Match `pathType` rules — no two rules for the same path with different types (Exact vs Prefix)
+- Include a `metadata.annotations` block with controller-specific annotations only
 
 ### MUST NOT DO
-- Never place a broader `Prefix` path (e.g., `/`) above a narrower one (`/dashboard`) — the ingress controller matches rules in order and the broader rule will catch all sub-paths, making the narrower rule unreachable
-- Do not rely solely on the deprecated `kubernetes.io/ingress.class` annotation without also specifying `ingressClassName` — the annotation is deprecated as of Kubernetes 1.18 and removed from the core API in 1.25+
-- Never expose internal admin panels or debugging endpoints through an Ingress without additional authentication annotations (e.g., Nginx basic-auth, OIDC middleware)
-- Do not place sensitive data like passwords or API tokens in Ingress annotations — they are stored in etcd in plain text and visible to anyone with `get ingress` permissions in the namespace
-- Avoid mixing controller-specific annotations from different controllers (e.g., both Nginx and Traefik annotations on the same resource) — only one controller can process a given Ingress, and unknown annotations are silently ignored
+- Never use `extensions/v1beta1` Ingress API — it has been removed and will fail on modern clusters
+- Never omit `ingressClassName` — without it, the ingress controller cannot claim the Ingress resource
+- Never reference a non-existent Service in the backend — the Ingress rule will be silently ignored
+- Never use `pathType: ImplementationSpecific` without documenting the controller-specific behavior
+- Never place TLS secrets in a different namespace than the Ingress — TLS will not activate
+- Never set `pathType: Exact` for a path that should also match sub-paths — clients will receive 404 errors
 
 ---
 
 ## Output Template
 
-When implementing or reviewing Kubernetes Ingress configurations, produce:
+When implementing a Kubernetes Ingress, produce the following:
 
-1. **Ingress Manifest** — Complete YAML with `apiVersion: networking.k8s.io/v1`, explicit `ingressClassName`, rules with `pathType`, TLS configuration with secret references, and default backend
-2. **Controller Selection Rationale** — Which ingress controller was chosen (nginx, Traefik, cloud-provider) and why it matches the use case requirements
-3. **TLS Strategy** — How certificates are provisioned (manual kubectl create secret tls vs. cert-manager ClusterIssuer) and renewal approach
-4. **Routing Logic** — Mapping of hostnames and paths to backend Services with `pathType` justification for each rule
-5. **Security Configuration** — SSL redirect enforcement, rate limiting settings, authentication requirements, and any custom header injection via controller annotations
+1. **Ingress YAML** — Complete `networking.k8s.io/v1` Ingress with `ingressClassName`, TLS rules, and path-based routing rules.
+2. **Backend Service List** — All Services referenced by the Ingress rules, with their port configurations.
+3. **TLS Configuration** — Certificate secret name, ClusterIssuer reference, and domain names covered.
+4. **Path Routing Table** — A table mapping host/path → Service/port for quick reference and debugging.
 
 ---
 
@@ -354,24 +285,21 @@ When implementing or reviewing Kubernetes Ingress configurations, produce:
 
 | Skill | Purpose |
 |---|---|
-| `cncf-kubernetes` | Core Kubernetes concepts (Pods, Deployments, Services) that Ingress routes to |
-| `cncf-cert-manager` | Automated TLS certificate provisioning and renewal — integrates directly with Ingress annotations |
-| `cncf-network-policies` | Network-level access control that complements Ingress L7 routing for defense-in-depth |
-| `cncf-service-mesh` | When to use Istio/Linkerd instead of or alongside Ingress for advanced traffic management |
-| `coding-kubernetes-ingress` | Application-layer patterns for handling proxied requests behind an ingress controller (headers, timeouts, chunked encoding) |
+| `kubernetes-networkpolicy` | Define network-level firewall rules to complement ingress-layer routing |
+| `kubernetes-services-management` | Create the ClusterIP/NodePort Services that serve as Ingress backends |
+| `kubernetes-istio` | Implement advanced traffic management (canary, circuit breaking, retries) at the service mesh layer |
+| `cncf/contour` | Use Contour as an alternative Ingress controller with Envoy proxy |
 
 ---
 
 ## Live References
 
-> Authoritative documentation links for Kubernetes Ingress. The model follows markdown links at load time to resolve external references and inline content.
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
 
-- [Kubernetes Ingress Documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-- [Nginx Ingress Controller Documentation](https://kubernetes.github.io/ingress-nginx/)
-- [cert-manager TLS Configuration](https://cert-manager.io/docs/configuration/)
-- [Kubernetes Gateway API Specification](https://gateway-api.sigs.k8s.io/reference/spec/)
-- [OWASP Kubernetes Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html)
-
----
-
-*This skill covers Ingress configuration patterns for production Kubernetes clusters running 1.19+. For older clusters, replace `networking.k8s.io/v1` with `extensions/v1beta1` and use the `kubernetes.io/ingress.class` annotation instead of `ingressClassName`.*
+- [Kubernetes Ingress Documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/) — Official guide to Ingress resources, controllers, and concepts
+- [Ingress API Reference — networking.k8s.io/v1](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#ingress-v1-networking-k8s-io) — Complete API schema for v1 Ingress resources
+- [NGINX Ingress Controller Annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) — NGINX-specific annotations for routing, SSL, and security
+- [Cert-manager Integration](https://cert-manager.io/docs/usage/ingress/) — Automated TLS certificate provisioning with cert-manager
+- [Ingress Path Types](https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types) — Prefix, Exact, and ImplementationSpecific path type behavior
+- [Multiple Ingress Controllers](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/#multiple-ingress-controllers) — Running multiple ingress controllers in a single cluster
+- [Kubernetes Ingress TLS](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) — TLS termination configuration and secret management
