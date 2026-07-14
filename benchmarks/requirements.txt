@@ -4,10 +4,10 @@
 openai>=2.40.0
 
 # Anthropic API support
-anthropic>=0.105.2
+anthropic>=0.116.0
 
 # Groq API support
-groq>=1.4.0
+groq>=1.5.0
 
 # Token counting for OpenAI models
 tiktoken>=0.13.0
@@ -19,6 +19,6 @@ requests>=2.34.2
 pydantic>=2.13.4
 
 # Development/optional
-pytest>=9.0.3
+pytest>=9.1.1
 black>=26.5.1
 flake8>=7.3.0
