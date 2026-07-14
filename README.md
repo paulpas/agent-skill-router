@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,287 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,299 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,287 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,299 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,9 +312,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-07-01 22:43:39 UTC  
-> **Total skills:** 1287  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1287 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-07-14 09:24:36 UTC  
+> **Total skills:** 1299  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1299 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -690,7 +690,7 @@ MIT — All skills are freely available and redistributable.
 | [oracle-cloud-infrastructure](skills/cloud/oracle-cloud-infrastructure/SKILL.md) | Implements functionalities for Oracle Cloud Infrastructure, covering Compute, Object Storage, and Autonomous Database services. | oracle cloud, compute services, object storage, autonomous database, oracle database, OCI functionalities [tactical, educational] |
 
 
-### Cncf (176 skills)
+### Cncf (188 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -823,6 +823,18 @@ MIT — All skills are freely available and redistributable.
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | cloud-native, engineering, kubevirt, virtualization [educational, strategic] |
 | [kuma](skills/cncf/kuma/SKILL.md) | "Kuma in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | cdn, infrastructure as code, k8s service, kubernetes service, kuma, monitoring, native, service [educational, strategic] |
 | [kyverno](skills/cncf/kyverno/SKILL.md) | "Configures kyverno in cloud-native engineering - policy engine for cloud-native deployment and infrastructure management." | cloud-native, engineering, kyverno, policy, kubernetes policies, security policies, container orchestration, vulnerability scanning [educational, strategic] |
+| [kyverno-cleanup-policies](skills/cncf/kyverno-cleanup-policies/SKILL.md) | Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion. | kyverno cleanup policies, ClusterCleanupPolicy, garbage collection, resource cleanup, automated deletion, scheduled cleanup, kyverno v2 cleanup, deletion propagation |
+| [kyverno-exemptions-management](skills/cncf/kyverno-exemptions-management/SKILL.md) | Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass. | kyverno exemptions, PolicyException, policy exemption, serviceAccount exemption, role exemption, PSS exception, kyverno policy bypass |
+| [kyverno-image-registry-validation](skills/cncf/kyverno-image-registry-validation/SKILL.md) | Validates container images from approved registries with allowed tags using Kyverno verifyImages rules and image digest mutation to prevent unapproved or latest-tagged images. | image validation, container registry, approved images, image digest, tag policy, image scanning, registry allowlist |
+| [kyverno-label-enforcement](skills/cncf/kyverno-label-enforcement/SKILL.md) | Enforces required labels on Pods and Namespaces using Kyverno validate rules with pattern matching and CEL expressions for compliance tracking. | kyverno label enforcement, required labels, namespace labels, pod labels, label validation, kubecost labels, compliance labels |
+| [kyverno-mutate-patterns](skills/cncf/kyverno-mutate-patterns/SKILL.md) | Mutates Kubernetes resources at admission using patchStrategicMerge, patchesJson6902, and set operations to inject labels, sidecars, and default configurations. | kyverno mutate rules, patch strategic merge, resource mutation, inject sidecar, patch pod, kyverno mutation, patch json 6902 |
+| [kyverno-network-policy-generation](skills/cncf/kyverno-network-policy-generation/SKILL.md) | Generates default-deny and allowlist NetworkPolicy resources for Kubernetes namespaces using Kyverno generate rules to enforce network segmentation and zero-trust isolation. | kyverno network policy, default deny network policy, generate network policy, network segmentation, podSelector, ingress egress rules, network isolation |
+| [kyverno-pod-security-baseline](skills/cncf/kyverno-pod-security-baseline/SKILL.md) | Implements Kyverno podSecurity rules to enforce the Kubernetes Pod Security Standards baseline profile across namespaces in a cluster. | pod security baseline, PSS baseline, kubernetes pod security, container runtime policies, privileged container prevention, baseline profile enforcement, kubelet pod security |
+| [kyverno-pod-security-restricted](skills/cncf/kyverno-pod-security-restricted/SKILL.md) | Enforces Kubernetes Pod Security Standards restricted profile using Kyverno podSecurity rules to prevent privileged containers, enforce runAsNonRoot, and require capability drops. | pod security restricted, PSS restricted, runAsNonRoot, capabilities drop, privileged pod prevention, restricted profile, hardening pod |
+| [kyverno-policy-generation](skills/cncf/kyverno-policy-generation/SKILL.md) | Implements Kyverno generate rules to automatically create or modify Kubernetes resources (ResourceQuota, LimitRange, NetworkPolicy) on namespace creation. | kyverno generate rules, resource generation, generatePresence, generationKey, clusterpolicy generate, automatic resource provisioning, kyverno sync rules |
+| [kyverno-policy-report-override](skills/cncf/kyverno-policy-report-override/SKILL.md) | Manages PolicyReport overrides using Kyverno's failureActionOverrides, report configuration, and CEL-based conditions to customize compliance reporting per resource. | kyverno report override, PolicyReport override, failureActionOverrides, report result override, kyverno compliance reporting, policy report management |
+| [kyverno-resource-quota-validation](skills/cncf/kyverno-resource-quota-validation/SKILL.md) | Validates Kubernetes pod resource requests and limits using Kyverno ClusterPolicy rules to enforce namespace quota compliance and prevent resource starvation. | resource quota validation, limit range, pod resource limits, CPU memory validation, namespace quota, resource constraints, container resource requests limits |
+| [kyverno-secret-validation](skills/cncf/kyverno-secret-validation/SKILL.md) | Validates Kubernetes Secrets meet security requirements by checking secret types, enforcing labeling standards, and preventing legacy service-account-token usage. | secret validation, Kubernetes secrets, deny service account token, secret type validation, secret security, secret labeling, legacy token detection |
 | [lima](skills/cncf/lima/SKILL.md) | "Lima in Container Runtime - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, lima, monitoring, runtime, cloudformation, cloudfront [educational, strategic] |
 | [linkerd](skills/cncf/linkerd/SKILL.md) | "Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | cdn, infrastructure as code, k8s service, kubernetes service, linkerd, monitoring, native, service [educational, strategic] |
 | [litmus](skills/cncf/litmus/SKILL.md) | "Litmus in Chaos Engineering - cloud native architecture, patterns, pits" and best practices | cdn, chaos, engineering, infrastructure as code, litmus, monitoring, cloudformation, cloudfront [educational, strategic] |
@@ -1760,7 +1772,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (858 skills)
+### Implementation (Build Features) (870 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2239,6 +2251,18 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-monitoring-logging](skills/coding/kubernetes-monitoring-logging/SKILL.md) | Coding | Manages monitoring and logging in Kubernetes, including setting up Prometheus, Grafana, and logging best practices. |
 | [kubernetes-resource-tuning](skills/cncf/kubernetes-resource-tuning/SKILL.md) | Cncf | Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads. |
 | [kubernetes-services-management](skills/coding/kubernetes-services-management/SKILL.md) | Coding | Manages Kubernetes Services, including configuration for ClusterIP, NodePort, and LoadBalancer services. This skill provides detailed guidance on setting up and maintaining services in a Kubernetes cluster, ensuring efficient access and networking fo... |
+| [kyverno-cleanup-policies](skills/cncf/kyverno-cleanup-policies/SKILL.md) | Cncf | Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion. |
+| [kyverno-exemptions-management](skills/cncf/kyverno-exemptions-management/SKILL.md) | Cncf | Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass. |
+| [kyverno-image-registry-validation](skills/cncf/kyverno-image-registry-validation/SKILL.md) | Cncf | Validates container images from approved registries with allowed tags using Kyverno verifyImages rules and image digest mutation to prevent unapproved or latest-tagged images. |
+| [kyverno-label-enforcement](skills/cncf/kyverno-label-enforcement/SKILL.md) | Cncf | Enforces required labels on Pods and Namespaces using Kyverno validate rules with pattern matching and CEL expressions for compliance tracking. |
+| [kyverno-mutate-patterns](skills/cncf/kyverno-mutate-patterns/SKILL.md) | Cncf | Mutates Kubernetes resources at admission using patchStrategicMerge, patchesJson6902, and set operations to inject labels, sidecars, and default configurations. |
+| [kyverno-network-policy-generation](skills/cncf/kyverno-network-policy-generation/SKILL.md) | Cncf | Generates default-deny and allowlist NetworkPolicy resources for Kubernetes namespaces using Kyverno generate rules to enforce network segmentation and zero-trust isolation. |
+| [kyverno-pod-security-baseline](skills/cncf/kyverno-pod-security-baseline/SKILL.md) | Cncf | Implements Kyverno podSecurity rules to enforce the Kubernetes Pod Security Standards baseline profile across namespaces in a cluster. |
+| [kyverno-pod-security-restricted](skills/cncf/kyverno-pod-security-restricted/SKILL.md) | Cncf | Enforces Kubernetes Pod Security Standards restricted profile using Kyverno podSecurity rules to prevent privileged containers, enforce runAsNonRoot, and require capability drops. |
+| [kyverno-policy-generation](skills/cncf/kyverno-policy-generation/SKILL.md) | Cncf | Implements Kyverno generate rules to automatically create or modify Kubernetes resources (ResourceQuota, LimitRange, NetworkPolicy) on namespace creation. |
+| [kyverno-policy-report-override](skills/cncf/kyverno-policy-report-override/SKILL.md) | Cncf | Manages PolicyReport overrides using Kyverno's failureActionOverrides, report configuration, and CEL-based conditions to customize compliance reporting per resource. |
+| [kyverno-resource-quota-validation](skills/cncf/kyverno-resource-quota-validation/SKILL.md) | Cncf | Validates Kubernetes pod resource requests and limits using Kyverno ClusterPolicy rules to enforce namespace quota compliance and prevent resource starvation. |
+| [kyverno-secret-validation](skills/cncf/kyverno-secret-validation/SKILL.md) | Cncf | Validates Kubernetes Secrets meet security requirements by checking secret types, enforcing labeling standards, and preventing legacy service-account-token usage. |
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. |
 | [langgraph-state-machine](skills/agent/langgraph-state-machine/SKILL.md) | Agent | Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows. |
@@ -3814,6 +3838,18 @@ MIT — All skills are freely available and redistributable.
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | Cncf | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | Reference |
 | [kuma](skills/cncf/kuma/SKILL.md) | Cncf | "Kuma in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | Reference |
 | [kyverno](skills/cncf/kyverno/SKILL.md) | Cncf | "Configures kyverno in cloud-native engineering - policy engine for cloud-native deployment and infrastructure management." | Reference |
+| [kyverno-cleanup-policies](skills/cncf/kyverno-cleanup-policies/SKILL.md) | Cncf | Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion. | Implementation |
+| [kyverno-exemptions-management](skills/cncf/kyverno-exemptions-management/SKILL.md) | Cncf | Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass. | Implementation |
+| [kyverno-image-registry-validation](skills/cncf/kyverno-image-registry-validation/SKILL.md) | Cncf | Validates container images from approved registries with allowed tags using Kyverno verifyImages rules and image digest mutation to prevent unapproved or latest-tagged images. | Implementation |
+| [kyverno-label-enforcement](skills/cncf/kyverno-label-enforcement/SKILL.md) | Cncf | Enforces required labels on Pods and Namespaces using Kyverno validate rules with pattern matching and CEL expressions for compliance tracking. | Implementation |
+| [kyverno-mutate-patterns](skills/cncf/kyverno-mutate-patterns/SKILL.md) | Cncf | Mutates Kubernetes resources at admission using patchStrategicMerge, patchesJson6902, and set operations to inject labels, sidecars, and default configurations. | Implementation |
+| [kyverno-network-policy-generation](skills/cncf/kyverno-network-policy-generation/SKILL.md) | Cncf | Generates default-deny and allowlist NetworkPolicy resources for Kubernetes namespaces using Kyverno generate rules to enforce network segmentation and zero-trust isolation. | Implementation |
+| [kyverno-pod-security-baseline](skills/cncf/kyverno-pod-security-baseline/SKILL.md) | Cncf | Implements Kyverno podSecurity rules to enforce the Kubernetes Pod Security Standards baseline profile across namespaces in a cluster. | Implementation |
+| [kyverno-pod-security-restricted](skills/cncf/kyverno-pod-security-restricted/SKILL.md) | Cncf | Enforces Kubernetes Pod Security Standards restricted profile using Kyverno podSecurity rules to prevent privileged containers, enforce runAsNonRoot, and require capability drops. | Implementation |
+| [kyverno-policy-generation](skills/cncf/kyverno-policy-generation/SKILL.md) | Cncf | Implements Kyverno generate rules to automatically create or modify Kubernetes resources (ResourceQuota, LimitRange, NetworkPolicy) on namespace creation. | Implementation |
+| [kyverno-policy-report-override](skills/cncf/kyverno-policy-report-override/SKILL.md) | Cncf | Manages PolicyReport overrides using Kyverno's failureActionOverrides, report configuration, and CEL-based conditions to customize compliance reporting per resource. | Implementation |
+| [kyverno-resource-quota-validation](skills/cncf/kyverno-resource-quota-validation/SKILL.md) | Cncf | Validates Kubernetes pod resource requests and limits using Kyverno ClusterPolicy rules to enforce namespace quota compliance and prevent resource starvation. | Implementation |
+| [kyverno-secret-validation](skills/cncf/kyverno-secret-validation/SKILL.md) | Cncf | Validates Kubernetes Secrets meet security requirements by checking secret types, enforcing labeling standards, and preventing legacy service-account-token usage. | Implementation |
 | [lambda-lang](skills/agent/lambda-lang/SKILL.md) | Agent | Implements intelligent lambda lang with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | Implementation |
 | [langgraph](skills/agent/langgraph/SKILL.md) | Agent | Implements intelligent langgraph with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
