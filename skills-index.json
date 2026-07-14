@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-14T14:25:05.386846Z",
-  "totalSkills": 1304,
+  "generatedAt": "2026-07-14T16:08:37.774240Z",
+  "totalSkills": 1311,
   "domains": {
     "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
-    "cncf": 190,
+    "cncf": 197,
     "coding": 594,
     "commerce": 1,
     "communications": 3,
@@ -28,9 +28,9 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 875,
+    "implementation": 883,
     "orchestration": 238,
-    "reference": 182,
+    "reference": 181,
     "information": 1,
     "review": 8
   },
@@ -17176,6 +17176,29 @@
       "source": "skills/cncf/kubernetes-api-patterns/SKILL.md"
     },
     {
+      "name": "kubernetes-configmap",
+      "domain": "cncf",
+      "description": "Implements v1 ConfigMap manifests for injecting configuration data into pods via environment variables, volume mounts, and command-line arguments.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "configuration injection",
+        "env variable",
+        "volume mount",
+        "key-value data",
+        "v1 core",
+        "configmap"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-secrets",
+        "cncf/kubernetes-deployment",
+        "cncf/kubernetes-statefulset"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-configmap/SKILL.md"
+    },
+    {
       "name": "kubernetes-crds-management",
       "domain": "coding",
       "description": "Manages Kubernetes Custom Resource Definitions, including creation, updates, and best practices for usage.",
@@ -17243,6 +17266,30 @@
       "source": "skills/agent/kubernetes-deployment/SKILL.md"
     },
     {
+      "name": "kubernetes-deployment",
+      "domain": "cncf",
+      "description": "Implements apps/v1 Deployment YAML manifests with rolling update strategies, replica scaling, and rollback procedures for stateless application workloads.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rolling update",
+        "replica count",
+        "deployment strategy",
+        "rollback",
+        "apps/v1",
+        "deployment rollout",
+        "kubernetes deployment"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-deployment",
+        "cncf/kubernetes-services-management",
+        "cncf/kubernetes-configmap"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-deployment/SKILL.md"
+    },
+    {
       "name": "kubernetes-deployment-patterns",
       "domain": "coding",
       "description": "Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation.",
@@ -17270,29 +17317,53 @@
     {
       "name": "kubernetes-ingress",
       "domain": "cncf",
-      "description": "Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration.",
-      "role": "reference",
-      "scope": "infrastructure",
-      "outputFormat": "manifests",
+      "description": "Implements networking.k8s.io/v1 Ingress resources with HTTP/HTTPS routing, TLS termination, path-based routing, and ingress controller configuration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
       "triggers": [
-        "ingress",
-        "kubernetes ingress",
-        "ingress controller",
-        "host-based routing",
+        "http routing",
+        "tls termination",
+        "ingress class",
         "path-based routing",
-        "TLS termination",
-        "cert-manager",
-        "external access routing"
+        "networking.k8s.io",
+        "ingress controller",
+        "load balancing"
       ],
       "relatedSkills": [
-        "cncf-kubernetes",
-        "cncf-cert-manager",
-        "cncf-traefik",
-        "cncf-network-policies",
-        "cncf-service-mesh"
+        "cncf/kubernetes-networkpolicy",
+        "cncf/kubernetes-services-management",
+        "cncf/cilium"
       ],
       "version": "1.0.0",
       "source": "skills/cncf/kubernetes-ingress/SKILL.md"
+    },
+    {
+      "name": "kubernetes-istio",
+      "domain": "cncf",
+      "description": "Implements Istio service mesh patterns (sidecar injection, traffic splitting, circuit breaking, retries, and mTLS) for advanced traffic management and zero-downtime deployments in Kubernetes.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "service mesh",
+        "istio",
+        "sidecar injection",
+        "traffic splitting",
+        "canary deployment",
+        "circuit breaker",
+        "zero-downtime deployment",
+        "envoy proxy"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-ingress",
+        "cncf/kubernetes-deployment",
+        "cncf/kubernetes-statefulset",
+        "cncf/kubernetes-networkpolicy",
+        "cncf/kubernetes-services-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-istio/SKILL.md"
     },
     {
       "name": "kubernetes-monitoring-logging",
@@ -17311,6 +17382,79 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/kubernetes-monitoring-logging/SKILL.md"
+    },
+    {
+      "name": "kubernetes-networkpolicy",
+      "domain": "cncf",
+      "description": "Implements networking.k8s.io/v1 NetworkPolicy resources with ingress and egress rules, pod selector targeting, and network segmentation for microservice isolation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pod isolation",
+        "ingress egress rules",
+        "network segmentation",
+        "pod selector",
+        "networking.k8s.io",
+        "networkpolicy",
+        "firewall"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-ingress",
+        "cncf/cilium",
+        "cncf/open-policy-agent-opa"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-networkpolicy/SKILL.md"
+    },
+    {
+      "name": "kubernetes-persistentvolume",
+      "domain": "cncf",
+      "description": "Implements v1 PersistentVolume, StorageClass, and PersistentVolumeClaim manifests with static/dynamic provisioning, access modes, and reclaim policies for Kubernetes storage.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "static provisioning",
+        "dynamic provisioning",
+        "storage class",
+        "access modes",
+        "reclaim policy",
+        "pv",
+        "pvc",
+        "storage.k8s.io"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-statefulset",
+        "cncf/kubernetes-deployment",
+        "cncf/crossplane"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-persistentvolume/SKILL.md"
+    },
+    {
+      "name": "kubernetes-rbac",
+      "domain": "cncf",
+      "description": "Implements rbac.authorization.k8s.io/v1 Role, ClusterRole, RoleBinding, and ClusterRoleBinding manifests with least privilege access control for Kubernetes resources.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "least privilege",
+        "role binding",
+        "clusterrole",
+        "service account",
+        "rbac.authorization.k8s.io",
+        "namespace permissions",
+        "access control"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-deployment",
+        "cncf/kyverno-pod-security-baseline",
+        "cncf/open-policy-agent-opa"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-rbac/SKILL.md"
     },
     {
       "name": "kubernetes-resource-tuning",
@@ -17353,6 +17497,29 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/kubernetes-services-management/SKILL.md"
+    },
+    {
+      "name": "kubernetes-statefulset",
+      "domain": "cncf",
+      "description": "Implements apps/v1 StatefulSet manifests with stable network identities, ordered pod lifecycle, and persistent volume claim automation for stateful workloads.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "stateful workload",
+        "stable network identity",
+        "persistent volume claim",
+        "ordered scaling",
+        "apps/v1",
+        "statefulset"
+      ],
+      "relatedSkills": [
+        "cncf/kubernetes-persistentvolume",
+        "cncf/kubernetes-services-management",
+        "cncf/kubernetes-configmap"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-statefulset/SKILL.md"
     },
     {
       "name": "kubescape",
