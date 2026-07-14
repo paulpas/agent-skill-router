@@ -112,7 +112,7 @@ jobs:
           awk -v c="$COVERAGE" 'BEGIN { if (c+0 < 70) { print "::error::Coverage " c "% < 70% threshold"; exit 1 } }'
       - name: Upload to Codecov
         if: ${{ secrets.CODECOV_TOKEN != '' }}
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v7
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage/coverage-summary.json
