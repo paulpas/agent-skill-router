@@ -17,7 +17,7 @@ maturity: stable
 metadata:
   domain: agent
   output-format: analysis
-  related-skills: agent-confidence-based-selector, agent-task-routing
+  related-skills: agent-confidence-based-selector, agent-task-routing, apify-xquik-x-research
   role: orchestration
   scope: orchestration
   triggers: apify-trend-analysis, apify trend analysis, how do i apify-trend-analysis,

@@ -4,6 +4,7 @@
 
 
 name: pinecone-api-tooling
+description: Implements Pinecone vector, index, namespace, hybrid search, and inference workflows with schema checks, secure credentials, and operational metrics.
 license: MIT
 compatibility: opencode
 metadata:

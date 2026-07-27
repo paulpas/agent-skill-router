@@ -4,7 +4,7 @@
 
 
 name: software-engineering-backwards-compatibility
-
+description: Implements backward-compatible API and library evolution with semantic versioning, feature flags, deprecation windows, and rollback planning.
 license: MIT
 compatibility: opencode
 metadata:
