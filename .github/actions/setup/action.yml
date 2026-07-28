@@ -1,5 +1,5 @@
 name: 'Setup Node.js Environment'
-description: 'Common setup steps: Node.js installation and npm ci'
+description: 'Common setup steps for root and routing-system dependencies'
 
 runs:
   using: 'composite'
@@ -8,6 +8,12 @@ runs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
+        cache-dependency-path: |
+          package-lock.json
+          agent-skill-routing-system/package-lock.json
 
     - shell: bash
       run: npm ci
+
+    - shell: bash
+      run: npm ci --prefix agent-skill-routing-system

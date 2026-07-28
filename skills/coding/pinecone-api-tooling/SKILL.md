@@ -125,4 +125,4 @@ When using this skill, the output must include:
 - [Pinecone Python SDK (pinecone-io)](https://github.com/pinecone-io/pinecone-python-client) — Official Pinecone Python client library source code with usage examples
 - [Vector Database Comparison (Pinecone vs Milvus vs Weaviate)](https://docs.pinecone.io/guides/data/understanding-index-types) — Pinecone's guide to understanding different vector index types and their trade-offs
 - [FAISS Vector Similarity Search (Meta)](https://github.com/facebookresearch/faiss) — Meta's FAISS library documentation, a foundational reference for vector similarity search algorithms
-- [Embedding Models for Semantic Search (Hugging Face)](https://huggingface.co/spaces/mteb/leaderboard) — Hugging Face MTEB leaderboard ranking embedding models used with Pinecone vector databases |
+- [Embedding Models for Semantic Search (Hugging Face)](https://huggingface.co/spaces/mteb/leaderboard): Hugging Face MTEB leaderboard ranking embedding models used with Pinecone vector databases |

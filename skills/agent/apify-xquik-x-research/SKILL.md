@@ -4,7 +4,7 @@ description: Orchestrates bounded X post and audience research with Xquik Apify 
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: '1.0.0'
   domain: agent
   role: orchestration
   scope: orchestration
@@ -35,7 +35,7 @@ lists, and communities. Keep every finding traceable to its source record.
 - [ ] Inspect each default build input schema before preparing a run
 - [ ] Review live pricing on each Actor page
 - [ ] Show the exact input and get explicit approval before every run
-- [ ] Bound the whole run and each target
+- [ ] Bound the whole run and each target when the mode supports it
 - [ ] Keep tokens in the `Authorization` header
 - [ ] Separate diagnostics and run reports from research records
 - [ ] Preserve source URLs, target metadata, and sampling caveats
@@ -63,10 +63,10 @@ Avoid this skill when:
 
 ## Actors
 
-| Actor | Identifier | Use |
-| --- | --- | --- |
-| [X Tweet Scraper](https://apify.com/xquik/x-tweet-scraper) | `xquik~x-tweet-scraper` | Posts, search, profiles, lists, articles, replies, quotes, threads, retweeters, and best-effort favoriters |
-| [X Follower Scraper](https://apify.com/xquik/x-follower-scraper) | `xquik~x-follower-scraper` | Followers, following, verified followers, list members, list followers, and community members |
+| Actor                                                            | Identifier                 | Use                                                                                                        |
+| ---------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [X Tweet Scraper](https://apify.com/xquik/x-tweet-scraper)       | `xquik~x-tweet-scraper`    | Posts, search, profiles, lists, articles, replies, quotes, threads, retweeters, and best-effort favoriters |
+| [X Follower Scraper](https://apify.com/xquik/x-follower-scraper) | `xquik~x-follower-scraper` | Followers, following, verified followers, list members, list followers, and community members              |
 
 Read current pricing from each Actor page. Never hardcode a price. An Apify run
 can incur charges, so every POST request requires explicit user approval.
@@ -151,6 +151,7 @@ curl -sS -X POST \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -d '{
+    "mode": "search",
     "searchTerms": ["product launch", "from:example AI"],
     "queryType": "Latest + Top",
     "includeSearchTerms": true,
@@ -163,10 +164,11 @@ curl -sS -X POST \
 ```
 
 `maxItems` caps the entire run across all search terms. It is not a per-term
-limit. Use `maxItemsPerTarget` to bound each explicit target.
+limit. Use `maxItemsPerTarget` only for supported multi-target modes.
 
-The Actor also accepts supported URL, ID, profile, list, article, reply, quote,
-thread, retweeter, and best-effort favoriter workflows. Choose only the target
+Supported modes are `legacy`, `tweet`, `tweets`, `search`, `profileTweets`,
+`profileReplies`, `profileMedia`, `profileLikes`, `listTweets`, `article`,
+`replies`, `quotes`, `thread`, `retweeters`, and `favoriters`. Choose only the
 mode required by the question. Keep the source URL and matched term attached
 to every retained post.
 
@@ -234,7 +236,8 @@ For audience research, retain:
 - Public profile fields used in the analysis
 
 State which observations come directly from records. Label every interpretation
-as an inference. Keep source links beside the findings they support.
+as an inference. Keep source links beside the findings they support. A follow
+does not prove endorsement, intent, or a sensitive trait.
 
 ## Fallback and Error Routing
 
@@ -262,7 +265,7 @@ as an inference. Keep source links beside the findings they support.
 - Inspect live schemas before constructing each payload
 - Review live pricing before requesting run approval
 - Require explicit approval for every POST request
-- Set whole-run and per-target caps
+- Set a whole-run cap and a per-target cap when supported
 - Send `APIFY_TOKEN` only through the `Authorization` header
 - Keep diagnostic records and source context
 - Report sample boundaries and partial results
@@ -295,12 +298,12 @@ Return:
 
 ## Related Skills
 
-| Skill | Purpose |
-| --- | --- |
-| [`apify-audience-analysis`](../apify-audience-analysis/SKILL.md) | Frame audience segments and comparisons |
-| [`apify-brand-reputation-monitoring`](../apify-brand-reputation-monitoring/SKILL.md) | Route reputation monitoring workflows |
-| [`apify-content-analytics`](../apify-content-analytics/SKILL.md) | Structure post and content analysis |
-| [`apify-trend-analysis`](../apify-trend-analysis/SKILL.md) | Compare time-bound conversation trends |
+| Skill                                                                                | Purpose                                 |
+| ------------------------------------------------------------------------------------ | --------------------------------------- |
+| [`apify-audience-analysis`](../apify-audience-analysis/SKILL.md)                     | Frame audience segments and comparisons |
+| [`apify-brand-reputation-monitoring`](../apify-brand-reputation-monitoring/SKILL.md) | Route reputation monitoring workflows   |
+| [`apify-content-analytics`](../apify-content-analytics/SKILL.md)                     | Structure post and content analysis     |
+| [`apify-trend-analysis`](../apify-trend-analysis/SKILL.md)                           | Compare time-bound conversation trends  |
 
 Xquik is an independent third-party service. Not affiliated with X Corp.
 "Twitter" and "X" are trademarks of X Corp.
