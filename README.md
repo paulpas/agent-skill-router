@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,311 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,313 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,311 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,313 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,9 +312,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-08-07 18:58:47 UTC  
-> **Total skills:** 1311  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1311 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-08-07 19:38:32 UTC  
+> **Total skills:** 1313  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1313 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -1574,7 +1574,7 @@ MIT — All skills are freely available and redistributable.
 | [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | kotlin coroutines, sealed interfaces, data classes, kotlinx serialization, context receivers, how do i write modern kotlin, suspend function [tactical, educational] |
 
 
-### Linux (24 skills)
+### Linux (26 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1586,7 +1586,9 @@ MIT — All skills are freely available and redistributable.
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | hardware provisioning, instance sizing, RAID configuration, SSD, cloud instance, on-prem hardware, disk sizing, CPU architecture [tactical] |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. | kernel tuning, sysctl, NUMA, interrupt affinity, page cache, TCP tuning, kernel parameters, performance tuning [tactical] |
 | [linux-cli-reference](skills/linux/linux-cli-reference/SKILL.md) | Consolidated reference for the essential Linux CLI tools and utilities used daily by engineers at the command line. | linux cli, command line tools, file management, process inspection, how do i use the linux terminal, disk usage, ssh rsync [educational] |
+| [linux-safe-script-execution](skills/linux/linux-safe-script-execution/SKILL.md) | Performs pre-flight validation and interaction mapping for Linux automation scripts to identify availability risks before execution. | script safety, pre-flight checks, availability risk, script interaction, automation safety, service disruption, Linux operational safety |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. | linux security, hardening, CIS benchmark, SELinux, AppArmor, SSH hardening, file integrity, audit framework [tactical] |
+| [linux-service-integrity-operations](skills/linux/linux-service-integrity-operations/SKILL.md) | Executes Linux system changes and deployments using zero-downtime patterns, health monitoring, and safe rollback procedures to maintain host availability. | zero downtime, service integrity, safe restart, rolling updates, health checks, Linux operational availability, service disruption prevention |
 | [linux-services](skills/linux/linux-services/SKILL.md) | Manages Linux services with systemd for reliable operation, dependency ordering, resource isolation, and automated recovery in cloud and on-prem environments. | systemd, service management, unit file, service restart, socket activation, systemd timer, journal, service dependency [tactical] |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds. | makefile, GNU make, build automation, incremental builds, phony targets, pattern rules, automatic variables, how do i automate builds with make [tactical, generation] |
 | [makefile-best-practices](skills/linux/makefile-best-practices/SKILL.md) | Implements portable, maintainable Makefiles with proper variable scope, dependency management, error handling, and parallel execution patterns for reliable build automation across Unix-like systems. | makefile, make, build automation, target rules, parallel builds, make dependencies, error handling, .PHONY targets [tactical, implementation] |
@@ -1784,7 +1786,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (883 skills)
+### Implementation (Build Features) (885 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2293,7 +2295,9 @@ MIT — All skills are freely available and redistributable.
 | [learning-adaptation](skills/agent/learning-adaptation/SKILL.md) | Agent | Enables agents to improve through experience using reinforcement learning patterns (PPO, DPO, RLHF) and knowledge base RAG for continuous self-improvement and adaptive behavior across sessions. |
 | [license-compliance-and-open-source-policy](skills/coding/license-compliance-and-open-source-policy/SKILL.md) | Coding | Implements strategies and guidelines for managing software licensing compliance and formulating open-source policies in software engineering practices. |
 | [linode-api](skills/coding/linode-api/SKILL.md) | Coding | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. |
+| [linux-safe-script-execution](skills/linux/linux-safe-script-execution/SKILL.md) | Linux | Performs pre-flight validation and interaction mapping for Linux automation scripts to identify availability risks before execution. |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Linux | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. |
+| [linux-service-integrity-operations](skills/linux/linux-service-integrity-operations/SKILL.md) | Linux | Executes Linux system changes and deployments using zero-downtime patterns, health monitoring, and safe rollback procedures to maintain host availability. |
 | [linux-services](skills/linux/linux-services/SKILL.md) | Linux | Manages Linux services with systemd for reliable operation, dependency ordering, resource isolation, and automated recovery in cloud and on-prem environments. |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Coding | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. |
 | [llamaindex](skills/coding/llamaindex/SKILL.md) | Coding | Integrates LlamaIndex (indexes, query engines, agents, workflows, document parsing, RAG pipelines) for building data-aware LLM applications in Python. |
@@ -3897,7 +3901,9 @@ MIT — All skills are freely available and redistributable.
 | [linode-api](skills/coding/linode-api/SKILL.md) | Coding | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. | Implementation |
 | [lint-and-validate](skills/agent/lint-and-validate/SKILL.md) | Agent | Implements intelligent lint and validate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [linux-cli-reference](skills/linux/linux-cli-reference/SKILL.md) | Linux | Consolidated reference for the essential Linux CLI tools and utilities used daily by engineers at the command line. | Reference |
+| [linux-safe-script-execution](skills/linux/linux-safe-script-execution/SKILL.md) | Linux | Performs pre-flight validation and interaction mapping for Linux automation scripts to identify availability risks before execution. | Implementation |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Linux | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. | Implementation |
+| [linux-service-integrity-operations](skills/linux/linux-service-integrity-operations/SKILL.md) | Linux | Executes Linux system changes and deployments using zero-downtime patterns, health monitoring, and safe rollback procedures to maintain host availability. | Implementation |
 | [linux-services](skills/linux/linux-services/SKILL.md) | Linux | Manages Linux services with systemd for reliable operation, dependency ordering, resource isolation, and automated recovery in cloud and on-prem environments. | Implementation |
 | [linux-troubleshooting](skills/agent/linux-troubleshooting/SKILL.md) | Agent | Implements intelligent linux troubleshooting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Coding | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | Implementation |

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-07T18:58:45.677451Z",
-  "totalSkills": 1316,
+  "generatedAt": "2026-08-07T19:38:30.379229Z",
+  "totalSkills": 1318,
   "domains": {
     "agent": 330,
     "ai": 5,
@@ -16,7 +16,7 @@
     "go": 13,
     "java": 1,
     "kotlin": 1,
-    "linux": 24,
+    "linux": 26,
     "maker": 3,
     "networking": 1,
     "payments": 5,
@@ -28,7 +28,7 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 888,
+    "implementation": 890,
     "orchestration": 238,
     "reference": 181,
     "information": 1,
@@ -18291,6 +18291,26 @@
       "source": "skills/linux/linux-cli-reference/SKILL.md"
     },
     {
+      "name": "linux-safe-script-execution",
+      "domain": "linux",
+      "description": "Performs pre-flight validation and interaction mapping for Linux automation scripts to identify availability risks before execution.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "script safety",
+        "pre-flight checks",
+        "availability risk",
+        "script interaction",
+        "automation safety",
+        "service disruption",
+        "Linux operational safety"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/linux/linux-safe-script-execution/SKILL.md"
+    },
+    {
       "name": "linux-security",
       "domain": "linux",
       "description": "Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments.",
@@ -18315,6 +18335,26 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/linux-security/SKILL.md"
+    },
+    {
+      "name": "linux-service-integrity-operations",
+      "domain": "linux",
+      "description": "Executes Linux system changes and deployments using zero-downtime patterns, health monitoring, and safe rollback procedures to maintain host availability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "zero downtime",
+        "service integrity",
+        "safe restart",
+        "rolling updates",
+        "health checks",
+        "Linux operational availability",
+        "service disruption prevention"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/linux/linux-service-integrity-operations/SKILL.md"
     },
     {
       "name": "linux-services",
