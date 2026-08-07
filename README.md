@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,306 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,311 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,306 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,311 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,17 +312,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-07-14 16:08:39 UTC  
-> **Total skills:** 1306  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1306 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-08-07 13:58:14 UTC  
+> **Total skills:** 1311  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1311 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1220 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1220 | Ranking penalty for conflicting query terms |
-| Response Profile | 1217 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1225 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1225 | Ranking penalty for conflicting query terms |
+| Response Profile | 1222 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -690,12 +690,13 @@ MIT — All skills are freely available and redistributable.
 | [oracle-cloud-infrastructure](skills/cloud/oracle-cloud-infrastructure/SKILL.md) | Implements functionalities for Oracle Cloud Infrastructure, covering Compute, Object Storage, and Autonomous Database services. | oracle cloud, compute services, object storage, autonomous database, oracle database, OCI functionalities [tactical, educational] |
 
 
-### Cncf (195 skills)
+### Cncf (200 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [architecture-best-practices](skills/cncf/architecture-best-practices/SKILL.md) | "Cloud Native Computing Foundation (CNCF) architecture best practices" for production-grade Kubernetes deployments. Covers service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling patterns across the CNCF landscape. | architecture best practices, architecture-best-practices, cdn, computing, infrastructure as code, monitoring, native, cloudformation [educational, strategic] |
 | [argo](skills/cncf/argo/SKILL.md) | "Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD" and Governance | argo, cloud-native, container orchestration, engineering, kubernetes-native, kubernetes, k8s [educational, strategic] |
+| [argo-cd-gitops-workflows](skills/cncf/argo-cd-gitops-workflows/SKILL.md) | Implements GitOps deployment workflows using Argo CD — sync policies, ApplicationSets, app-of-apps bootstrapping, and resource pruning for automated Kubernetes deployment pipelines. | argo cd, gitops workflows, argo sync policies, app of apps, kubernetes deployment automation, argo pruning [tactical, orchestration] |
 | [artifact-hub](skills/cncf/artifact-hub/SKILL.md) | "Provides Artifact Hub in Cloud-Native Engineering - Repository for Kubernetes Helm, Falco, OPA, and more" | artifact hub, artifact-hub, cloud-native, engineering, repository [educational, strategic] |
 | [aws-auto-scaling](skills/cncf/aws-auto-scaling/SKILL.md) | "Configures automatic scaling of compute resources (EC2, RDS, DynamoDB" Lambda) based on demand metrics with scaling policies and lifecycle hooks. | asg, auto-scaling, dynamic scaling, scaling policy, scheduled scaling, target tracking [educational, strategic] |
 | [aws-cloudformation](skills/cncf/aws-cloudformation/SKILL.md) | "Creates Infrastructure as Code templates with CloudFormation for reproducible" versioned, automated deployments of entire AWS infrastructure stacks. | cloudformation, infrastructure as code, iac, cloudformation template, stack, aws template, yaml, json [educational, strategic] |
@@ -795,6 +796,7 @@ MIT — All skills are freely available and redistributable.
 | [harbor](skills/cncf/harbor/SKILL.md) | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." | cloud-native, container, engineering, harbor, container images, private registry, docker, containerization [educational, strategic] |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns | health checks, liveness probes, readiness probes, health monitoring, health endpoint, service health, health check implementation, health check testing [tactical] |
 | [helm](skills/cncf/helm/SKILL.md) | "Provides Helm in Cloud-Native Engineering - The Kubernetes Package Manager" | cloud-native, container orchestration, engineering, helm, k8s, k8s charts, kubernetes package manager, kubernetes [educational, strategic] |
+| [helm-chart-development](skills/cncf/helm-chart-development/SKILL.md) | Builds, templates, and manages Helm charts with Chart.yaml, values.yaml, and Go template files for reliable Kubernetes application deployment and versioned releases. | helm chart development, helm templating, helm values, helm debugging, chartmuseum, helm registry, helm lint, chart.yaml [tactical, generation] |
 | [in-toto](skills/cncf/in-toto/SKILL.md) | "in-toto in Supply Chain Security - cloud native architecture, patterns" pitfalls, and best practices | chain, in toto, in-toto, supply [educational, strategic] |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. | incident response, runbook creation, incident procedures, escalation procedures, incident command, postmortem, blameless postmortem, incident documentation [tactical] |
 | [istio](skills/cncf/istio/SKILL.md) | "Istio in Cloud-Native Engineering - Connect, secure, control, and observe" services. | cloud-native, connect, engineering, istio, service mesh, traffic management, kubernetes service, container orchestration [educational, strategic] |
@@ -829,6 +831,7 @@ MIT — All skills are freely available and redistributable.
 | [kubevela](skills/cncf/kubevela/SKILL.md) | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." | application, cloud-native, engineering, kubevela [educational, strategic] |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | cloud-native, engineering, kubevirt, virtualization [educational, strategic] |
 | [kuma](skills/cncf/kuma/SKILL.md) | "Kuma in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | cdn, infrastructure as code, k8s service, kubernetes service, kuma, monitoring, native, service [educational, strategic] |
+| [kustomize-k8s-config-management](skills/cncf/kustomize-k8s-config-management/SKILL.md) | Implements Kubernetes configuration management with Kustomize bases, overlays, strategic/JSON patches, and generators for environment-specific deployment customization. | kustomize, kustomization.yaml, overlay patches, kubernetes customization, kustomize generators, k8s config management, json patches, strategic merge [tactical, diagnostic] |
 | [kyverno](skills/cncf/kyverno/SKILL.md) | "Configures kyverno in cloud-native engineering - policy engine for cloud-native deployment and infrastructure management." | cloud-native, engineering, kyverno, policy, kubernetes policies, security policies, container orchestration, vulnerability scanning [educational, strategic] |
 | [kyverno-cleanup-policies](skills/cncf/kyverno-cleanup-policies/SKILL.md) | Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion. | kyverno cleanup policies, ClusterCleanupPolicy, garbage collection, resource cleanup, automated deletion, scheduled cleanup, kyverno v2 cleanup, deletion propagation |
 | [kyverno-exemptions-management](skills/cncf/kyverno-exemptions-management/SKILL.md) | Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass. | kyverno exemptions, PolicyException, policy exemption, serviceAccount exemption, role exemption, PSS exception, kyverno policy bypass |
@@ -871,6 +874,7 @@ MIT — All skills are freely available and redistributable.
 | [process-security-policy](skills/cncf/process-security-policy/SKILL.md) | "Creates or updates SECURITY.md defining the vulnerability reporting process" disclosure timeline, and supported versions for CNCF projects | creates, defining, process security policy, process-security-policy, updates, vulnerability scanning, security, security auditing [educational, strategic] |
 | [prometheus](skills/cncf/prometheus/SKILL.md) | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | cloud-native, engineering, metrics, monitoring, prometheus, prometheus monitoring, cloudwatch, logging [educational, strategic] |
 | [pulumi-reference](skills/cncf/pulumi-reference/SKILL.md) | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning | pulumi, iac, infrastructure as code, pulumi python, pulumi typescript, how do i deploy infrastructure, crossplane, cloudformation [tactical] |
+| [renovate-dependency-automation](skills/cncf/renovate-dependency-automation/SKILL.md) | Automates dependency update PRs by configuring Renovate for version policies, branch strategies, commit templates, and PR templates across monorepo and multi-repo projects. | renovate, dependency automation, dependency updates, PR automation, semantic versioning, dependency configuration, automated PRs [tactical, orchestration] |
 | [rollback-procedures](skills/cncf/rollback-procedures/SKILL.md) | Implements comprehensive rollback procedures including deployment rollback, version rollback, database rollback, and rollback testing for Kubernetes and cloud-native applications | rollback strategies, deployment rollback, version rollback, rollback procedures, rollback testing, rollback automation, rollback validation, rollback procedures [tactical] |
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. | rollback strategy, deployment rollback, release rollback, rollback automation, data rollback, partial rollback, rollback trigger, rollback procedure [tactical] |
 | [rook](skills/cncf/rook/SKILL.md) | "Configures rook in cloud-native storage orchestration for kubernetes for cloud-native deployment and infrastructure management." | cloud-native, orchestration, rook, storage [educational, strategic] |
@@ -882,6 +886,7 @@ MIT — All skills are freely available and redistributable.
 | [strimzi](skills/cncf/strimzi/SKILL.md) | "Provides Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments" | apache, container orchestration, event streaming, k8s, kafka, message streaming, strimzi, kubernetes [educational, strategic] |
 | [tekton](skills/cncf/tekton/SKILL.md) | "Provides Tekton in Cloud-Native Engineering - A cloud-native Pipeline resource" | cloud-native, engineering, pipeline, tekton [educational, strategic] |
 | [terraform](skills/cncf/terraform/SKILL.md) | Implements Terraform infrastructure as code for cloud provisioning with state management, modules, remote backends, and troubleshooting | terraform, iac, infrastructure as code, terraform state, modules, remote backends, plan apply, terraform troubleshooting [tactical] |
+| [terraform-iac-patterns](skills/cncf/terraform-iac-patterns/SKILL.md) | Implements Terraform infrastructure as code patterns including modular design, remote state locking with S3/DynamoDB, workspace strategy, and plan/apply workflows for production-grade cloud provisioning. | terraform iac, terraform modules, terraform state locking, terraform workspaces, terraform plan apply, hcl patterns [tactical, strategic] |
 | [thanos](skills/cncf/thanos/SKILL.md) | "Provides Thanos in High availability Prometheus solution with long-term storage" | availability, metrics, prometheus, prometheus monitoring, solution, thanos, cloudwatch, monitoring [educational, strategic] |
 | [the-update-framework-tuf](skills/cncf/the-update-framework-tuf/SKILL.md) | "The Update Framework (TUF) in Secure software update framework for protecting" software deliveries | protecting, secure, software, the update framework tuf, the-update-framework-tuf [educational, strategic] |
 | [tikv](skills/cncf/tikv/SKILL.md) | "TiKV in Distributed transactional key-value database inspired by Google" Spanner | distributed, key-value, tikv, transactional [educational, strategic] |
@@ -1779,7 +1784,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (878 skills)
+### Implementation (Build Features) (883 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1852,6 +1857,7 @@ MIT — All skills are freely available and redistributable.
 | [application-resilience-patterns](skills/coding/application-resilience-patterns/SKILL.md) | Coding | Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully. |
 | [architectural-modernization](skills/coding/architectural-modernization/SKILL.md) | Coding | Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt. |
 | [architecture-documentation-practices](skills/coding/architecture-documentation-practices/SKILL.md) | Coding | Implements architecture documentation standards including Architecture Decision Records (ADRs), C4 model diagrams, and RFC templates to capture design rationale, system context, and component relationships. |
+| [argo-cd-gitops-workflows](skills/cncf/argo-cd-gitops-workflows/SKILL.md) | Cncf | Implements GitOps deployment workflows using Argo CD — sync policies, ApplicationSets, app-of-apps bootstrapping, and resource pruning for automated Kubernetes deployment pipelines. |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Coding | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. |
 | [asana-tasks](skills/coding/asana-tasks/SKILL.md) | Coding | Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API. |
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
@@ -2205,6 +2211,7 @@ MIT — All skills are freely available and redistributable.
 | [hashicorp-vault](skills/secrets-management/hashicorp-vault/SKILL.md) | Secrets-management | Implements HashiCorp Vault for secure secret management, including features for dynamic secrets, access control, and secret revocation. |
 | [hashicorp-vault-patterns](skills/coding/hashicorp-vault-patterns/SKILL.md) | Coding | Implements HashiCorp Vault API strategies for secure access and management of secrets in modern applications while minimizing risk and ensuring compliance with security regulations. |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns |
+| [helm-chart-development](skills/cncf/helm-chart-development/SKILL.md) | Cncf | Builds, templates, and manages Helm charts with Chart.yaml, values.yaml, and Go template files for reliable Kubernetes application deployment and versioned releases. |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Coding | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. |
 | [hint-based-prompting](skills/coding/hint-based-prompting/SKILL.md) | Coding | Applies subtle contextual hints instead of explicit step-by-step instructions to guide LLM output naturally, reducing token overhead and improving generation quality through framing rather than commanding. |
 | [html-entity-encoding](skills/coding/html-entity-encoding/SKILL.md) | Coding | Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts. |
@@ -2266,6 +2273,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-resource-tuning](skills/cncf/kubernetes-resource-tuning/SKILL.md) | Cncf | Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads. |
 | [kubernetes-services-management](skills/coding/kubernetes-services-management/SKILL.md) | Coding | Manages Kubernetes Services, including configuration for ClusterIP, NodePort, and LoadBalancer services. This skill provides detailed guidance on setting up and maintaining services in a Kubernetes cluster, ensuring efficient access and networking fo... |
 | [kubernetes-statefulset](skills/cncf/kubernetes-statefulset/SKILL.md) | Cncf | Implements apps/v1 StatefulSet manifests with stable network identities, ordered pod lifecycle, and persistent volume claim automation for stateful workloads. |
+| [kustomize-k8s-config-management](skills/cncf/kustomize-k8s-config-management/SKILL.md) | Cncf | Implements Kubernetes configuration management with Kustomize bases, overlays, strategic/JSON patches, and generators for environment-specific deployment customization. |
 | [kyverno-cleanup-policies](skills/cncf/kyverno-cleanup-policies/SKILL.md) | Cncf | Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion. |
 | [kyverno-exemptions-management](skills/cncf/kyverno-exemptions-management/SKILL.md) | Cncf | Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass. |
 | [kyverno-image-registry-validation](skills/cncf/kyverno-image-registry-validation/SKILL.md) | Cncf | Validates container images from approved registries with allowed tags using Kyverno verifyImages rules and image digest mutation to prevent unapproved or latest-tagged images. |
@@ -2459,6 +2467,7 @@ MIT — All skills are freely available and redistributable.
 | [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Coding | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. |
 | [reference-operators](skills/coding/reference-operators/SKILL.md) | Coding | Implements reference (&) and address-of operators across C++, Rust, C#, and PHP for safe memory access, parameter passing, and pointer arithmetic. |
 | [reflection-loop](skills/agent/reflection-loop/SKILL.md) | Agent | Implements self-correction feedback loops (execution → evaluation/critique → refinement) to iteratively improve agent outputs through producer-critic collaboration and automated quality gates. |
+| [renovate-dependency-automation](skills/cncf/renovate-dependency-automation/SKILL.md) | Cncf | Automates dependency update PRs by configuring Renovate for version policies, branch strategies, commit templates, and PR templates across monorepo and multi-repo projects. |
 | [replicate-api](skills/coding/replicate-api/SKILL.md) | Coding | Integrates Replicate API (models, predictions, trainings, webhooks) using the replicate Python SDK for running and fine-tuning open-source AI models in the cloud. |
 | [requirement-driven-selection](skills/coding/requirement-driven-selection/SKILL.md) | Coding | Evaluates technology candidates against measurable project requirements using weighted decision matrices, evidence-based validation, and ADR documentation to select the optimal framework or tool for a given context. |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Linux | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. |
@@ -2603,6 +2612,7 @@ MIT — All skills are freely available and redistributable.
 | [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Coding | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. |
 | [template-method-pattern](skills/coding/template-method-pattern/SKILL.md) | Coding | Implements the GoF Template Method pattern for defining algorithm skeletons in Python ABCs with customizable hook methods, comparing inheritance-based templating vs composition-based strategy selection. |
 | [terraform](skills/cncf/terraform/SKILL.md) | Cncf | Implements Terraform infrastructure as code for cloud provisioning with state management, modules, remote backends, and troubleshooting |
+| [terraform-iac-patterns](skills/cncf/terraform-iac-patterns/SKILL.md) | Cncf | Implements Terraform infrastructure as code patterns including modular design, remote state locking with S3/DynamoDB, workspace strategy, and plan/apply workflows for production-grade cloud provisioning. |
 | [terraform-sdk](skills/coding/terraform-sdk/SKILL.md) | Coding | Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE), CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources, state, and modules. |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Coding | Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code. |
 | [testing-contract](skills/coding/testing-contract/SKILL.md) | Coding | Validates external APIs and service contracts, ensuring that your application correctly consumes and produces expected data structures. |
@@ -3224,6 +3234,7 @@ MIT — All skills are freely available and redistributable.
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Coding | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | Reference |
 | [architecture-documentation-practices](skills/coding/architecture-documentation-practices/SKILL.md) | Coding | Implements architecture documentation standards including Architecture Decision Records (ADRs), C4 model diagrams, and RFC templates to capture design rationale, system context, and component relationships. | Implementation |
 | [argo](skills/cncf/argo/SKILL.md) | Cncf | "Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD" and Governance | Reference |
+| [argo-cd-gitops-workflows](skills/cncf/argo-cd-gitops-workflows/SKILL.md) | Cncf | Implements GitOps deployment workflows using Argo CD — sync policies, ApplicationSets, app-of-apps bootstrapping, and resource pruning for automated Kubernetes deployment pipelines. | Implementation |
 | [artifact-hub](skills/cncf/artifact-hub/SKILL.md) | Cncf | "Provides Artifact Hub in Cloud-Native Engineering - Repository for Kubernetes Helm, Falco, OPA, and more" | Reference |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Coding | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. | Implementation |
 | [asana-tasks](skills/coding/asana-tasks/SKILL.md) | Coding | Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API. | Implementation |
@@ -3762,6 +3773,7 @@ MIT — All skills are freely available and redistributable.
 | [hashicorp-vault-patterns](skills/coding/hashicorp-vault-patterns/SKILL.md) | Coding | Implements HashiCorp Vault API strategies for secure access and management of secrets in modern applications while minimizing risk and ensuring compliance with security regulations. | Implementation |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns | Implementation |
 | [helm](skills/cncf/helm/SKILL.md) | Cncf | "Provides Helm in Cloud-Native Engineering - The Kubernetes Package Manager" | Reference |
+| [helm-chart-development](skills/cncf/helm-chart-development/SKILL.md) | Cncf | Builds, templates, and manages Helm charts with Chart.yaml, values.yaml, and Go template files for reliable Kubernetes application deployment and versioned releases. | Implementation |
 | [helpdesk-automation](skills/agent/helpdesk-automation/SKILL.md) | Agent | Implements intelligent helpdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Coding | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | Implementation |
 | [hierarchical-agent-memory](skills/agent/hierarchical-agent-memory/SKILL.md) | Agent | Implements intelligent hierarchical agent memory with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3858,6 +3870,7 @@ MIT — All skills are freely available and redistributable.
 | [kubevela](skills/cncf/kubevela/SKILL.md) | Cncf | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." | Reference |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | Cncf | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | Reference |
 | [kuma](skills/cncf/kuma/SKILL.md) | Cncf | "Kuma in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | Reference |
+| [kustomize-k8s-config-management](skills/cncf/kustomize-k8s-config-management/SKILL.md) | Cncf | Implements Kubernetes configuration management with Kustomize bases, overlays, strategic/JSON patches, and generators for environment-specific deployment customization. | Implementation |
 | [kyverno](skills/cncf/kyverno/SKILL.md) | Cncf | "Configures kyverno in cloud-native engineering - policy engine for cloud-native deployment and infrastructure management." | Reference |
 | [kyverno-cleanup-policies](skills/cncf/kyverno-cleanup-policies/SKILL.md) | Cncf | Automates garbage collection of unused Kubernetes resources using Kyverno v2 ClusterCleanupPolicy and CleanupPolicy with cron scheduling and conditional deletion. | Implementation |
 | [kyverno-exemptions-management](skills/cncf/kyverno-exemptions-management/SKILL.md) | Cncf | Manages Kyverno policy exemptions using PolicyException v2, rule-level exclude settings, and serviceAccount exemptions for controlled policy bypass. | Implementation |
@@ -4137,6 +4150,7 @@ MIT — All skills are freely available and redistributable.
 | [reflection-loop](skills/agent/reflection-loop/SKILL.md) | Agent | Implements self-correction feedback loops (execution → evaluation/critique → refinement) to iteratively improve agent outputs through producer-critic collaboration and automated quality gates. | Implementation |
 | [regression-detector](skills/agent/regression-detector/SKILL.md) | Agent | Implements intelligent regression detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [render-automation](skills/agent/render-automation/SKILL.md) | Agent | Implements intelligent render automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [renovate-dependency-automation](skills/cncf/renovate-dependency-automation/SKILL.md) | Cncf | Automates dependency update PRs by configuring Renovate for version policies, branch strategies, commit templates, and PR templates across monorepo and multi-repo projects. | Implementation |
 | [replicate-api](skills/coding/replicate-api/SKILL.md) | Coding | Integrates Replicate API (models, predictions, trainings, webhooks) using the replicate Python SDK for running and fine-tuning open-source AI models in the cloud. | Implementation |
 | [requesting-code-review](skills/agent/requesting-code-review/SKILL.md) | Agent | Implements intelligent requesting code review with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [requirement-driven-selection](skills/coding/requirement-driven-selection/SKILL.md) | Coding | Evaluates technology candidates against measurable project requirements using weighted decision matrices, evidence-based validation, and ADR documentation to select the optimal framework or tool for a given context. | Implementation |
@@ -4325,6 +4339,7 @@ MIT — All skills are freely available and redistributable.
 | [temporal-golang-pro](skills/agent/temporal-golang-pro/SKILL.md) | Agent | Implements intelligent temporal golang pro with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [temporal-python-pro](skills/agent/temporal-python-pro/SKILL.md) | Agent | Implements intelligent temporal python pro with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [terraform](skills/cncf/terraform/SKILL.md) | Cncf | Implements Terraform infrastructure as code for cloud provisioning with state management, modules, remote backends, and troubleshooting | Implementation |
+| [terraform-iac-patterns](skills/cncf/terraform-iac-patterns/SKILL.md) | Cncf | Implements Terraform infrastructure as code patterns including modular design, remote state locking with S3/DynamoDB, workspace strategy, and plan/apply workflows for production-grade cloud provisioning. | Implementation |
 | [terraform-infrastructure](skills/agent/terraform-infrastructure/SKILL.md) | Agent | Implements intelligent terraform infrastructure with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [terraform-sdk](skills/coding/terraform-sdk/SKILL.md) | Coding | Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE), CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources, state, and modules. | Implementation |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Coding | Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code. | Implementation |
