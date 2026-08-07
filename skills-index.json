@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-14T16:08:37.774240Z",
-  "totalSkills": 1311,
+  "generatedAt": "2026-08-07T18:58:45.677451Z",
+  "totalSkills": 1316,
   "domains": {
     "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
-    "cncf": 197,
+    "cncf": 202,
     "coding": 594,
     "commerce": 1,
     "communications": 3,
@@ -28,7 +28,7 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 883,
+    "implementation": 888,
     "orchestration": 238,
     "reference": 181,
     "information": 1,
@@ -2716,6 +2716,30 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/argo/SKILL.md"
+    },
+    {
+      "name": "argo-cd-gitops-workflows",
+      "domain": "cncf",
+      "description": "Implements GitOps deployment workflows using Argo CD — sync policies, ApplicationSets, app-of-apps bootstrapping, and resource pruning for automated Kubernetes deployment pipelines.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "manifests",
+      "triggers": [
+        "argo cd",
+        "gitops workflows",
+        "argo sync policies",
+        "app of apps",
+        "kubernetes deployment automation",
+        "argo pruning"
+      ],
+      "relatedSkills": [
+        "cncf-helm-chart-development",
+        "cncf-kyverno",
+        "cncf-gitlab-ci-cd-pipelines",
+        "cncf-kubernetes-deployments-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/argo-cd-gitops-workflows/SKILL.md"
     },
     {
       "name": "artifact-hub",
@@ -15360,6 +15384,31 @@
       "source": "skills/cncf/helm/SKILL.md"
     },
     {
+      "name": "helm-chart-development",
+      "domain": "cncf",
+      "description": "Builds, templates, and manages Helm charts with Chart.yaml, values.yaml, and Go template files for reliable Kubernetes application deployment and versioned releases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "helm chart development",
+        "helm templating",
+        "helm values",
+        "helm debugging",
+        "chartmuseum",
+        "helm registry",
+        "helm lint",
+        "chart.yaml"
+      ],
+      "relatedSkills": [
+        "cncf-kubernetes",
+        "coding-kubernetes-deployments-management",
+        "cncf-prometheus"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/helm-chart-development/SKILL.md"
+    },
+    {
       "name": "helpdesk-automation",
       "domain": "agent",
       "description": "Implements intelligent helpdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -17599,6 +17648,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/kuma/SKILL.md"
+    },
+    {
+      "name": "kustomize-k8s-config-management",
+      "domain": "cncf",
+      "description": "Implements Kubernetes configuration management with Kustomize bases, overlays, strategic/JSON patches, and generators for environment-specific deployment customization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kustomize",
+        "kustomization.yaml",
+        "overlay patches",
+        "kubernetes customization",
+        "kustomize generators",
+        "k8s config management",
+        "json patches",
+        "strategic merge"
+      ],
+      "relatedSkills": [
+        "cncf-kubernetes",
+        "cncf-helm",
+        "cncf-argo-cd"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kustomize-k8s-config-management/SKILL.md"
     },
     {
       "name": "kyverno",
@@ -24246,6 +24320,30 @@
       "source": "skills/agent/render-automation/SKILL.md"
     },
     {
+      "name": "renovate-dependency-automation",
+      "domain": "cncf",
+      "description": "Automates dependency update PRs by configuring Renovate for version policies, branch strategies, commit templates, and PR templates across monorepo and multi-repo projects.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "renovate",
+        "dependency automation",
+        "dependency updates",
+        "PR automation",
+        "semantic versioning",
+        "dependency configuration",
+        "automated PRs"
+      ],
+      "relatedSkills": [
+        "cncf-azure-devops",
+        "coding-gitlab-ci-cd-pipelines",
+        "coding-github-actions-workflows"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/renovate-dependency-automation/SKILL.md"
+    },
+    {
       "name": "replicate-api",
       "domain": "coding",
       "description": "Integrates Replicate API (models, predictions, trainings, webhooks) using the replicate Python SDK for running and fine-tuning open-source AI models in the cloud.",
@@ -28662,6 +28760,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/terraform/SKILL.md"
+    },
+    {
+      "name": "terraform-iac-patterns",
+      "domain": "cncf",
+      "description": "Implements Terraform infrastructure as code patterns including modular design, remote state locking with S3/DynamoDB, workspace strategy, and plan/apply workflows for production-grade cloud provisioning.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "terraform iac",
+        "terraform modules",
+        "terraform state locking",
+        "terraform workspaces",
+        "terraform plan apply",
+        "hcl patterns"
+      ],
+      "relatedSkills": [
+        "cncf-terraform",
+        "coding-platform-engineering",
+        "cncf-kubernetes"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/terraform-iac-patterns/SKILL.md"
     },
     {
       "name": "terraform-infrastructure",
