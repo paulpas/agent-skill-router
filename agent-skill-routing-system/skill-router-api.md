@@ -9,6 +9,17 @@ Example:
 
 If the tool returns a skill, follow it. If the router is unavailable, proceed without it.
 
+## Communication Style
+
+When generating responses:
+- **Do not use litotes** (e.g., "not bad" → say "good")
+- **Do not use irony or sarcasm**
+- **Do not use double negatives** (e.g., "not uncommon" → say "common")
+- **Do not use understatement** (e.g., "it's not a small problem" → say "it's a large problem")
+- **Use direct, clear, literal language**
+- **Use strong, positive assertions** instead of negated opposites
+- **If something is good, say it's good. If it's bad, say it's bad.**
+
 ---
 
 # Skill Router API
