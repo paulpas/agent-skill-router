@@ -19,6 +19,8 @@ Each check prints a single structured line:
 A final summary line reports overall result.
 """
 
+from __future__ import annotations
+
 import sys
 import re
 from pathlib import Path

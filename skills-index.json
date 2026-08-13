@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-07T19:38:30.379229Z",
-  "totalSkills": 1318,
+  "generatedAt": "2026-08-12T17:33:04.474855Z",
+  "totalSkills": 1319,
   "domains": {
-    "agent": 330,
+    "agent": 331,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
@@ -29,7 +29,7 @@
   },
   "roles": {
     "implementation": 890,
-    "orchestration": 238,
+    "orchestration": 239,
     "reference": 181,
     "information": 1,
     "review": 8
@@ -1712,11 +1712,19 @@
     {
       "name": "anthro-claude-api",
       "domain": "coding",
-      "description": "",
+      "description": "Implements Anthropic Claude API integrations with secure credentials, message handling, batching, tool orchestration, response validation, and tests.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
-      "triggers": [],
+      "triggers": [
+        "anthropic claude api",
+        "claude messages",
+        "claude tools",
+        "claude batching",
+        "anthropic sdk",
+        "secure claude integration",
+        "how do i call claude"
+      ],
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/anthro-claude-api/SKILL.md"
@@ -2279,7 +2287,8 @@
       ],
       "relatedSkills": [
         "agent-confidence-based-selector",
-        "agent-task-routing"
+        "agent-task-routing",
+        "apify-xquik-x-research"
       ],
       "version": "1.0.0",
       "source": "skills/agent/apify-audience-analysis/SKILL.md"
@@ -2301,7 +2310,8 @@
       ],
       "relatedSkills": [
         "agent-confidence-based-selector",
-        "agent-task-routing"
+        "agent-task-routing",
+        "apify-xquik-x-research"
       ],
       "version": "1.0.0",
       "source": "skills/agent/apify-brand-reputation-monitoring/SKILL.md"
@@ -2345,7 +2355,8 @@
       ],
       "relatedSkills": [
         "agent-confidence-based-selector",
-        "agent-task-routing"
+        "agent-task-routing",
+        "apify-xquik-x-research"
       ],
       "version": "1.0.0",
       "source": "skills/agent/apify-content-analytics/SKILL.md"
@@ -2455,7 +2466,8 @@
       ],
       "relatedSkills": [
         "agent-confidence-based-selector",
-        "agent-task-routing"
+        "agent-task-routing",
+        "apify-xquik-x-research"
       ],
       "version": "1.0.0",
       "source": "skills/agent/apify-trend-analysis/SKILL.md"
@@ -2481,6 +2493,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/apify-ultimate-scraper/SKILL.md"
+    },
+    {
+      "name": "apify-xquik-x-research",
+      "domain": "agent",
+      "description": "Orchestrates bounded X post and audience research with Xquik Apify Actors, preserving source context, approval gates, diagnostics, and sampling limits.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "xquik x research",
+        "x tweet scraper",
+        "x follower scraper",
+        "apify x data",
+        "analyze x conversations",
+        "compare x audiences",
+        "how do i research x"
+      ],
+      "relatedSkills": [
+        "apify-audience-analysis",
+        "apify-brand-reputation-monitoring",
+        "apify-content-analytics",
+        "apify-trend-analysis"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/apify-xquik-x-research/SKILL.md"
     },
     {
       "name": "app-configuration-patterns",
@@ -2535,7 +2572,7 @@
     {
       "name": "arbitrage-strategies",
       "domain": "trading",
-      "description": "",
+      "description": "Implements bounded arbitrage detection and execution workflows with multi-market data validation, transaction-cost checks, risk controls, and execution logs.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -2786,7 +2823,7 @@
     {
       "name": "asana-projects",
       "domain": "coding",
-      "description": "",
+      "description": "Implements Asana project and task management through authenticated API calls, structured error handling, rate-limit controls, and traceable project updates.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -22305,7 +22342,7 @@
     {
       "name": "pinecone-api-tooling",
       "domain": "coding",
-      "description": "",
+      "description": "Implements Pinecone vector, index, namespace, hybrid search, and inference workflows with schema checks, secure credentials, and operational metrics.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -27036,7 +27073,7 @@
     {
       "name": "software-engineering-backwards-compatibility",
       "domain": "coding",
-      "description": "",
+      "description": "Implements backward-compatible API and library evolution with semantic versioning, feature flags, deprecation windows, and rollback planning.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",

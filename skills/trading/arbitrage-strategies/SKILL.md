@@ -4,6 +4,7 @@
 
 
 name: arbitrage-strategies
+description: Implements bounded arbitrage detection and execution workflows with multi-market data validation, transaction-cost checks, risk controls, and execution logs.
 license: MIT
 compatibility: opencode
 metadata:

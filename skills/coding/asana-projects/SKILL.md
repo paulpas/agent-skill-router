@@ -4,6 +4,7 @@
 
 
 name: asana-projects
+description: Implements Asana project and task management through authenticated API calls, structured error handling, rate-limit controls, and traceable project updates.
 license: MIT
 compatibility: opencode
 metadata:

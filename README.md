@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,313 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,319 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,313 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,319 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,22 +312,24 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-08-07 19:38:32 UTC  
-> **Total skills:** 1313  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1313 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-08-12 20:33:06 UTC
+>
+> **Total skills:** 1319
+>
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1319 entries, JSON); machine-readable source of truth. The pre-commit hook and GitHub Actions keep this README in sync with it.
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1225 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1225 | Ranking penalty for conflicting query terms |
-| Response Profile | 1222 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1231 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1231 | Ranking penalty for conflicting query terms |
+| Response Profile | 1227 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (329 skills)
+### Agent (330 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -383,6 +385,7 @@ MIT — All skills are freely available and redistributable.
 | [apify-market-research](skills/agent/apify-market-research/SKILL.md) | Implements intelligent apify market research with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-market-research, apify market research, how do i apify-market-research, orchestrate apify-market-research, automate apify-market-research, agent apify-market-research [orchestration, strategic] |
 | [apify-trend-analysis](skills/agent/apify-trend-analysis/SKILL.md) | Implements intelligent apify trend analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-trend-analysis, apify trend analysis, how do i apify-trend-analysis, orchestrate apify-trend-analysis, automate apify-trend-analysis, agent apify-trend-analysis [orchestration, strategic] |
 | [apify-ultimate-scraper](skills/agent/apify-ultimate-scraper/SKILL.md) | Implements intelligent apify ultimate scraper with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-ultimate-scraper, apify ultimate scraper, how do i apify-ultimate-scraper, orchestrate apify-ultimate-scraper, automate apify-ultimate-scraper, agent apify-ultimate-scraper [orchestration, strategic] |
+| [apify-xquik-x-research](skills/agent/apify-xquik-x-research/SKILL.md) | Orchestrates bounded X post and audience research with Xquik Apify Actors, preserving source context, approval gates, diagnostics, and sampling limits. | xquik x research, x tweet scraper, x follower scraper, apify x data, analyze x conversations, compare x audiences, how do i research x [orchestration, strategic, tactical] |
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. | ascii diagram, excalidraw style, flowchart, sequence diagram, state diagram, diagram generation, visual explanation, process flow diagram generation [tactical] |
 | [ask-questions-if-underspecified](skills/agent/ask-questions-if-underspecified/SKILL.md) | Implements intelligent ask questions if underspecified with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ask-questions-if-underspecified, ask questions if underspecified, how do i ask-questions-if-underspecified, orchestrate ask-questions-if-underspecified, automate ask-questions-if-underspecified, agent ask-questions-if-underspecified [orchestration, strategic] |
 | [audio-transcriber](skills/agent/audio-transcriber/SKILL.md) | Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | audio-transcriber, audio transcriber, how do i audio-transcriber, orchestrate audio-transcriber, automate audio-transcriber, agent audio-transcriber [orchestration, strategic] |
@@ -896,7 +899,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (596 skills)
+### Coding (600 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -915,6 +918,7 @@ MIT — All skills are freely available and redistributable.
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation [tactical, generation] |
 | [amplitude-api](skills/coding/amplitude-api/SKILL.md) | Implements Amplitude analytics integration (event tracking, user profiles, identify API, cohort analysis, dashboard export) using amplitude-analytics Python SDK with event batching, user properties, group identify, revenue tracking, and Amplitude HTT... | amplitude, event tracking, user analytics, amplitude events, identify api, cohort analysis, how do i track user events in amplitude, product analytics [tactical, generation] |
 | [ansible-api](skills/coding/ansible-api/SKILL.md) | Integrates with Ansible via ansible-runner, the AWX/Tower API, and the Ansible Python API to manage playbooks, inventory, job templates, collections, and automation workflows. | ansible api, ansible-runner, ansible tower, awx api, ansible playbook, ansible inventory, ansible collections, automation controller [tactical, generation] |
+| [anthro-claude-api](skills/coding/anthro-claude-api/SKILL.md) | Implements Anthropic Claude API integrations with secure credentials, message handling, batching, tool orchestration, response validation, and tests. | anthropic claude api, claude messages, claude tools, claude batching, anthropic sdk, secure claude integration, how do i call claude [coding, AI, claude] |
 | [anthropic-api](skills/coding/anthropic-api/SKILL.md) | Integrates Anthropic Claude API (Messages API, Tool Use, MCP Connector, Computer Use, Batches) using the anthropic Python SDK with streaming and error handling. | anthropic, claude, claude api, messages api, tool use, mcp connector, how do i use claude api, anthropic bedrock [tactical, generation] |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. | anti corruption layer, acl, foreign model translation, boundary adapter, external system isolation, how do i protect my domain from bad apis, legacy system integration, domain contamination [tactical, generation] |
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring cargo cult [educational] |
@@ -939,6 +943,7 @@ MIT — All skills are freely available and redistributable.
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | architecture decision records, ADR, architectural decisions, how do i document architectural choices, design rationale, technology selection, system trade-offs, decision log [educational] |
 | [architecture-documentation-practices](skills/coding/architecture-documentation-practices/SKILL.md) | Implements architecture documentation standards including Architecture Decision Records (ADRs), C4 model diagrams, and RFC templates to capture design rationale, system context, and component relationships. | ADR, architecture decision record, C4 model, system context diagram, software architecture documentation, RFC template, design rationale, how do i document my architecture decisions [orchestration, educational] |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. | asana api, asana python, asana tasks, asana projects, asana webhooks, asana sdk, asana automation [tactical, generation] |
+| [asana-projects](skills/coding/asana-projects/SKILL.md) | Implements Asana project and task management through authenticated API calls, structured error handling, rate-limit controls, and traceable project updates. | asana, project management, tasks, team collaboration, API integration [task management, project management] |
 | [asana-tasks](skills/coding/asana-tasks/SKILL.md) | Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API. | asana, task management, create task, update task, delete task [tactical, implementation] |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. | asynchronous programming, async await, asyncio, goroutine pool, concurrency patterns, event loop, structured concurrency, cancellation scope patterns [tactical, generation] |
 | [asyncio-patterns](skills/coding/asyncio-patterns/SKILL.md) | Implements Python asyncio patterns (TaskGroup, semaphores, queues, context management) with typed coroutines, proper error handling, and structured concurrency for production-grade async applications in Python 3.12+. | asyncio, async await, coroutine, event loop, TaskGroup, async context manager, aiohttp, structured concurrency manager [tactical, generation] |
@@ -1317,6 +1322,7 @@ MIT — All skills are freely available and redistributable.
 | [perplexity-api](skills/coding/perplexity-api/SKILL.md) | Integrates Perplexity AI API (Sonar chat completions, online search, multi-step queries) using the perplexity-openai Python SDK for real-time web-connected LLM responses. | perplexity, perplexity ai, sonar, perplexity api, perplexity sonar, online LLM, how do i use perplexity, real-time search LLM [tactical, generation] |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain [tactical, generation] |
 | [pinecone-api](skills/coding/pinecone-api/SKILL.md) | Integrates Pinecone vector database (serverless/pod indexes, upsert, query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production vector search. | pinecone, vector database, vector search, pinecone index, hybrid search, upsert vectors, how do i use pinecone, semantic search [tactical, generation] |
+| [pinecone-api-tooling](skills/coding/pinecone-api-tooling/SKILL.md) | Implements Pinecone vector, index, namespace, hybrid search, and inference workflows with schema checks, secure credentials, and operational metrics. | pinecone api, vectors, indexes, namespaces, hybrid search, inference, how do i use pinecone [tactical, implementation] |
 | [plaid-api](skills/coding/plaid-api/SKILL.md) | Implements Plaid API integration (Auth, Transactions, Identity, Investments, Income) using plaid-python SDK with Link token flow, webhook verification, access token storage security, and financial data synchronization patterns. | plaid, plaid link, plaid auth, plaid transactions, plaid identity, plaid investments, plaid income verification, how do i integrate plaid investments [tactical, generation] |
 | [planetscale-sdk](skills/coding/planetscale-sdk/SKILL.md) | Integrates PlanetScale using mysql-connector-python with patterns for database branching, deploy requests, schema management, connection pooling, and insights for serverless MySQL. | planetscale, mysql connector, database branching, planetscale api, how do i connect to planetscale from python, serverless mysql, deploy request, vitess [tactical, generation] |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | platform engineering, internal developer platform, IDP, golden paths, self-service infrastructure, Backstage.io, developer experience metrics, how do i build a developer platform [tactical, generation] |
@@ -1412,6 +1418,7 @@ MIT — All skills are freely available and redistributable.
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design [tactical, generation] |
 | [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. | software development lifecycle, SDLC, iterative development, branching strategy, code review process, user stories, acceptance criteria, how do i manage a software project [orchestration, tactical, generation] |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | software documentation, API docs, docstrings, README writing, developer guides, OpenAPI, MkDocs, Docusaurus guides [tactical, generation] |
+| [software-engineering-backwards-compatibility](skills/coding/software-engineering-backwards-compatibility/SKILL.md) | Implements backward-compatible API and library evolution with semantic versioning, feature flags, deprecation windows, and rollback planning. | backwards compatibility, API versioning, deprecation strategies, feature flags [tactical, strategic] |
 | [software-engineering-deprecation-strategies](skills/coding/software-engineering-deprecation-strategies/SKILL.md) | Defines effective strategies for deprecating features and APIs in software applications to ensure a smooth transition for users and clients. | deprecation strategies, feature removal, backward compatibility, versioning [strategic, tactical] |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture [tactical, generation] |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | error handling, exception design, retry logic, circuit breaker, graceful degradation, error recovery, resilience patterns, how do i handle errors in software [tactical, generation] |
@@ -1674,7 +1681,7 @@ MIT — All skills are freely available and redistributable.
 | [software-testing-best-practices](skills/software/software-testing-best-practices/SKILL.md) | Explains various software testing methodologies including unit testing, integration testing, and system testing with best practices. | unit testing, integration testing, system testing, testing methodologies, testing frameworks [tactical] |
 
 
-### Trading (93 skills)
+### Trading (94 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1695,6 +1702,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-synthetic-data](skills/trading/ai-synthetic-data/SKILL.md) | "Provides Generate synthetic financial data for training and testing trading models" | ai synthetic data, ai-synthetic-data, financial, generate, training [tactical] |
 | [ai-time-series-forecasting](skills/trading/ai-time-series-forecasting/SKILL.md) | "Provides Time series forecasting for price prediction and market analysis" | ai time series forecasting, ai-time-series-forecasting, market, prediction, price [tactical] |
 | [ai-volatility-prediction](skills/trading/ai-volatility-prediction/SKILL.md) | "Implements forecast volatility for risk management and option pricing for risk management and algorithmic trading execution." | ai volatility prediction, ai-volatility-prediction, forecast, management, option [tactical] |
+| [arbitrage-strategies](skills/trading/arbitrage-strategies/SKILL.md) | Implements bounded arbitrage detection and execution workflows with multi-market data validation, transaction-cost checks, risk controls, and execution logs. | arbitrage, trading strategies, how do I profit from arbitrage, arbitrage opportunities, moving average arbitrage [trading, strategies, arbitrage] |
 | [backtest-drawdown-analysis](skills/trading/backtest-drawdown-analysis/SKILL.md) | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." | backtest drawdown analysis, backtest-drawdown-analysis, maximum, recovery, value-at-risk [tactical] |
 | [backtest-lookahead-bias](skills/trading/backtest-lookahead-bias/SKILL.md) | "Preventing lookahead bias in backtesting through strict causality enforcement" time-based validation, and comprehensive detection frameworks. | backtest lookahead bias, backtest-lookahead-bias, backtesting, preventing, strict, unit tests, testing, test automation [tactical] |
 | [backtest-position-exits](skills/trading/backtest-position-exits/SKILL.md) | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. | backtest position exits, backtest-position-exits, stops, strategies, trailing [tactical] |
@@ -1786,7 +1794,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (885 skills)
+### Implementation (Build Features) (890 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1840,6 +1848,7 @@ MIT — All skills are freely available and redistributable.
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
 | [amplitude-api](skills/coding/amplitude-api/SKILL.md) | Coding | Implements Amplitude analytics integration (event tracking, user profiles, identify API, cohort analysis, dashboard export) using amplitude-analytics Python SDK with event batching, user properties, group identify, revenue tracking, and Amplitude HTT... |
 | [ansible-api](skills/coding/ansible-api/SKILL.md) | Coding | Integrates with Ansible via ansible-runner, the AWX/Tower API, and the Ansible Python API to manage playbooks, inventory, job templates, collections, and automation workflows. |
+| [anthro-claude-api](skills/coding/anthro-claude-api/SKILL.md) | Coding | Implements Anthropic Claude API integrations with secure credentials, message handling, batching, tool orchestration, response validation, and tests. |
 | [anthropic-api](skills/coding/anthropic-api/SKILL.md) | Coding | Integrates Anthropic Claude API (Messages API, Tool Use, MCP Connector, Computer Use, Batches) using the anthropic Python SDK with streaming and error handling. |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Coding | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Coding | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. |
@@ -1857,10 +1866,12 @@ MIT — All skills are freely available and redistributable.
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
 | [application-resilience-patterns](skills/coding/application-resilience-patterns/SKILL.md) | Coding | Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully. |
+| [arbitrage-strategies](skills/trading/arbitrage-strategies/SKILL.md) | Trading | Implements bounded arbitrage detection and execution workflows with multi-market data validation, transaction-cost checks, risk controls, and execution logs. |
 | [architectural-modernization](skills/coding/architectural-modernization/SKILL.md) | Coding | Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt. |
 | [architecture-documentation-practices](skills/coding/architecture-documentation-practices/SKILL.md) | Coding | Implements architecture documentation standards including Architecture Decision Records (ADRs), C4 model diagrams, and RFC templates to capture design rationale, system context, and component relationships. |
 | [argo-cd-gitops-workflows](skills/cncf/argo-cd-gitops-workflows/SKILL.md) | Cncf | Implements GitOps deployment workflows using Argo CD — sync policies, ApplicationSets, app-of-apps bootstrapping, and resource pruning for automated Kubernetes deployment pipelines. |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Coding | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. |
+| [asana-projects](skills/coding/asana-projects/SKILL.md) | Coding | Implements Asana project and task management through authenticated API calls, structured error handling, rate-limit controls, and traceable project updates. |
 | [asana-tasks](skills/coding/asana-tasks/SKILL.md) | Coding | Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API. |
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Coding | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. |
@@ -2408,6 +2419,7 @@ MIT — All skills are freely available and redistributable.
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. |
 | [pinecone-api](skills/coding/pinecone-api/SKILL.md) | Coding | Integrates Pinecone vector database (serverless/pod indexes, upsert, query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production vector search. |
+| [pinecone-api-tooling](skills/coding/pinecone-api-tooling/SKILL.md) | Coding | Implements Pinecone vector, index, namespace, hybrid search, and inference workflows with schema checks, secure credentials, and operational metrics. |
 | [plaid-api](skills/coding/plaid-api/SKILL.md) | Coding | Implements Plaid API integration (Auth, Transactions, Identity, Investments, Income) using plaid-python SDK with Link token flow, webhook verification, access token storage security, and financial data synchronization patterns. |
 | [plaid-authentication](skills/payments/plaid-authentication/SKILL.md) | Payments | Implements authentication strategies using the Plaid API (Link token flow, Item public token exchange, Auth data retrieval) for secure user bank account verification in financial applications. |
 | [plaid-identity](skills/payments/plaid-identity/SKILL.md) | Payments | Implements identity verification features via the Plaid API (IdentityGet, address validation, name matching) for KYC compliance and user profile enrichment in financial applications. |
@@ -2553,6 +2565,7 @@ MIT — All skills are freely available and redistributable.
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
 | [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Coding | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. |
+| [software-engineering-backwards-compatibility](skills/coding/software-engineering-backwards-compatibility/SKILL.md) | Coding | Implements backward-compatible API and library evolution with semantic versioning, feature flags, deprecation windows, and rollback planning. |
 | [software-engineering-deprecation-strategies](skills/coding/software-engineering-deprecation-strategies/SKILL.md) | Coding | Defines effective strategies for deprecating features and APIs in software applications to ensure a smooth transition for users and clients. |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. |
@@ -2864,7 +2877,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (238 skills)
+### Orchestration (Manage AI Agents) (239 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2902,6 +2915,7 @@ MIT — All skills are freely available and redistributable.
 | [apify-market-research](skills/agent/apify-market-research/SKILL.md) | Agent | Implements intelligent apify market research with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [apify-trend-analysis](skills/agent/apify-trend-analysis/SKILL.md) | Agent | Implements intelligent apify trend analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [apify-ultimate-scraper](skills/agent/apify-ultimate-scraper/SKILL.md) | Agent | Implements intelligent apify ultimate scraper with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [apify-xquik-x-research](skills/agent/apify-xquik-x-research/SKILL.md) | Agent | Orchestrates bounded X post and audience research with Xquik Apify Actors, preserving source context, approval gates, diagnostics, and sampling limits. |
 | [ask-questions-if-underspecified](skills/agent/ask-questions-if-underspecified/SKILL.md) | Agent | Implements intelligent ask questions if underspecified with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [audio-transcriber](skills/agent/audio-transcriber/SKILL.md) | Agent | Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [audit-context-building](skills/agent/audit-context-building/SKILL.md) | Agent | Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -3197,6 +3211,7 @@ MIT — All skills are freely available and redistributable.
 | [andruia-niche-intelligence](skills/agent/andruia-niche-intelligence/SKILL.md) | Agent | Implements intelligent andruia niche intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [andruia-skill-smith](skills/agent/andruia-skill-smith/SKILL.md) | Agent | Implements intelligent andruia skill smith with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ansible-api](skills/coding/ansible-api/SKILL.md) | Coding | Integrates with Ansible via ansible-runner, the AWX/Tower API, and the Ansible Python API to manage playbooks, inventory, job templates, collections, and automation workflows. | Implementation |
+| [anthro-claude-api](skills/coding/anthro-claude-api/SKILL.md) | Coding | Implements Anthropic Claude API integrations with secure credentials, message handling, batching, tool orchestration, response validation, and tests. | Implementation |
 | [anthropic-api](skills/coding/anthropic-api/SKILL.md) | Coding | Integrates Anthropic Claude API (Messages API, Tool Use, MCP Connector, Computer Use, Batches) using the anthropic Python SDK with streaming and error handling. | Implementation |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Coding | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. | Implementation |
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | Review |
@@ -3229,8 +3244,10 @@ MIT — All skills are freely available and redistributable.
 | [apify-market-research](skills/agent/apify-market-research/SKILL.md) | Agent | Implements intelligent apify market research with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [apify-trend-analysis](skills/agent/apify-trend-analysis/SKILL.md) | Agent | Implements intelligent apify trend analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [apify-ultimate-scraper](skills/agent/apify-ultimate-scraper/SKILL.md) | Agent | Implements intelligent apify ultimate scraper with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [apify-xquik-x-research](skills/agent/apify-xquik-x-research/SKILL.md) | Agent | Orchestrates bounded X post and audience research with Xquik Apify Actors, preserving source context, approval gates, diagnostics, and sampling limits. | Orchestration |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | Implementation |
 | [application-resilience-patterns](skills/coding/application-resilience-patterns/SKILL.md) | Coding | Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully. | Implementation |
+| [arbitrage-strategies](skills/trading/arbitrage-strategies/SKILL.md) | Trading | Implements bounded arbitrage detection and execution workflows with multi-market data validation, transaction-cost checks, risk controls, and execution logs. | Implementation |
 | [architectural-modernization](skills/coding/architectural-modernization/SKILL.md) | Coding | Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt. | Implementation |
 | [architectural-patterns](skills/coding/architectural-patterns/SKILL.md) | Coding | Provides a thorough overview of software architectural patterns, including layers, microservices, event-driven architectures, and more. | Reference |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. | Review |
@@ -3241,6 +3258,7 @@ MIT — All skills are freely available and redistributable.
 | [argo-cd-gitops-workflows](skills/cncf/argo-cd-gitops-workflows/SKILL.md) | Cncf | Implements GitOps deployment workflows using Argo CD — sync policies, ApplicationSets, app-of-apps bootstrapping, and resource pruning for automated Kubernetes deployment pipelines. | Implementation |
 | [artifact-hub](skills/cncf/artifact-hub/SKILL.md) | Cncf | "Provides Artifact Hub in Cloud-Native Engineering - Repository for Kubernetes Helm, Falco, OPA, and more" | Reference |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Coding | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. | Implementation |
+| [asana-projects](skills/coding/asana-projects/SKILL.md) | Coding | Implements Asana project and task management through authenticated API calls, structured error handling, rate-limit controls, and traceable project updates. | Implementation |
 | [asana-tasks](skills/coding/asana-tasks/SKILL.md) | Coding | Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API. | Implementation |
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. | Implementation |
 | [ask-questions-if-underspecified](skills/agent/ask-questions-if-underspecified/SKILL.md) | Agent | Implements intelligent ask questions if underspecified with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -4070,6 +4088,7 @@ MIT — All skills are freely available and redistributable.
 | [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Agent | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. | Orchestration |
 | [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. | Implementation |
 | [pinecone-api](skills/coding/pinecone-api/SKILL.md) | Coding | Integrates Pinecone vector database (serverless/pod indexes, upsert, query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production vector search. | Implementation |
+| [pinecone-api-tooling](skills/coding/pinecone-api-tooling/SKILL.md) | Coding | Implements Pinecone vector, index, namespace, hybrid search, and inference workflows with schema checks, secure credentials, and operational metrics. | Implementation |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [plaid-api](skills/coding/plaid-api/SKILL.md) | Coding | Implements Plaid API integration (Auth, Transactions, Identity, Investments, Income) using plaid-python SDK with Link token flow, webhook verification, access token storage security, and financial data synchronization patterns. | Implementation |
 | [plaid-authentication](skills/payments/plaid-authentication/SKILL.md) | Payments | Implements authentication strategies using the Plaid API (Link token flow, Item public token exchange, Auth data retrieval) for secure user bank account verification in financial applications. | Implementation |
@@ -4270,6 +4289,7 @@ MIT — All skills are freely available and redistributable.
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
 | [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Coding | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. | Implementation |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | Implementation |
+| [software-engineering-backwards-compatibility](skills/coding/software-engineering-backwards-compatibility/SKILL.md) | Coding | Implements backward-compatible API and library evolution with semantic versioning, feature flags, deprecation windows, and rollback planning. | Implementation |
 | [software-engineering-deprecation-strategies](skills/coding/software-engineering-deprecation-strategies/SKILL.md) | Coding | Defines effective strategies for deprecating features and APIs in software applications to ensure a smooth transition for users and clients. | Implementation |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | Implementation |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | Implementation |

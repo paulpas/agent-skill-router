@@ -376,9 +376,11 @@ def generate_content(skills: List[Dict]) -> str:
 
     content = f"""<!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** {timestamp}  
-> **Total skills:** {len(skills)}  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) ({len(skills)} entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** {timestamp}
+>
+> **Total skills:** {len(skills)}
+>
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) ({len(skills)} entries, JSON); machine-readable source of truth. The pre-commit hook and GitHub Actions keep this README in sync with it.
 
 {generate_routing_field_summary(skills)}
 {generate_skills_by_domain(skills)}

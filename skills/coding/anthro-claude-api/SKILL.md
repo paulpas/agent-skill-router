@@ -4,6 +4,7 @@
 
 
 name: anthro-claude-api
+description: Implements Anthropic Claude API integrations with secure credentials, message handling, batching, tool orchestration, response validation, and tests.
 license: MIT
 compatibility: opencode
 metadata:
@@ -11,8 +12,9 @@ metadata:
   anti_triggers: [generic routing]
   response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
 
-  triggers: 
-  domain: 
+  version: "1.0.0"
+  triggers: anthropic claude api, claude messages, claude tools, claude batching, anthropic sdk, secure claude integration, how do i call claude
+  domain: coding
   role: implementation
   scope: implementation
   output-format: code
