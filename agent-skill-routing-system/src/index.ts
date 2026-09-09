@@ -10,6 +10,7 @@ import { SkillRegistryWithCompression } from './core/SkillRegistry';
 import { AppError } from './core/AppError';
 import { AutoSkillCreator } from './core/AutoSkillCreator';
 import { SkillCreationTracker } from './core/SkillCreationTracker';
+import { withTimeout, StallTimeoutError, ROUTER_TIMEOUT_CONFIG } from './core/RouterTimeoutProtection';
 
 /**
  * Route request body
@@ -210,7 +211,15 @@ export class AgentSkillRoutingApp {
       try {
         const body = request.body as RouteRequestBody;
         this.logger.info('Routing task', { task: body.task.slice(0, 120) });
-        const response = await this.router!.routeTask(body);
+
+        const sessionId = (request.headers['x-session-id'] as string) || 'unknown';
+        const response = await withTimeout(
+          this.router!.routeTask(body),
+          ROUTER_TIMEOUT_CONFIG.route,
+          sessionId,
+          '/route'
+        );
+
         this.logger.info('Route result', {
           topSkill: response.selectedSkills?.[0]?.name ?? null,
           reason: response.selectedSkills?.[0]?.reasoning?.slice(0, 150) ?? null,
@@ -231,6 +240,19 @@ export class AgentSkillRoutingApp {
         if (this.accessLog.length > 100) this.accessLog.shift();
         reply.code(200).send(response);
       } catch (error) {
+        if (error instanceof StallTimeoutError) {
+          this.logger.error('Route stall timeout', {
+            deadlineMs: ROUTER_TIMEOUT_CONFIG.route,
+            sessionId: error.sessionId,
+          });
+          reply.code(504).send({
+            error: 'STALL_TIMEOUT',
+            message: 'Skill routing timed out. The request took longer than the configured deadline.',
+            deadlineMs: ROUTER_TIMEOUT_CONFIG.route,
+            retryHint: 'This can happen with very large skill sets or slow embedding services. Try reducing MAX_SKILLS.',
+          });
+          return;
+        }
         const isAppError = error instanceof AppError;
         const statusCode = isAppError ? error.statusCode : 500;
         const errorLabel = isAppError ? 'Validation failed' : 'Route failed';
@@ -252,6 +274,7 @@ export class AgentSkillRoutingApp {
         reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
         return;
       }
+      const sessionId = (request.headers['x-session-id'] as string) || 'unknown';
       try {
         const body = request.body as ExecuteRequestBody;
         const { task, taskId, inputs, skills } = body;
@@ -267,14 +290,36 @@ export class AgentSkillRoutingApp {
           for (const skillName of skills) {
             const tool = this.mcpBridge!.getTool(skillName);
             if (tool) {
-              const result = await tool.execute(inputs || {});
-              results.push({
-                skillName,
-                status: result.success ? 'success' : 'failure',
-                output: result.output,
-                error: result.error,
-                latencyMs: result.latencyMs,
-              });
+              try {
+                const result = await withTimeout(
+                  tool.execute(inputs || {}),
+                  ROUTER_TIMEOUT_CONFIG.execute,
+                  sessionId,
+                  `/execute/${skillName}`
+                );
+                results.push({
+                  skillName,
+                  status: result.success ? 'success' : 'failure',
+                  output: result.output,
+                  error: result.error,
+                  latencyMs: result.latencyMs,
+                });
+              } catch (timeoutError) {
+                if (timeoutError instanceof StallTimeoutError) {
+                  this.logger.warn('Execute skill stall timeout', {
+                    skillName,
+                    deadlineMs: ROUTER_TIMEOUT_CONFIG.execute,
+                  });
+                  results.push({
+                    skillName,
+                    status: 'failure',
+                    error: `Execution timed out after ${ROUTER_TIMEOUT_CONFIG.execute}ms`,
+                    latencyMs: ROUTER_TIMEOUT_CONFIG.execute,
+                  });
+                } else {
+                  throw timeoutError;
+                }
+              }
             } else {
               results.push({
                 skillName,
@@ -293,6 +338,20 @@ export class AgentSkillRoutingApp {
           results,
         });
       } catch (error) {
+        if (error instanceof StallTimeoutError) {
+          this.logger.error('Execute stall timeout', {
+            deadlineMs: ROUTER_TIMEOUT_CONFIG.execute,
+            sessionId: error.sessionId,
+            route: error.route,
+          });
+          reply.code(504).send({
+            error: 'STALL_TIMEOUT',
+            message: 'Skill execution timed out. One or more tools exceeded the deadline.',
+            deadlineMs: ROUTER_TIMEOUT_CONFIG.execute,
+            retryHint: 'Check that external services are reachable and responding within expected timeframes.',
+          });
+          return;
+        }
         const isAppError = error instanceof AppError;
         const statusCode = isAppError ? error.statusCode : 500;
         const errorLabel = isAppError ? 'Validation failed' : 'Execution failed';

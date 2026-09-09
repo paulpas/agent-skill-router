@@ -37,7 +37,7 @@ RUN npm run build
 
 # Stage 2: Runtime — 1,827 Skills Support
 # ARGs must be declared before FROM to be available via --build-arg
-ARG COMPRESSION_LEVEL=4
+ARG COMPRESSION_LEVEL=0
 ARG ENABLE_LLM_COMPRESSION=true
 ARG OPENAI_MODEL=gpt-4o-mini
 ARG COMPRESSION_CACHE_SIZE_MB=1024

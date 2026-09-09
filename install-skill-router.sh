@@ -2217,6 +2217,7 @@ run_installation() {
   [[ -n "${RETRIEVAL_ARCHETYPE_WEIGHT:-}" ]]     && ENV_ARGS+=(-e "RETRIEVAL_ARCHETYPE_WEIGHT=$RETRIEVAL_ARCHETYPE_WEIGHT")
   [[ -n "${RETRIEVAL_HISTORICAL_WEIGHT:-}" ]]    && ENV_ARGS+=(-e "RETRIEVAL_HISTORICAL_WEIGHT=$RETRIEVAL_HISTORICAL_WEIGHT")
   [[ -n "${MMR_LAMBDA:-}" ]]                     && ENV_ARGS+=(-e "MMR_LAMBDA=$MMR_LAMBDA")
+  ENV_ARGS+=(-e STALL_RESILIENCE_ENABLED=true)
   
   # Validate skills directory
   if [[ ! -d "${ROUTER_DIR%/agent-skill-routing-system}/skills" ]]; then
@@ -2327,8 +2328,63 @@ run_installation() {
       warn "Neither curl nor wget found — skipping skill-router-api.md fetch"
     fi
     
+    info "Fetching appropriate-behavior.md from GitHub..."
+    
+    BEHAVIOR_DOC_PATH="$HOME/.config/opencode/appropriate-behavior.md"
+    BEHAVIOR_RAW_URL="https://raw.githubusercontent.com/paulpas/skills/main/agent-skill-routing-system/appropriate-behavior.md"
+    
+    if command -v curl &>/dev/null; then
+      curl -fsSL "$BEHAVIOR_RAW_URL" -o "$BEHAVIOR_DOC_PATH" && ok "Written: $BEHAVIOR_DOC_PATH" || warn "curl fetch failed, skipping"
+    elif command -v wget &>/dev/null; then
+      wget -q "$BEHAVIOR_RAW_URL" -O "$BEHAVIOR_DOC_PATH" && ok "Written: $BEHAVIOR_DOC_PATH" || warn "wget fetch failed, skipping"
+    else
+      warn "Neither curl nor wget found — skipping appropriate-behavior.md fetch"
+    fi
+    
     info "Updating opencode.json instructions array..."
     
+    if [[ -s "$BEHAVIOR_DOC_PATH" ]]; then
+      info "Registering appropriate-behavior.md and skill-router-api.md in instructions array..."
+      if command -v jq &>/dev/null; then
+        if jq -e --arg beh "$BEHAVIOR_DOC_PATH" --arg api "$API_DOC_PATH" '
+            (.instructions // []) as $o
+            | ($o | index($beh)) == 0 and ($o | index($api)) != null
+          ' "$OPENCODE_CONFIG" > /dev/null 2>&1; then
+          ok "appropriate-behavior.md + skill-router-api.md already in instructions array, skipping"
+        else
+          if jq --arg beh "$BEHAVIOR_DOC_PATH" --arg api "$API_DOC_PATH" '
+            (.instructions // []) as $o
+            | ($o | map(select(. != $beh and . != $api))) as $rest
+            | .instructions = [$beh] + $rest + [$api]
+          ' "$OPENCODE_CONFIG" > "$OPENCODE_CONFIG.tmp" && mv "$OPENCODE_CONFIG.tmp" "$OPENCODE_CONFIG"; then
+            ok "Instructions: appropriate-behavior.md registered first, skill-router-api.md ensured present"
+          else
+            rm -f "$OPENCODE_CONFIG.tmp"
+            warn "jq failed to update instructions array — $OPENCODE_CONFIG left unchanged"
+          fi
+        fi
+      elif command -v python3 &>/dev/null; then
+        python3 - "$OPENCODE_CONFIG" "$BEHAVIOR_DOC_PATH" "$API_DOC_PATH" <<'PYEOF'
+import json, sys
+config_path, beh, api = sys.argv[1], sys.argv[2], sys.argv[3]
+with open(config_path) as f:
+    cfg = json.load(f)
+instr = cfg.get('instructions', [])
+if instr and instr[0] == beh and api in instr:
+    print('appropriate-behavior.md + skill-router-api.md already in instructions array, skipping')
+else:
+    rest = [p for p in instr if p != beh and p != api]
+    cfg['instructions'] = [beh] + rest + [api]
+    with open(config_path, 'w') as f:
+        json.dump(cfg, f, indent=2)
+    print('Instructions: appropriate-behavior.md registered first, skill-router-api.md ensured present')
+PYEOF
+      else
+        warn "Neither jq nor python3 found — cannot update opencode.json instructions array"
+      fi
+    else
+      warn "appropriate-behavior.md missing or empty after fetch — registering skill-router-api.md only"
+      # existing single-file instructions update preserved verbatim below
     if command -v jq &>/dev/null; then
       if jq -e --arg p "$API_DOC_PATH" \
         '(.instructions // []) | index($p) != null' \
@@ -2361,6 +2417,7 @@ if instr_path not in cfg['instructions']:
 else:
     print('Already in instructions array, skipping')
 PYEOF
+    fi
     fi
     
     # Install MCP bridge script
@@ -2676,6 +2733,11 @@ UNIT
   if [[ "$int_opencode" == "true" ]]; then
     echo -e "  ${BOLD}OpenCode:${RESET}     $OPENCODE_CONFIG ${GREEN}✓${RESET}"
     echo -e "  ${BOLD}Instructions:${RESET} $API_DOC_PATH ${GREEN}✓${RESET}"
+    if [[ -s "$BEHAVIOR_DOC_PATH" ]]; then
+      echo -e "  ${BOLD}Behavior:${RESET}    $BEHAVIOR_DOC_PATH ${GREEN}✓${RESET}"
+    else
+      echo -e "  ${BOLD}Behavior:${RESET}    (not deployed — fetch failed)"
+    fi
   fi
   
   if [[ "$int_claude" == "true" ]]; then

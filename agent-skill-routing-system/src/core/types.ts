@@ -183,9 +183,11 @@ export interface RouteResponse {
   inputTokens?: number;
   /** Total output tokens generated during this routing request (optional LLM ranking) */
   outputTokens?: number;
-  attributionFooter?: string;
-  /** Human-readable score explanations per skill (only when requested) */
-  scoreExplanations?: Record<string, string[]>;
+   attributionFooter?: string;
+   /** Auto-generated loop-guard instruction injected when STALL_RESILIENCE_ENABLED=true */
+   stallResiliencePreamble?: string;
+   /** Human-readable score explanations per skill (only when requested) */
+   scoreExplanations?: Record<string, string[]>;
 }
 
 
