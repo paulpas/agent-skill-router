@@ -35,25 +35,36 @@ RUN npm run build
 
 # Stage 1b: Python Builder for Skill Generation (removed - now using TypeScript MCP tool)
 
-# Stage 2: Runtime — 1,827 Skills Support
-# ARGs must be declared before FROM to be available via --build-arg
-ARG COMPRESSION_LEVEL=0
-ARG ENABLE_LLM_COMPRESSION=true
-ARG OPENAI_MODEL=gpt-4o-mini
+FROM node:24-alpine AS runtime
+
+# Alpine mirror and version — dynamic, so the build pulls from the matching minor release as the base image.
+# Default is HTTP so it works out-of-the-box behind corporate MITM proxies on both macOS and Linux.
+# HTTP is safe: apk verifies RSA signatures on package indices and SHA256 checksums per package.
+# A MITM proxy cannot silently swap packages — it would break signature verification.
+# Use --build-arg APK_USE_HTTPS=true if your network blocks HTTP but allows HTTPS.
+ARG ALPINE_MIRROR_BASE=http://dl-cdn.alpinelinux.org/alpine
+ARG ALPINE_VERSION=3.21
+ARG APK_USE_HTTPS=false
+
+# Re-declare ARGs so they are in scope for this stage.
+# NOTE: ARGs declared between FROM instructions are scoped to the preceding stage.
+ARG COMPRESSION_LEVEL=4
 ARG COMPRESSION_CACHE_SIZE_MB=1024
 ARG COMPRESSION_WARMUP_ENABLED=true
 ARG COMPRESSION_ADAPTIVE_TTL=true
 ARG SKILL_COMPRESSION_ENABLED=true
-ARG SKILL_COMPRESSION_STRATEGY=moderate
 ARG SKILL_COMPRESSION_LLM_MODEL=claude-3-haiku
 ARG SKILL_COMPRESSION_MEMORY_TTL_MINUTES=60
 ARG SKILL_COMPRESSION_DISK_TTL_DAYS=7
 ARG SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS=5000
 
-FROM node:24-alpine AS runtime
-
-# Install git and openssh-client for skill repository management with SSH support
-RUN apk add --no-cache git openssh-client chromium
+# Replace /etc/apk/repositories to use configurable mirrors.
+# HTTP is safe: apk verifies RSA signatures on indices and SHA256 per package.
+# MITM cannot tamper without detection. Use HTTPS build-arg if your network blocks HTTP.
+RUN printf '%s/v%s/main\n%s/v%s/community\n' \
+    "$(if [ "${APK_USE_HTTPS}" = "true" ]; then echo https; else echo http; fi)://dl-cdn.alpinelinux.org/alpine" "${ALPINE_VERSION}" \
+    "$(if [ "${APK_USE_HTTPS}" = "true" ]; then echo https; else echo http; fi)://dl-cdn.alpinelinux.org/alpine" "${ALPINE_VERSION}" \
+    > /etc/apk/repositories && apk --no-cache add git openssh-client
 
 WORKDIR /app
 
@@ -117,19 +128,15 @@ ENV GITHUB_SKILLS_REPO_SSH=git@github.com:paulpas/skills.git
 # Skill validation is now handled by the TypeScript MCP tool
 
 # OpenAI-based LLM compression configuration
-# Note: OPENAI_MODEL and ENABLE_LLM_COMPRESSION ARGs defined before FROM (stage 2) are used
 # These environment variables are intentionally empty - set at runtime with -e flags
 # ENV OPENAI_API_KEY=""
 # ENV OPENAI_BASE_URL=""
 # ENV OPENAI_ORG_ID=""
 
-# LLM-based skill compression configuration
-# NOTE: ARGs are declared before FROM (stage 2) and available throughout this stage
-# For multi-stage builds, ARGs are not automatically available in subsequent stages
+# Skill compression strategy is controlled at application runtime, not baked into the image.
 # These environment variables are intentionally empty - set at runtime with -e flags
 
 ENV SKILL_COMPRESSION_ENABLED=$SKILL_COMPRESSION_ENABLED
-ENV SKILL_COMPRESSION_STRATEGY=$SKILL_COMPRESSION_STRATEGY
 ENV SKILL_COMPRESSION_LLM_MODEL=$SKILL_COMPRESSION_LLM_MODEL
 ENV SKILL_COMPRESSION_MEMORY_TTL_MINUTES=$SKILL_COMPRESSION_MEMORY_TTL_MINUTES
 ENV SKILL_COMPRESSION_DISK_TTL_DAYS=$SKILL_COMPRESSION_DISK_TTL_DAYS
