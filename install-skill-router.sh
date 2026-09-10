@@ -2314,45 +2314,55 @@ run_installation() {
   
   # OpenCode integration
   if [[ "$int_opencode" == "true" ]]; then
-    info "Fetching skill-router-api.md from GitHub..."
-    
+    mkdir -p "$HOME/.config/opencode"
+
+    # ── Helper: fetch remote with local fallback ────────────────────────────
+    # Tries the remote URL first (curl, then wget). If both fail and a local
+    # source file exists at $ROUTER_DIR/<basename>, copies it to the target
+    # path so opencode still gets the instruction.  Returns 0 on success, 1
+    # if neither remote nor local source is available.
+    fetch_instruction_with_local_fallback() {
+      local url="$1" target="$2" basename="$3"
+      local fetched=false
+
+      if command -v curl &>/dev/null; then
+        if curl -fsSL "$url" -o "$target" 2>/dev/null; then
+          ok "Fetched $basename from GitHub → $target"
+          return 0
+        fi
+      elif command -v wget &>/dev/null; then
+        if wget -q "$url" -O "$target" 2>/dev/null; then
+          ok "Fetched $basename from GitHub → $target"
+          return 0
+        fi
+      fi
+
+      # Remote fetch failed — fall back to local file in ROUTER_DIR
+      local local_src="$ROUTER_DIR/$basename"
+      if [[ -s "$local_src" ]]; then
+        cp "$local_src" "$target"
+        warn "GitHub fetch failed for $basename — copied from local ($local_src)"
+        return 0
+      fi
+
+      err "Cannot fetch $basename: remote returned error and no local source at $local_src"
+      return 1
+    }
+
+    info "Fetching skill-router-api.md..."
     API_DOC_PATH="$HOME/.config/opencode/skill-router-api.md"
     RAW_URL="https://raw.githubusercontent.com/paulpas/skills/main/agent-skill-routing-system/skill-router-api.md"
-    mkdir -p "$HOME/.config/opencode"
-    
-    if command -v curl &>/dev/null; then
-      curl -fsSL "$RAW_URL" -o "$API_DOC_PATH" && ok "Written: $API_DOC_PATH" || warn "curl fetch failed, skipping"
-    elif command -v wget &>/dev/null; then
-      wget -q "$RAW_URL" -O "$API_DOC_PATH" && ok "Written: $API_DOC_PATH" || warn "wget fetch failed, skipping"
-    else
-      warn "Neither curl nor wget found — skipping skill-router-api.md fetch"
-    fi
-    
-    info "Fetching appropriate-behavior.md from GitHub..."
-    
+    fetch_instruction_with_local_fallback "$RAW_URL" "$API_DOC_PATH" "skill-router-api.md" || true
+
+    info "Fetching appropriate-behavior.md..."
     BEHAVIOR_DOC_PATH="$HOME/.config/opencode/appropriate-behavior.md"
     BEHAVIOR_RAW_URL="https://raw.githubusercontent.com/paulpas/skills/main/agent-skill-routing-system/appropriate-behavior.md"
-    
-    if command -v curl &>/dev/null; then
-      curl -fsSL "$BEHAVIOR_RAW_URL" -o "$BEHAVIOR_DOC_PATH" && ok "Written: $BEHAVIOR_DOC_PATH" || warn "curl fetch failed, skipping"
-    elif command -v wget &>/dev/null; then
-      wget -q "$BEHAVIOR_RAW_URL" -O "$BEHAVIOR_DOC_PATH" && ok "Written: $BEHAVIOR_DOC_PATH" || warn "wget fetch failed, skipping"
-    else
-      warn "Neither curl nor wget found — skipping appropriate-behavior.md fetch"
-    fi
+    fetch_instruction_with_local_fallback "$BEHAVIOR_RAW_URL" "$BEHAVIOR_DOC_PATH" "appropriate-behavior.md" || true
 
-    info "Fetching reasoning-economy.md from GitHub..."
-
+    info "Fetching reasoning-economy.md..."
     REASONING_ECONOMY_DOC_PATH="$HOME/.config/opencode/reasoning-economy.md"
     REASONING_ECONOMY_RAW_URL="https://raw.githubusercontent.com/paulpas/skills/main/agent-skill-routing-system/reasoning-economy.md"
-
-    if command -v curl &>/dev/null; then
-      curl -fsSL "$REASONING_ECONOMY_RAW_URL" -o "$REASONING_ECONOMY_DOC_PATH" && ok "Written: $REASONING_ECONOMY_DOC_PATH" || warn "curl fetch failed, skipping"
-    elif command -v wget &>/dev/null; then
-      wget -q "$REASONING_ECONOMY_RAW_URL" -O "$REASONING_ECONOMY_DOC_PATH" && ok "Written: $REASONING_ECONOMY_DOC_PATH" || warn "wget fetch failed, skipping"
-    else
-      warn "Neither curl nor wget found — skipping reasoning-economy.md fetch"
-    fi
+    fetch_instruction_with_local_fallback "$REASONING_ECONOMY_RAW_URL" "$REASONING_ECONOMY_DOC_PATH" "reasoning-economy.md" || true
 
     info "Updating opencode.json instructions array..."
 
