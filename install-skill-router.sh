@@ -2340,84 +2340,115 @@ run_installation() {
     else
       warn "Neither curl nor wget found — skipping appropriate-behavior.md fetch"
     fi
-    
+
+    info "Fetching reasoning-economy.md from GitHub..."
+
+    REASONING_ECONOMY_DOC_PATH="$HOME/.config/opencode/reasoning-economy.md"
+    REASONING_ECONOMY_RAW_URL="https://raw.githubusercontent.com/paulpas/skills/main/agent-skill-routing-system/reasoning-economy.md"
+
+    if command -v curl &>/dev/null; then
+      curl -fsSL "$REASONING_ECONOMY_RAW_URL" -o "$REASONING_ECONOMY_DOC_PATH" && ok "Written: $REASONING_ECONOMY_DOC_PATH" || warn "curl fetch failed, skipping"
+    elif command -v wget &>/dev/null; then
+      wget -q "$REASONING_ECONOMY_RAW_URL" -O "$REASONING_ECONOMY_DOC_PATH" && ok "Written: $REASONING_ECONOMY_DOC_PATH" || warn "wget fetch failed, skipping"
+    else
+      warn "Neither curl nor wget found — skipping reasoning-economy.md fetch"
+    fi
+
     info "Updating opencode.json instructions array..."
-    
+
     if [[ -s "$BEHAVIOR_DOC_PATH" ]]; then
-      info "Registering appropriate-behavior.md and skill-router-api.md in instructions array..."
+      info "Registering appropriate-behavior.md, reasoning-economy.md, and skill-router-api.md in instructions array..."
       if command -v jq &>/dev/null; then
-        if jq -e --arg beh "$BEHAVIOR_DOC_PATH" --arg api "$API_DOC_PATH" '
+        # Check if all three files are in correct order: behavior first, reasoning-economy middle, api last
+        if jq -e --arg beh "$BEHAVIOR_DOC_PATH" --arg econ "$REASONING_ECONOMY_DOC_PATH" --arg api "$API_DOC_PATH" '
             (.instructions // []) as $o
-            | ($o | index($beh)) == 0 and ($o | index($api)) != null
+            | ($o | index($beh)) == 0 and ($o | index($econ)) != null and ($o | index($api)) != null
           ' "$OPENCODE_CONFIG" > /dev/null 2>&1; then
-          ok "appropriate-behavior.md + skill-router-api.md already in instructions array, skipping"
+          ok "All three instruction files already in instructions array, skipping"
         else
-          if jq --arg beh "$BEHAVIOR_DOC_PATH" --arg api "$API_DOC_PATH" '
+          if jq --arg beh "$BEHAVIOR_DOC_PATH" --arg econ "$REASONING_ECONOMY_DOC_PATH" --arg api "$API_DOC_PATH" '
             (.instructions // []) as $o
-            | ($o | map(select(. != $beh and . != $api))) as $rest
-            | .instructions = [$beh] + $rest + [$api]
+            | ($o | map(select(. != $beh and . != $econ and . != $api))) as $rest
+            | .instructions = [$beh] + $rest + [$econ, $api]
           ' "$OPENCODE_CONFIG" > "$OPENCODE_CONFIG.tmp" && mv "$OPENCODE_CONFIG.tmp" "$OPENCODE_CONFIG"; then
-            ok "Instructions: appropriate-behavior.md registered first, skill-router-api.md ensured present"
+            ok "Instructions: appropriate-behavior.md first, reasoning-economy.md second, skill-router-api.md last"
           else
             rm -f "$OPENCODE_CONFIG.tmp"
             warn "jq failed to update instructions array — $OPENCODE_CONFIG left unchanged"
           fi
         fi
       elif command -v python3 &>/dev/null; then
-        python3 - "$OPENCODE_CONFIG" "$BEHAVIOR_DOC_PATH" "$API_DOC_PATH" <<'PYEOF'
+        python3 - "$OPENCODE_CONFIG" "$BEHAVIOR_DOC_PATH" "$REASONING_ECONOMY_DOC_PATH" "$API_DOC_PATH" <<'PYEOF'
 import json, sys
-config_path, beh, api = sys.argv[1], sys.argv[2], sys.argv[3]
+config_path, beh, econ, api = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 with open(config_path) as f:
     cfg = json.load(f)
 instr = cfg.get('instructions', [])
-if instr and instr[0] == beh and api in instr:
-    print('appropriate-behavior.md + skill-router-api.md already in instructions array, skipping')
+if instr and instr[0] == beh and api in instr and econ in instr:
+    print('All three instruction files already in instructions array, skipping')
 else:
-    rest = [p for p in instr if p != beh and p != api]
-    cfg['instructions'] = [beh] + rest + [api]
+    rest = [p for p in instr if p != beh and p != econ and p != api]
+    cfg['instructions'] = [beh] + rest + [econ, api]
     with open(config_path, 'w') as f:
         json.dump(cfg, f, indent=2)
-    print('Instructions: appropriate-behavior.md registered first, skill-router-api.md ensured present')
+    print('Instructions: appropriate-behavior.md first, reasoning-economy.md second, skill-router-api.md last')
 PYEOF
       else
         warn "Neither jq nor python3 found — cannot update opencode.json instructions array"
       fi
     else
-      warn "appropriate-behavior.md missing or empty after fetch — registering skill-router-api.md only"
-      # existing single-file instructions update preserved verbatim below
-    if command -v jq &>/dev/null; then
-      if jq -e --arg p "$API_DOC_PATH" \
-        '(.instructions // []) | index($p) != null' \
-        "$OPENCODE_CONFIG" > /dev/null 2>&1; then
-        ok "Already in instructions array, skipping"
-      else
-        jq --arg p "$API_DOC_PATH" '
-          if .instructions then
-            .instructions += [$p]
-          else
-            .instructions = [$p]
-          end
-        ' "$OPENCODE_CONFIG" > "$OPENCODE_CONFIG.tmp" && mv "$OPENCODE_CONFIG.tmp" "$OPENCODE_CONFIG"
-        ok "Added $API_DOC_PATH to instructions array"
+      # appropriate-behavior.md missing — register whatever files are available
+      AVAILABLE_FILES=()
+      if [[ -s "$REASONING_ECONOMY_DOC_PATH" ]]; then
+        AVAILABLE_FILES+=("$REASONING_ECONOMY_DOC_PATH")
       fi
-    elif command -v python3 &>/dev/null; then
-      python3 - "$OPENCODE_CONFIG" "$API_DOC_PATH" <<'PYEOF'
+      if [[ -s "$API_DOC_PATH" ]]; then
+        AVAILABLE_FILES+=("$API_DOC_PATH")
+      fi
+      if [[ ${#AVAILABLE_FILES[@]} -gt 0 ]]; then
+        info "Registering available instruction files in instructions array..."
+        if command -v jq &>/dev/null; then
+          for f in "${AVAILABLE_FILES[@]}"; do
+            if jq -e --arg p "$f" '(.instructions // []) | index($p) != null' "$OPENCODE_CONFIG" > /dev/null 2>&1; then
+              ok "$f already in instructions array, skipping"
+            else
+              jq --arg p "$f" '
+                if .instructions then
+                  .instructions += [$p]
+                else
+                  .instructions = [$p]
+                end
+              ' "$OPENCODE_CONFIG" > "$OPENCODE_CONFIG.tmp" && mv "$OPENCODE_CONFIG.tmp" "$OPENCODE_CONFIG"
+              ok "Added $f to instructions array"
+            fi
+          done
+        elif command -v python3 &>/dev/null; then
+          python3 - "$OPENCODE_CONFIG" "${AVAILABLE_FILES[@]}" <<'PYEOF'
 import json, sys
 config_path = sys.argv[1]
-instr_path = sys.argv[2]
+files = sys.argv[2:]
 with open(config_path) as f:
     cfg = json.load(f)
 if 'instructions' not in cfg:
     cfg['instructions'] = []
-if instr_path not in cfg['instructions']:
-    cfg['instructions'].append(instr_path)
-    with open(config_path, 'w') as f:
-        json.dump(cfg, f, indent=2)
+for instr_path in files:
+    if instr_path not in cfg['instructions']:
+        cfg['instructions'].append(instr_path)
+    else:
+        print(f'{instr_path} already in instructions array, skipping')
+with open(config_path, 'w') as f:
+    json.dump(cfg, f, indent=2)
+if len(files) > 1:
+    print(f'Registered {len(files)} instruction files')
+elif len(files) == 1:
     print('Added to instructions array')
-else:
-    print('Already in instructions array, skipping')
 PYEOF
-    fi
+        else
+          warn "Neither jq nor python3 found — cannot update opencode.json instructions array"
+        fi
+      else
+        warn "No instruction files available after fetch — nothing to register"
+      fi
     fi
     
     # Install MCP bridge script
@@ -2732,11 +2763,20 @@ UNIT
   
   if [[ "$int_opencode" == "true" ]]; then
     echo -e "  ${BOLD}OpenCode:${RESET}     $OPENCODE_CONFIG ${GREEN}✓${RESET}"
-    echo -e "  ${BOLD}Instructions:${RESET} $API_DOC_PATH ${GREEN}✓${RESET}"
     if [[ -s "$BEHAVIOR_DOC_PATH" ]]; then
       echo -e "  ${BOLD}Behavior:${RESET}    $BEHAVIOR_DOC_PATH ${GREEN}✓${RESET}"
     else
       echo -e "  ${BOLD}Behavior:${RESET}    (not deployed — fetch failed)"
+    fi
+    if [[ -s "$REASONING_ECONOMY_DOC_PATH" ]]; then
+      echo -e "  ${BOLD}Reasoning Economy:${RESET} $REASONING_ECONOMY_DOC_PATH ${GREEN}✓${RESET}"
+    else
+      echo -e "  ${BOLD}Reasoning Economy:${RESET} (not deployed — fetch failed)"
+    fi
+    if [[ -s "$API_DOC_PATH" ]]; then
+      echo -e "  ${BOLD}Router API:${RESET}   $API_DOC_PATH ${GREEN}✓${RESET}"
+    else
+      echo -e "  ${BOLD}Router API:${RESET}    (not deployed — fetch failed)"
     fi
   fi
   
