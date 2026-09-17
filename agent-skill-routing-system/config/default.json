@@ -36,19 +36,26 @@ export interface AppConfig {
     fallbackEnabled: boolean;
   };
   
-  /**
-   * Safety configuration
-   */
-  safety: {
-    maxSkillsInPlan: number;
-    enablePromptInjectionFilter: boolean;
-    requireSchemaValidation: boolean;
-    skillAllowlist: string[];
-  };
-  
-  /**
-   * Observability configuration
-   */
+   /**
+    * Safety configuration
+    */
+   safety: {
+     maxSkillsInPlan: number;
+     enablePromptInjectionFilter: boolean;
+     requireSchemaValidation: boolean;
+     skillAllowlist: string[];
+   };
+
+   /**
+    * Stall resilience — auto-inject loop-guard instruction into routing responses
+    */
+   stallResilience: {
+     enabled: boolean;
+   };
+
+   /**
+    * Observability configuration
+    */
   observability: {
     level: 'debug' | 'info' | 'warn' | 'error';
     includePayloads: boolean;
@@ -86,6 +93,9 @@ export const defaultConfig: AppConfig = {
     enablePromptInjectionFilter: process.env.SAFETY_STRICT === 'true' || true,
     requireSchemaValidation: true,
     skillAllowlist: [],
+  },
+  stallResilience: {
+    enabled: process.env.STALL_RESILIENCE_ENABLED === 'true' || false,
   },
   observability: {
     level: 'info',

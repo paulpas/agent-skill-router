@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,313 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,314 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,313 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,314 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,22 +312,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-08-07 19:38:32 UTC  
-> **Total skills:** 1313  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1313 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-09-09 00:46:31 UTC  
+> **Total skills:** 1314  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1314 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1225 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1225 | Ranking penalty for conflicting query terms |
-| Response Profile | 1222 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1226 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1226 | Ranking penalty for conflicting query terms |
+| Response Profile | 1223 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (329 skills)
+### Agent (330 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -349,6 +349,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | fault tolerance, circuit breaker, retry strategy, exponential backoff, graceful degradation, health check, dead letter queue, timeout management graceful degradation [tactical] |
 | [agent-requirements-engineering](skills/agent/agent-requirements-engineering/SKILL.md) | Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria. | agent requirements, AI system requirements, capability matrix, hallucination threshold, safety guardrails, AI evaluation criteria, prompt requirements, how do i define AI system requirements [strategic, tactical] |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. | prompt injection, guardrails, jailbreak detection, tool access control, input validation, LLM security, how do i secure my agent |
+| [agent-stall-resilience](skills/agent/agent-stall-resilience/SKILL.md) | Detects stalls and repetition loops in AI agent sessions and implements auto-respawn, circuit breakers, and graceful recovery to maintain session continuity under prolonged inactivity or infinite message cycles. | stall detection, infinite loop recovery, auto respawn, agent freeze, how do i recover from stuck agents, circuit breaker, repetition detection, session resilience [diagnostic, orchestration, tactical] |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. | agent evaluation, benchmarking, hallucination detection, tool-use accuracy, multi-turn reasoning, automated grading, promptfoo, how do i test my agent |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agent-development, ai agent development, how do i ai-agent-development, orchestrate ai-agent-development, automate ai-agent-development, agent ai-agent-development [orchestration, strategic] |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | ai agent safety, hallucination detection, prompt injection, output validation, tool call safety, guardrails, autonomous agent safety, AI safety [tactical] |
@@ -1786,7 +1787,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (885 skills)
+### Implementation (Build Features) (886 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1808,6 +1809,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [agent-requirements-engineering](skills/agent/agent-requirements-engineering/SKILL.md) | Agent | Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria. |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. |
+| [agent-stall-resilience](skills/agent/agent-stall-resilience/SKILL.md) | Agent | Detects stalls and repetition loops in AI agent sessions and implements auto-respawn, circuit breakers, and graceful recovery to maintain session continuity under prolonged inactivity or infinite message cycles. |
 | [agent-tool-calling-architecture](skills/coding/agent-tool-calling-architecture/SKILL.md) | Coding | Implements tool calling architecture (Pydantic schemas, function-to-schema conversion, output parsing with error recovery, parallel execution with fallback chains) for LLM agents in Python. |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
@@ -3152,6 +3154,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | Implementation |
 | [agent-requirements-engineering](skills/agent/agent-requirements-engineering/SKILL.md) | Agent | Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria. | Implementation |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. | Implementation |
+| [agent-stall-resilience](skills/agent/agent-stall-resilience/SKILL.md) | Agent | Detects stalls and repetition loops in AI agent sessions and implements auto-respawn, circuit breakers, and graceful recovery to maintain session continuity under prolonged inactivity or infinite message cycles. | Implementation |
 | [agent-tool-calling-architecture](skills/coding/agent-tool-calling-architecture/SKILL.md) | Coding | Implements tool calling architecture (Pydantic schemas, function-to-schema conversion, output parsing with error recovery, parallel execution with fallback chains) for LLM agents in Python. | Implementation |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. | Implementation |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

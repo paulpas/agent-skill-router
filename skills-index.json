@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-07T19:38:30.379229Z",
-  "totalSkills": 1318,
+  "generatedAt": "2026-09-09T00:46:29.874243Z",
+  "totalSkills": 1319,
   "domains": {
-    "agent": 330,
+    "agent": 331,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
@@ -28,7 +28,7 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 890,
+    "implementation": 891,
     "orchestration": 238,
     "reference": 181,
     "information": 1,
@@ -689,6 +689,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-security-guardrails/SKILL.md"
+    },
+    {
+      "name": "agent-stall-resilience",
+      "domain": "agent",
+      "description": "Detects stalls and repetition loops in AI agent sessions and implements auto-respawn, circuit breakers, and graceful recovery to maintain session continuity under prolonged inactivity or infinite message cycles.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "code",
+      "triggers": [
+        "stall detection",
+        "infinite loop recovery",
+        "auto respawn",
+        "agent freeze",
+        "how do i recover from stuck agents",
+        "circuit breaker",
+        "repetition detection",
+        "session resilience"
+      ],
+      "relatedSkills": [
+        "agent-debugging",
+        "exception-handling-recovery",
+        "tool-use-function-calling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-stall-resilience/SKILL.md"
     },
     {
       "name": "agent-tool-calling-architecture",

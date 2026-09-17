@@ -494,6 +494,40 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       }
     }
 
+    // Generate stall resilience preamble (if enabled)
+    if (process.env.STALL_RESILIENCE_ENABLED === 'true') {
+      try {
+        const allSkills = this.skillRegistry.getAllSkills();
+        const loopGuardSkill = allSkills.find(s => s.metadata.name === 'agent-stall-resilience');
+
+        if (loopGuardSkill) {
+          // Extract the directive text from between --- PERSISTENT SYSTEM DIRECTIVE --- markers
+          const skillContent = loopGuardSkill.rawContent || '';
+          const match = skillContent.match(/--- PERSISTENT SYSTEM DIRECTIVE: LOOP GUARD \((?:LIGHT MODE|AGGRESSIVE MODE)\) ---[\s\S]*?--- END PERSISTENT SYSTEM DIRECTIVE ---/);
+
+          if (match) {
+            // Clean up the extracted text — remove the markdown code fence and YAML frontmatter artifacts
+            let preamble = match[0];
+            preamble = preamble.replace(/```/, '');
+            preamble = preamble.replace(/\n```\s*$/, '').replace(/^\s*\n/, '');
+            preamble = preamble.trim();
+
+            // Add context header so the model knows this came from the routing system
+            const header = '[STALL RESILIENCE INJECTED]\nThe following loop-guard instruction was automatically added to your session by the skill router. This is a persistent directive that remains active throughout this session.\n\n';
+            preamble = header + preamble;
+
+            response.stallResiliencePreamble = preamble;
+          }
+        }
+      } catch (error) {
+        // Gracefully skip preamble on any error — it's optional
+        this.logger.debug('Failed to generate stall resilience preamble', {
+          taskId,
+          error: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+
     this.logger.info('Routing completed', {
       taskId,
       selectedSkills: filteredSkills.length,

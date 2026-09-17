@@ -47,6 +47,7 @@ docker run -d \
   -e "AUTO_SKILL_CONTRIBUTE=true" \
   -e "AUTO_SKILL_ENABLED=true" \
   -e "GITHUB_SKILLS_ENABLED=true" \
+  -e STALL_RESILIENCE_ENABLED=true \
   -v "$SKILLS_DIR:/app/skills:ro" \
   "$IMAGE"
 

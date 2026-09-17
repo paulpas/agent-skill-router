@@ -254,6 +254,20 @@ SEMANTIC_SIMILARITY_THRESHOLD=0.3
 # AUTO_SKILL_MAX_RETRIES=3
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Stall Resilience — Auto-Inject Loop-Guard Instructions (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Enable automatic injection of loop-guard instructions into every routing response.
+# When enabled, the router reads the agent-stall-resilience skill and extracts
+# its light-mode loop-guard directive, injecting it as a preamble in every
+# /route response JSON under the stallResiliencePreamble field.
+#
+# This prevents agents from falling into repetition/stalling loops without
+# any manual configuration on the consumer side — just set this to true
+# and restart the service.
+STALL_RESILIENCE_ENABLED=true
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Pre-commit Hook Configuration (Optional)
 # ─────────────────────────────────────────────────────────────────────────────
 
