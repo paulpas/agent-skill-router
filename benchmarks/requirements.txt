@@ -4,7 +4,7 @@
 openai>=3.13.0
 
 # Anthropic API support
-anthropic>=1.5.0
+anthropic>=1.7.0
 
 # Groq API support
 groq>=1.7.0
