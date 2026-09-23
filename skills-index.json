@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-23T17:22:30.143322Z",
-  "totalSkills": 1327,
+  "generatedAt": "2026-09-23T22:18:22.191188Z",
+  "totalSkills": 1336,
   "domains": {
     "agent": 331,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
-    "cncf": 202,
-    "coding": 602,
+    "cncf": 203,
+    "coding": 609,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -22,13 +22,13 @@
     "payments": 5,
     "programming": 7,
     "secrets-management": 4,
-    "security": 5,
+    "security": 6,
     "software": 3,
     "trading": 94,
     "writing": 5
   },
   "roles": {
-    "implementation": 897,
+    "implementation": 906,
     "orchestration": 238,
     "reference": 183,
     "information": 1,
@@ -19124,6 +19124,29 @@
       "source": "skills/agent/mcp-builder-ms/SKILL.md"
     },
     {
+      "name": "mcp-client-integration",
+      "domain": "coding",
+      "description": "Integrates MCP clients using Python SDK v2 and TypeScript SDK v2 to connect to MCP servers, manage tools/resources/prompts, handle transport (stdio/SSE), error recovery, and implement structured calling conventions in AI agent applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mcp client",
+        "mcp integration",
+        "how do i connect to mcp",
+        "consuming mcp servers",
+        "claude mcp client",
+        "typescript mcp",
+        "tool invocation"
+      ],
+      "relatedSkills": [
+        "mcp-server-fastmcp-python",
+        "mcp-tool-design-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mcp-client-integration/SKILL.md"
+    },
+    {
       "name": "mcp-integration",
       "domain": "agent",
       "description": "Integrates the Model Context Protocol (MCP) standard for LLM tool discovery and interaction, implementing MCP client-server architecture with stdio/HTTP transport, tool/resource/prompt types, and FastMCP SDK patterns.",
@@ -19149,6 +19172,30 @@
       "source": "skills/agent/mcp-integration/SKILL.md"
     },
     {
+      "name": "mcp-production-patterns",
+      "domain": "cncf",
+      "description": "Implements production-grade MCP deployments with patterns for latency optimization (stdio vs HTTP transports), stateful session management, caching strategies, observability (tracing, metrics), rate limiting, graceful degradation, and lessons from production evidence (Smartsheet, Rippling, Chronograph deployments).",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "mcp production",
+        "mcp deployment",
+        "mcp performance",
+        "mcp observability",
+        "mcp monitoring",
+        "http streamable",
+        "stateful session pattern"
+      ],
+      "relatedSkills": [
+        "mcp-server-fastmcp-python",
+        "mcp-client-integration",
+        "mcp-security-authorization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/mcp-production-patterns/SKILL.md"
+    },
+    {
       "name": "mcp-protocol",
       "domain": "coding",
       "description": "Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration.",
@@ -19172,6 +19219,77 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/mcp-protocol/SKILL.md"
+    },
+    {
+      "name": "mcp-security-authorization",
+      "domain": "security",
+      "description": "Implements MCP security best practices including OAuth 2.1 PKCE, resource indicators, token management, tool poisoning prevention, secret management, attestation, audit logging, and defense-in-depth strategies against OWASP MCP Top 10 risks (token mismanagement, tool rug pulls, unverified inputs, supply chain attacks).",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "code",
+      "triggers": [
+        "mcp security",
+        "oauth 2.1",
+        "tool poisoning",
+        "mcp token management",
+        "secret management",
+        "mcp authentication",
+        "how do i secure mcp",
+        "authorization"
+      ],
+      "relatedSkills": [
+        "ai-llm-agentic-tooling-mcp",
+        "identity-security-hashicorp-vault"
+      ],
+      "version": "1.0.0",
+      "source": "skills/security/mcp-security-authorization/SKILL.md"
+    },
+    {
+      "name": "mcp-server-fastmcp-python",
+      "domain": "coding",
+      "description": "Implements FastMCP v3.x/4.0.0b1 server development using Python SDK v2 with Pydantic validation, transport selection, resource/tool/prompt management, and production-grade error handling for building MCP servers.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "fastmcp",
+        "mcp server python",
+        "how do i create an mcp server",
+        "tool registration",
+        "pydantic validation",
+        "mcp transport",
+        "streamable http"
+      ],
+      "relatedSkills": [
+        "ai-llm-agentic-tooling-mcp",
+        "mcp-client-integration",
+        "mcp-tool-design-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mcp-server-fastmcp-python/SKILL.md"
+    },
+    {
+      "name": "mcp-tool-design-patterns",
+      "domain": "coding",
+      "description": "Designs effective MCP tools and resources following best practices including clear descriptions, bounded inputs/outputs, proper annotations (readOnlyHint, destructiveHint, idempotentHint), hierarchical resource templates, progressive discovery patterns, and avoiding anti-patterns like tool bloat, vague contracts, and unbounded responses.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mcp tool design",
+        "resource design",
+        "tool descriptions",
+        "mcp schema",
+        "idempotent hint",
+        "resource templates",
+        "bounded responses"
+      ],
+      "relatedSkills": [
+        "mcp-server-fastmcp-python",
+        "mcp-client-integration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mcp-tool-design-patterns/SKILL.md"
     },
     {
       "name": "memoization-cache-patterns",
@@ -30196,6 +30314,90 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/wcag-21-aa-fundamentals/SKILL.md"
+    },
+    {
+      "name": "wcag-contrast-color-screen-reader",
+      "domain": "coding",
+      "description": "Implements WCAG 2.2 AA color contrast (4.5:1 text, 3:1 UI), semantic HTML landmarks, heading hierarchy, table markup, ARIA naming, live regions, and screen reader optimization for accessible web applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "color contrast",
+        "wcag accessibility",
+        "screen reader optimization",
+        "aria labels",
+        "semantic html",
+        "landmark navigation",
+        "heading hierarchy",
+        "alt text"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/wcag-contrast-color-screen-reader/SKILL.md"
+    },
+    {
+      "name": "wcag-form-accessibility-nodejs",
+      "domain": "coding",
+      "description": "Implements WCAG 2.2 AA form accessibility patterns for Node.js/JavaScript (server-side rendering, React/Next.js), including label-to-input association, error identification, focus management, dynamic updates with aria-live, and form state management with aria-invalid/aria-required.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "wcag form accessibility",
+        "form validation a11y",
+        "aria-invalid",
+        "aria-describedby",
+        "screen reader forms",
+        "keyboard form navigation",
+        "next.js server actions forms",
+        "how do i make accessible forms"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/wcag-form-accessibility-nodejs/SKILL.md"
+    },
+    {
+      "name": "wcag-form-accessibility-php-laravel",
+      "domain": "coding",
+      "description": "Implements WCAG 2.2 AA accessible form patterns in PHP/Laravel using semantic HTML, aria-describedby error linking, fieldset/legend grouping, focus management, and server-rendered form practices for guaranteed accessibility compliance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "WCAG form accessibility",
+        "Laravel form validation",
+        "aria-describedby",
+        "accessible form groups",
+        "Blade form patterns",
+        "form error handling",
+        "focus management forms",
+        "Livewire accessibility"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/wcag-form-accessibility-php-laravel/SKILL.md"
+    },
+    {
+      "name": "wcag-keyboard-navigation-focus-management",
+      "domain": "coding",
+      "description": "Implements WCAG 2.2 AA keyboard navigation (2.1.1) and focus management (2.4.3, 2.4.7, 2.4.11, 2.1.2) patterns including logical tab order, skip links, focus visible, focus traps, and roving tabIndex for accessible web interfaces.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "keyboard navigation",
+        "focus management",
+        "tab order",
+        "roving tabindex",
+        "focus trap",
+        "focus visible",
+        "skip link",
+        "arrow keys"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/wcag-keyboard-navigation-focus-management/SKILL.md"
     },
     {
       "name": "weaviate-api",
