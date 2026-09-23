@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,327 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,331 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,327 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,331 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,17 +312,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-09-23 12:17:58 UTC  
-> **Total skills:** 1327  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1327 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-09-23 16:59:55 UTC  
+> **Total skills:** 1331  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1331 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1234 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1234 | Ranking penalty for conflicting query terms |
-| Response Profile | 1231 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1243 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1243 | Ranking penalty for conflicting query terms |
+| Response Profile | 1240 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -850,7 +850,7 @@ MIT — All skills are freely available and redistributable.
 | [linkerd](skills/cncf/linkerd/SKILL.md) | "Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | cdn, infrastructure as code, k8s service, kubernetes service, linkerd, monitoring, native, service [educational, strategic] |
 | [litmus](skills/cncf/litmus/SKILL.md) | "Litmus in Chaos Engineering - cloud native architecture, patterns, pits" and best practices | cdn, chaos, engineering, infrastructure as code, litmus, monitoring, cloudformation, cloudfront [educational, strategic] |
 | [longhorn](skills/cncf/longhorn/SKILL.md) | "Longhorn in Cloud Native Storage - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, longhorn, monitoring, native, storage, cloudformation, cloudfront [educational, strategic] |
-| [mcp-production-patterns](skills/cncf/mcp-production-patterns/SKILL.md) | Implements production-grade MCP deployments with patterns for latency optimization (stdio vs HTTP transports), stateful session management, caching strategies, observability (tracing, metrics), rate limiting, graceful degradation, and lessons from pr... | mcp production, mcp deployment, mcp performance, mcp observability, mcp monitoring, http streamable, stateful session pattern |
+| [mcp-production-patterns](skills/cncf/mcp-production-patterns/SKILL.md) | Implements production-grade MCP deployments with patterns for latency optimization (stdio vs HTTP transports), stateful session management, caching strategies, observability (tracing, metrics), rate limiting, graceful degradation, and lessons from pr... | mcp production, mcp deployment, mcp performance, mcp observability, mcp monitoring, http streamable, stateful session pattern [tactical, strategic] |
 | [metal3-io](skills/cncf/metal3-io/SKILL.md) | "metal3.io in Bare Metal Provisioning - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, metal, metal3 io, metal3-io, monitoring, provisioning, cloudformation [educational, strategic] |
 | [microprofile](skills/cncf/microprofile/SKILL.md) | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. | microprofile, fault tolerance, service mesh, openapi spec, health checks, metrics endpoint, config source, jwt security metrics endpoint [educational, strategic] |
 | [multi-stage-deployment](skills/cncf/multi-stage-deployment/SKILL.md) | Designs multi-stage deployment pipelines that reduce risk through progressive disclosure, environment parity, and quality-gated stage transitions from development to production. | multi-stage deployment, deployment stages, environment parity, deployment pipeline, stage gates, dev staging pre-prod, deployment readiness, progressive delivery [educational, diagnostic] |
@@ -898,7 +898,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (607 skills)
+### Coding (611 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1267,10 +1267,10 @@ MIT — All skills are freely available and redistributable.
 | [marketo-api](skills/coding/marketo-api/SKILL.md) | Implements Marketo API integration (REST, SOAP, Lead Database, Activities, Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export, trigger campaigns, and Marketo REST API patterns. | marketo, marketo api, marketo rest, adobe marketo, marketo leads, marketo activities, marketo campaigns, how do i integrate with marketo activities [tactical, generation] |
 | [maven-build-system](skills/coding/maven-build-system/SKILL.md) | Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects. | maven, pom.xml, mvn command, java build tool, dependency management, maven central, plugin management, BOM [tactical, generation] |
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | maven, pom.xml, mvn command, dependency management, how do i fix maven conflicts, how do i manage java dependencies, reactor build, BOM conflicts [tactical, generation] |
-| [mcp-client-integration](skills/coding/mcp-client-integration/SKILL.md) | Integrates MCP clients using Python SDK v2 and TypeScript SDK v2 to connect to MCP servers, manage tools/resources/prompts, handle transport (stdio/SSE), error recovery, and implement structured calling conventions in AI agent applications. | mcp client, mcp integration, how do i connect to mcp, consuming mcp servers, claude mcp client, typescript mcp, tool invocation |
+| [mcp-client-integration](skills/coding/mcp-client-integration/SKILL.md) | Integrates MCP clients using Python SDK v2 and TypeScript SDK v2 to connect to MCP servers, manage tools/resources/prompts, handle transport (stdio/SSE), error recovery, and implement structured calling conventions in AI agent applications. | mcp client, mcp integration, how do i connect to mcp, consuming mcp servers, claude mcp client, typescript mcp, tool invocation [tactical] |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | mcp, model context protocol, mcp server, fastmcp, mcp tools, mcp resources, how do i build an mcp server, mcp python sdk [tactical, generation] |
-| [mcp-server-fastmcp-python](skills/coding/mcp-server-fastmcp-python/SKILL.md) | Implements FastMCP v3.x/4.0.0b1 server development using Python SDK v2 with Pydantic validation, transport selection, resource/tool/prompt management, and production-grade error handling for building MCP servers. | fastmcp, mcp server python, how do i create an mcp server, tool registration, pydantic validation, mcp transport, streamable http |
-| [mcp-tool-design-patterns](skills/coding/mcp-tool-design-patterns/SKILL.md) | Designs effective MCP tools and resources following best practices including clear descriptions, bounded inputs/outputs, proper annotations (readOnlyHint, destructiveHint, idempotentHint), hierarchical resource templates, progressive discovery patter... | mcp tool design, resource design, tool descriptions, mcp schema, idempotent hint, resource templates, bounded responses |
+| [mcp-server-fastmcp-python](skills/coding/mcp-server-fastmcp-python/SKILL.md) | Implements FastMCP v3.x/4.0.0b1 server development using Python SDK v2 with Pydantic validation, transport selection, resource/tool/prompt management, and production-grade error handling for building MCP servers. | fastmcp, mcp server python, how do i create an mcp server, tool registration, pydantic validation, mcp transport, streamable http [tactical, generation] |
+| [mcp-tool-design-patterns](skills/coding/mcp-tool-design-patterns/SKILL.md) | Designs effective MCP tools and resources following best practices including clear descriptions, bounded inputs/outputs, proper annotations (readOnlyHint, destructiveHint, idempotentHint), hierarchical resource templates, progressive discovery patter... | mcp tool design, resource design, tool descriptions, mcp schema, idempotent hint, resource templates, bounded responses [tactical, strategic] |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | memoization, cache pattern, LRU cache, LFU cache, cache invalidation, TTL strategy, write-through, cache stampede TTL strategy [tactical, generation] |
 | [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. | memory management, smart pointers, RAII, CMake, concurrency, multithreading, thread safety, synchronization primitives [tactical, generation] |
 | [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. | message queue, message broker, pub/sub, consumer groups, delivery semantics, RabbitMQ, Kafka, SQS [tactical, generation] |
@@ -1490,6 +1490,10 @@ MIT — All skills are freely available and redistributable.
 | [vercel-optimize](skills/coding/vercel-optimize/SKILL.md) | Optimizes Vercel-deployed applications for cost, performance, and reliability through cold start mitigation, caching strategy, edge function optimization, bundle auditing, and monitoring. | vercel optimize, vercel performance, cold start, vercel caching, vercel analytics, edge functions, vercel cost |
 | [version-migration](skills/coding/version-migration/SKILL.md) | Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies. | version migration, major version upgrade, breaking changes, framework upgrade, deprecation migration, API breakage, automated refactoring, semver upgrade [tactical, generation] |
 | [wcag-21-aa-fundamentals](skills/coding/wcag-21-aa-fundamentals/SKILL.md) | Teaches WCAG 2.1 Level AA standards, success criteria categories, conformance levels, and regulatory context for developers implementing accessible web applications. | WCAG 2.1, Level AA, success criteria, accessibility standard, compliance, conformance, ADA compliance, WCAG baseline [educational, enforcement] |
+| [wcag-contrast-color-screen-reader](skills/coding/wcag-contrast-color-screen-reader/SKILL.md) | Implements WCAG 2.2 AA color contrast (4.5:1 text, 3:1 UI), semantic HTML landmarks, heading hierarchy, table markup, ARIA naming, live regions, and screen reader optimization for accessible web applications. | color contrast, wcag accessibility, screen reader optimization, aria labels, semantic html, landmark navigation, heading hierarchy, alt text [tactical, diagnostic] |
+| [wcag-form-accessibility-nodejs](skills/coding/wcag-form-accessibility-nodejs/SKILL.md) | Implements WCAG 2.2 AA form accessibility patterns for Node.js/JavaScript (server-side rendering, React/Next.js), including label-to-input association, error identification, focus management, dynamic updates with aria-live, and form state management... | wcag form accessibility, form validation a11y, aria-invalid, aria-describedby, screen reader forms, keyboard form navigation, next.js server actions forms, how do i make accessible forms [tactical] |
+| [wcag-form-accessibility-php-laravel](skills/coding/wcag-form-accessibility-php-laravel/SKILL.md) | Implements WCAG 2.2 AA accessible form patterns in PHP/Laravel using semantic HTML, aria-describedby error linking, fieldset/legend grouping, focus management, and server-rendered form practices for guaranteed accessibility compliance. | WCAG form accessibility, Laravel form validation, aria-describedby, accessible form groups, Blade form patterns, form error handling, focus management forms, Livewire accessibility [tactical] |
+| [wcag-keyboard-navigation-focus-management](skills/coding/wcag-keyboard-navigation-focus-management/SKILL.md) | Implements WCAG 2.2 AA keyboard navigation (2.1.1) and focus management (2.4.3, 2.4.7, 2.4.11, 2.1.2) patterns including logical tab order, skip links, focus visible, focus traps, and roving tabIndex for accessible web interfaces. | keyboard navigation, focus management, tab order, roving tabindex, focus trap, focus visible, skip link, arrow keys [tactical, diagnostic] |
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. | weaviate, vector database, weaviate client, hybrid search, generative search, weaviate graphql, how do i use weaviate, vector collections [tactical, generation] |
 | [weaviate-integration](skills/coding/weaviate-integration/SKILL.md) | Integrates Weaviate with external services and tools for AI applications, handling bidirectional data synchronization, API connectivity patterns, and error management for seamless interoperability. | weaviate, vector database, integration, API connectivity, data synchronization, AI applications, interop [tactical, generation] |
 | [weaviate-modules](skills/coding/weaviate-modules/SKILL.md) | Implements custom Weaviate modules (functions, vectorizers, generative providers) to extend data processing capabilities with application-specific AI and ML functions. | weaviate, custom modules, vectorizer extensions, generative AI, custom functions, schema customization, AI processing [tactical, generation] |
@@ -1675,7 +1679,7 @@ MIT — All skills are freely available and redistributable.
 | [auth0-api-skills](skills/security/auth0-api-skills/SKILL.md) | Implements Auth0 API functionalities (user CRUD, authentication flows, actions/hooks, organizations/multi-tenancy) for secure identity and access management in web and mobile applications. | auth0, authentication, user management, actions, organizations, identity security, auth0 api, jwt tokens [tactical] |
 | [dast-tooling](skills/security/dast-tooling/SKILL.md) | Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications. | dynamic application security testing, runtime analysis, web vulnerabilities, security testing, DAST [implementation, review] |
 | [dependency-vulnerability-scanning](skills/security/dependency-vulnerability-scanning/SKILL.md) | Implements dependency vulnerability scanning mechanisms to identify known security vulnerabilities in third-party libraries and dependencies. | dependency vulnerability scanning, library vulnerabilities, third-party security, vulnerability management, SCA [implementation, review] |
-| [mcp-security-authorization](skills/security/mcp-security-authorization/SKILL.md) | Implements MCP security best practices including OAuth 2.1 PKCE, resource indicators, token management, tool poisoning prevention, secret management, attestation, audit logging, and defense-in-depth strategies against OWASP MCP Top 10 risks (token mi... | mcp security, oauth 2.1, tool poisoning, mcp token management, secret management, mcp authentication, how do i secure mcp, authorization |
+| [mcp-security-authorization](skills/security/mcp-security-authorization/SKILL.md) | Implements MCP security best practices including OAuth 2.1 PKCE, resource indicators, token management, tool poisoning prevention, secret management, attestation, audit logging, and defense-in-depth strategies against OWASP MCP Top 10 risks (token mi... | mcp security, oauth 2.1, tool poisoning, mcp token management, secret management, mcp authentication, how do i secure mcp, authorization [tactical, enforcement] |
 | [sast-tooling](skills/security/sast-tooling/SKILL.md) | Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases. | static application security testing, source code analysis, code vulnerabilities, security bugs, early detection, SAST [implementation, review] |
 
 
@@ -1800,7 +1804,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (897 skills)
+### Implementation (Build Features) (901 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2676,6 +2680,10 @@ MIT — All skills are freely available and redistributable.
 | [vercel-deploy](skills/coding/vercel-deploy/SKILL.md) | Coding | Deploys frontend applications to Vercel with preview deployments, production releases, and environment-specific configuration management via Git integration. |
 | [vercel-optimize](skills/coding/vercel-optimize/SKILL.md) | Coding | Optimizes Vercel-deployed applications for cost, performance, and reliability through cold start mitigation, caching strategy, edge function optimization, bundle auditing, and monitoring. |
 | [version-migration](skills/coding/version-migration/SKILL.md) | Coding | Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies. |
+| [wcag-contrast-color-screen-reader](skills/coding/wcag-contrast-color-screen-reader/SKILL.md) | Coding | Implements WCAG 2.2 AA color contrast (4.5:1 text, 3:1 UI), semantic HTML landmarks, heading hierarchy, table markup, ARIA naming, live regions, and screen reader optimization for accessible web applications. |
+| [wcag-form-accessibility-nodejs](skills/coding/wcag-form-accessibility-nodejs/SKILL.md) | Coding | Implements WCAG 2.2 AA form accessibility patterns for Node.js/JavaScript (server-side rendering, React/Next.js), including label-to-input association, error identification, focus management, dynamic updates with aria-live, and form state management... |
+| [wcag-form-accessibility-php-laravel](skills/coding/wcag-form-accessibility-php-laravel/SKILL.md) | Coding | Implements WCAG 2.2 AA accessible form patterns in PHP/Laravel using semantic HTML, aria-describedby error linking, fieldset/legend grouping, focus management, and server-rendered form practices for guaranteed accessibility compliance. |
+| [wcag-keyboard-navigation-focus-management](skills/coding/wcag-keyboard-navigation-focus-management/SKILL.md) | Coding | Implements WCAG 2.2 AA keyboard navigation (2.1.1) and focus management (2.4.3, 2.4.7, 2.4.11, 2.1.2) patterns including logical tab order, skip links, focus visible, focus traps, and roving tabIndex for accessible web interfaces. |
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Coding | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. |
 | [weaviate-collections-api](skills/ai/weaviate-collections-api/SKILL.md) | Ai | Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information. |
 | [weaviate-graphql](skills/ai/weaviate-graphql/SKILL.md) | Ai | Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently. |
@@ -4439,6 +4447,10 @@ MIT — All skills are freely available and redistributable.
 | [volcano](skills/cncf/volcano/SKILL.md) | Cncf | "Configures volcano in batch scheduling infrastructure for kubernetes for cloud-native deployment and infrastructure management." | Reference |
 | [wasmcloud](skills/cncf/wasmcloud/SKILL.md) | Cncf | "Provides wasmCloud in WebAssembly-based distributed applications platform" | Reference |
 | [wcag-21-aa-fundamentals](skills/coding/wcag-21-aa-fundamentals/SKILL.md) | Coding | Teaches WCAG 2.1 Level AA standards, success criteria categories, conformance levels, and regulatory context for developers implementing accessible web applications. | Reference |
+| [wcag-contrast-color-screen-reader](skills/coding/wcag-contrast-color-screen-reader/SKILL.md) | Coding | Implements WCAG 2.2 AA color contrast (4.5:1 text, 3:1 UI), semantic HTML landmarks, heading hierarchy, table markup, ARIA naming, live regions, and screen reader optimization for accessible web applications. | Implementation |
+| [wcag-form-accessibility-nodejs](skills/coding/wcag-form-accessibility-nodejs/SKILL.md) | Coding | Implements WCAG 2.2 AA form accessibility patterns for Node.js/JavaScript (server-side rendering, React/Next.js), including label-to-input association, error identification, focus management, dynamic updates with aria-live, and form state management... | Implementation |
+| [wcag-form-accessibility-php-laravel](skills/coding/wcag-form-accessibility-php-laravel/SKILL.md) | Coding | Implements WCAG 2.2 AA accessible form patterns in PHP/Laravel using semantic HTML, aria-describedby error linking, fieldset/legend grouping, focus management, and server-rendered form practices for guaranteed accessibility compliance. | Implementation |
+| [wcag-keyboard-navigation-focus-management](skills/coding/wcag-keyboard-navigation-focus-management/SKILL.md) | Coding | Implements WCAG 2.2 AA keyboard navigation (2.1.1) and focus management (2.4.3, 2.4.7, 2.4.11, 2.1.2) patterns including logical tab order, skip links, focus visible, focus traps, and roving tabIndex for accessible web interfaces. | Implementation |
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Coding | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. | Implementation |
 | [weaviate-collections-api](skills/ai/weaviate-collections-api/SKILL.md) | Ai | Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information. | Implementation |
 | [weaviate-graphql](skills/ai/weaviate-graphql/SKILL.md) | Ai | Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently. | Implementation |

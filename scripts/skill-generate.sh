@@ -27,8 +27,8 @@
 set -euo pipefail
 
 # MODEL="openai/gpt-4o-mini"
-# MODEL="anthropic/claude-haiku-4-5"
-MODEL="llamacpp/anomaly-llama-cpp-model"
+ MODEL="anthropic/claude-haiku-4-5"
+#MODEL="llamacpp/anomaly-llama-cpp-model"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
