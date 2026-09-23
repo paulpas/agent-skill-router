@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-09T00:46:29.874243Z",
-  "totalSkills": 1319,
+  "generatedAt": "2026-09-23T17:22:30.143322Z",
+  "totalSkills": 1327,
   "domains": {
     "agent": 331,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
     "cncf": 202,
-    "coding": 594,
+    "coding": 602,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -28,9 +28,9 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 891,
+    "implementation": 897,
     "orchestration": 238,
-    "reference": 181,
+    "reference": 183,
     "information": 1,
     "review": 8
   },
@@ -3247,6 +3247,30 @@
       "source": "skills/coding/autogen-conversational-patterns/SKILL.md"
     },
     {
+      "name": "automated-a11y-testing-axe-core",
+      "domain": "coding",
+      "description": "Implements automated accessibility testing across the testing pyramid using axe-core engine with jest-axe, @axe-core/playwright, pa11y-ci for unit/E2E/CI integration and WCAG violation detection.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "axe-core",
+        "jest-axe",
+        "automated testing",
+        "accessibility testing",
+        "WCAG violations",
+        "CI/CD",
+        "pa11y-ci",
+        "@axe-core/playwright"
+      ],
+      "relatedSkills": [
+        "wcag-21-aa-fundamentals",
+        "keyboard-navigation-focus-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/automated-a11y-testing-axe-core/SKILL.md"
+    },
+    {
       "name": "autonomous-coding-lifecycle",
       "domain": "agent",
       "description": "Manages the complete autonomous coding lifecycle from code generation through self-review, test validation, failure repair, and deployment with state-machine orchestration.",
@@ -6430,6 +6454,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/collaboration-process-refactoring/SKILL.md"
+    },
+    {
+      "name": "color-contrast-visual-accessibility-wcag",
+      "domain": "coding",
+      "description": "Implements WCAG 2.1 color contrast and visual accessibility: SC 1.4.3/1.4.11 compliance, contrast ratio verification, CSS variable architecture for theme switching, high-contrast mode via forced-colors media query, and focus indicator contrast.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "color contrast",
+        "WCAG 1.4.3",
+        "WCAG 1.4.11",
+        "contrast ratio",
+        "accessible color",
+        "CSS variables",
+        "high contrast mode",
+        "forced-colors"
+      ],
+      "relatedSkills": [
+        "wcag-21-aa-fundamentals",
+        "semantic-html-aria-accessibility-tree"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/color-contrast-visual-accessibility-wcag/SKILL.md"
     },
     {
       "name": "command-pattern",
@@ -16895,6 +16943,30 @@
       "source": "skills/linux/kernel-tuning/SKILL.md"
     },
     {
+      "name": "keyboard-navigation-focus-management",
+      "domain": "coding",
+      "description": "Implements keyboard accessibility and focus management: focus APIs, roving tabindex, focus trapping in modals, focus restoration on close, visible focus indicators, keyboard event handlers for Enter/Space/Escape/Arrow keys, and skip links.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "keyboard navigation",
+        "focus management",
+        "roving tabindex",
+        "focus trap",
+        "visible focus",
+        "tabindex",
+        "Escape key",
+        "keyboard events"
+      ],
+      "relatedSkills": [
+        "semantic-html-aria-accessibility-tree",
+        "react-accessibility-components-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/keyboard-navigation-focus-management/SKILL.md"
+    },
+    {
       "name": "keycloak",
       "domain": "cncf",
       "description": "\"Provides Keycloak in Cloud-Native Engineering - identity and access management\"",
@@ -19670,6 +19742,30 @@
       "source": "skills/go/mobile-applications/SKILL.md"
     },
     {
+      "name": "mobile-web-accessibility-touch-targets",
+      "domain": "coding",
+      "description": "Implements mobile web accessibility with proper touch target sizing (44/48pt minimum), gesture alternatives, viewport configuration for zoom, orientation support, and screen reader testing methodology for VoiceOver/TalkBack.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mobile accessibility",
+        "touch targets",
+        "VoiceOver",
+        "TalkBack",
+        "gesture alternatives",
+        "viewport meta",
+        "touch events",
+        "screen reader testing"
+      ],
+      "relatedSkills": [
+        "wcag-21-aa-fundamentals",
+        "keyboard-navigation-focus-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mobile-web-accessibility-touch-targets/SKILL.md"
+    },
+    {
       "name": "modern-architecture-patterns",
       "domain": "coding",
       "description": "Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems.",
@@ -22301,6 +22397,30 @@
       "source": "skills/agent/personalized-behavior/SKILL.md"
     },
     {
+      "name": "php-laravel-blade-accessibility",
+      "domain": "coding",
+      "description": "Builds accessible server-rendered PHP/Laravel applications using Blade templates with accessible form patterns, Livewire integration, aria attributes, error announcements with alerts, and tools lens-for-laravel and laravel-blade-ally.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "PHP",
+        "Laravel",
+        "Blade",
+        "Livewire",
+        "accessible forms",
+        "aria attributes",
+        "lens-for-laravel",
+        "laravel-blade-ally"
+      ],
+      "relatedSkills": [
+        "semantic-html-aria-accessibility-tree",
+        "automated-a11y-testing-axe-core"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/php-laravel-blade-accessibility/SKILL.md"
+    },
+    {
       "name": "pinecone-api",
       "domain": "coding",
       "description": "Integrates Pinecone vector database (serverless/pod indexes, upsert, query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production vector search.",
@@ -23700,6 +23820,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/maker/rapid-prototyping-workflow/SKILL.md"
+    },
+    {
+      "name": "react-accessibility-components-patterns",
+      "domain": "coding",
+      "description": "Implements accessible React components using Radix Primitives and React Aria with keyboard navigation, focus management, ARIA attributes, and tested patterns for dialog, menu, combobox, and form elements.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "React",
+        "Radix Primitives",
+        "react-aria",
+        "accessible components",
+        "keyboard navigation",
+        "focus trap",
+        "headless components",
+        "accessible patterns"
+      ],
+      "relatedSkills": [
+        "keyboard-navigation-focus-management",
+        "semantic-html-aria-accessibility-tree"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-accessibility-components-patterns/SKILL.md"
     },
     {
       "name": "react-advanced-patterns",
@@ -25564,6 +25708,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/self-improvement/SKILL.md"
+    },
+    {
+      "name": "semantic-html-aria-accessibility-tree",
+      "domain": "coding",
+      "description": "Builds accessible HTML structures using semantic elements (button, nav, main, section, form, fieldset, label) and ARIA 1.2 with clear understanding of accessibility tree, implicit roles, first rule of ARIA, and landmark navigation.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "semantic HTML",
+        "ARIA 1.2",
+        "accessibility tree",
+        "implicit roles",
+        "HTML5",
+        "button",
+        "form",
+        "landmark"
+      ],
+      "relatedSkills": [
+        "keyboard-navigation-focus-management",
+        "wcag-21-aa-fundamentals"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/semantic-html-aria-accessibility-tree/SKILL.md"
     },
     {
       "name": "semver-automation",
@@ -30003,6 +30171,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/wasmcloud/SKILL.md"
+    },
+    {
+      "name": "wcag-21-aa-fundamentals",
+      "domain": "coding",
+      "description": "Teaches WCAG 2.1 Level AA standards, success criteria categories, conformance levels, and regulatory context for developers implementing accessible web applications.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "guidance",
+      "triggers": [
+        "WCAG 2.1",
+        "Level AA",
+        "success criteria",
+        "accessibility standard",
+        "compliance",
+        "conformance",
+        "ADA compliance",
+        "WCAG baseline"
+      ],
+      "relatedSkills": [
+        "semantic-html-aria-accessibility-tree",
+        "keyboard-navigation-focus-management",
+        "color-contrast-visual-accessibility-wcag"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/wcag-21-aa-fundamentals/SKILL.md"
     },
     {
       "name": "weaviate-api",
