@@ -1,22 +1,22 @@
 # LLM Benchmark Requirements
 
 # OpenAI API support
-openai>=2.45.0
+openai>=3.13.0
 
 # Anthropic API support
-anthropic>=0.116.0
+anthropic>=1.5.0
 
 # Groq API support
-groq>=1.5.0
+groq>=1.7.0
 
 # Token counting for OpenAI models
-tiktoken>=0.13.0
+tiktoken>=0.14.0
 
 # HTTP requests (for Ollama and general use)
 requests>=2.34.2
 
 # Data serialization
-pydantic>=2.13.4
+pydantic>=2.13.5
 
 # Development/optional
 pytest>=9.1.1
