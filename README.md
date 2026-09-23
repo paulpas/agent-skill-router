@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,327 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,322 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,327 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,322 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,9 +312,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-09-23 12:17:58 UTC  
-> **Total skills:** 1327  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1327 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-09-23 17:22:31 UTC  
+> **Total skills:** 1322  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1322 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -691,7 +691,7 @@ MIT — All skills are freely available and redistributable.
 | [oracle-cloud-infrastructure](skills/cloud/oracle-cloud-infrastructure/SKILL.md) | Implements functionalities for Oracle Cloud Infrastructure, covering Compute, Object Storage, and Autonomous Database services. | oracle cloud, compute services, object storage, autonomous database, oracle database, OCI functionalities [tactical, educational] |
 
 
-### Cncf (201 skills)
+### Cncf (200 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -850,7 +850,6 @@ MIT — All skills are freely available and redistributable.
 | [linkerd](skills/cncf/linkerd/SKILL.md) | "Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | cdn, infrastructure as code, k8s service, kubernetes service, linkerd, monitoring, native, service [educational, strategic] |
 | [litmus](skills/cncf/litmus/SKILL.md) | "Litmus in Chaos Engineering - cloud native architecture, patterns, pits" and best practices | cdn, chaos, engineering, infrastructure as code, litmus, monitoring, cloudformation, cloudfront [educational, strategic] |
 | [longhorn](skills/cncf/longhorn/SKILL.md) | "Longhorn in Cloud Native Storage - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, longhorn, monitoring, native, storage, cloudformation, cloudfront [educational, strategic] |
-| [mcp-production-patterns](skills/cncf/mcp-production-patterns/SKILL.md) | Implements production-grade MCP deployments with patterns for latency optimization (stdio vs HTTP transports), stateful session management, caching strategies, observability (tracing, metrics), rate limiting, graceful degradation, and lessons from pr... | mcp production, mcp deployment, mcp performance, mcp observability, mcp monitoring, http streamable, stateful session pattern |
 | [metal3-io](skills/cncf/metal3-io/SKILL.md) | "metal3.io in Bare Metal Provisioning - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, metal, metal3 io, metal3-io, monitoring, provisioning, cloudformation [educational, strategic] |
 | [microprofile](skills/cncf/microprofile/SKILL.md) | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. | microprofile, fault tolerance, service mesh, openapi spec, health checks, metrics endpoint, config source, jwt security metrics endpoint [educational, strategic] |
 | [multi-stage-deployment](skills/cncf/multi-stage-deployment/SKILL.md) | Designs multi-stage deployment pipelines that reduce risk through progressive disclosure, environment parity, and quality-gated stage transitions from development to production. | multi-stage deployment, deployment stages, environment parity, deployment pipeline, stage gates, dev staging pre-prod, deployment readiness, progressive delivery [educational, diagnostic] |
@@ -898,7 +897,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (607 skills)
+### Coding (604 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1267,10 +1266,7 @@ MIT — All skills are freely available and redistributable.
 | [marketo-api](skills/coding/marketo-api/SKILL.md) | Implements Marketo API integration (REST, SOAP, Lead Database, Activities, Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export, trigger campaigns, and Marketo REST API patterns. | marketo, marketo api, marketo rest, adobe marketo, marketo leads, marketo activities, marketo campaigns, how do i integrate with marketo activities [tactical, generation] |
 | [maven-build-system](skills/coding/maven-build-system/SKILL.md) | Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects. | maven, pom.xml, mvn command, java build tool, dependency management, maven central, plugin management, BOM [tactical, generation] |
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | maven, pom.xml, mvn command, dependency management, how do i fix maven conflicts, how do i manage java dependencies, reactor build, BOM conflicts [tactical, generation] |
-| [mcp-client-integration](skills/coding/mcp-client-integration/SKILL.md) | Integrates MCP clients using Python SDK v2 and TypeScript SDK v2 to connect to MCP servers, manage tools/resources/prompts, handle transport (stdio/SSE), error recovery, and implement structured calling conventions in AI agent applications. | mcp client, mcp integration, how do i connect to mcp, consuming mcp servers, claude mcp client, typescript mcp, tool invocation |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | mcp, model context protocol, mcp server, fastmcp, mcp tools, mcp resources, how do i build an mcp server, mcp python sdk [tactical, generation] |
-| [mcp-server-fastmcp-python](skills/coding/mcp-server-fastmcp-python/SKILL.md) | Implements FastMCP v3.x/4.0.0b1 server development using Python SDK v2 with Pydantic validation, transport selection, resource/tool/prompt management, and production-grade error handling for building MCP servers. | fastmcp, mcp server python, how do i create an mcp server, tool registration, pydantic validation, mcp transport, streamable http |
-| [mcp-tool-design-patterns](skills/coding/mcp-tool-design-patterns/SKILL.md) | Designs effective MCP tools and resources following best practices including clear descriptions, bounded inputs/outputs, proper annotations (readOnlyHint, destructiveHint, idempotentHint), hierarchical resource templates, progressive discovery patter... | mcp tool design, resource design, tool descriptions, mcp schema, idempotent hint, resource templates, bounded responses |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | memoization, cache pattern, LRU cache, LFU cache, cache invalidation, TTL strategy, write-through, cache stampede TTL strategy [tactical, generation] |
 | [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. | memory management, smart pointers, RAII, CMake, concurrency, multithreading, thread safety, synchronization primitives [tactical, generation] |
 | [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. | message queue, message broker, pub/sub, consumer groups, delivery semantics, RabbitMQ, Kafka, SQS [tactical, generation] |
@@ -1667,7 +1663,7 @@ MIT — All skills are freely available and redistributable.
 | [secrets-rotation](skills/secrets-management/secrets-rotation/SKILL.md) | Manages the periodic and automatic rotation of sensitive secrets, integrating techniques applicable to systems like AWS Secrets Manager and HashiCorp Vault while ensuring minimal disruption to services and enhancing overall security and compliance me... | secrets rotation, automatic rotation, credential rotation, secret management, HashiCorp Vault, AWS Secrets Manager, key rotation, password rotation [management, implementation] |
 
 
-### Security (6 skills)
+### Security (5 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1675,7 +1671,6 @@ MIT — All skills are freely available and redistributable.
 | [auth0-api-skills](skills/security/auth0-api-skills/SKILL.md) | Implements Auth0 API functionalities (user CRUD, authentication flows, actions/hooks, organizations/multi-tenancy) for secure identity and access management in web and mobile applications. | auth0, authentication, user management, actions, organizations, identity security, auth0 api, jwt tokens [tactical] |
 | [dast-tooling](skills/security/dast-tooling/SKILL.md) | Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications. | dynamic application security testing, runtime analysis, web vulnerabilities, security testing, DAST [implementation, review] |
 | [dependency-vulnerability-scanning](skills/security/dependency-vulnerability-scanning/SKILL.md) | Implements dependency vulnerability scanning mechanisms to identify known security vulnerabilities in third-party libraries and dependencies. | dependency vulnerability scanning, library vulnerabilities, third-party security, vulnerability management, SCA [implementation, review] |
-| [mcp-security-authorization](skills/security/mcp-security-authorization/SKILL.md) | Implements MCP security best practices including OAuth 2.1 PKCE, resource indicators, token management, tool poisoning prevention, secret management, attestation, audit logging, and defense-in-depth strategies against OWASP MCP Top 10 risks (token mi... | mcp security, oauth 2.1, tool poisoning, mcp token management, secret management, mcp authentication, how do i secure mcp, authorization |
 | [sast-tooling](skills/security/sast-tooling/SKILL.md) | Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases. | static application security testing, source code analysis, code vulnerabilities, security bugs, early detection, SAST [implementation, review] |
 
 
@@ -1800,7 +1795,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (897 skills)
+### Implementation (Build Features) (892 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2335,13 +2330,8 @@ MIT — All skills are freely available and redistributable.
 | [mass-framework](skills/agent/mass-framework/SKILL.md) | Agent | Automates multi-agent system design through three-stage optimization (block-level prompt tuning, influence-weighted topology search, workflow-level joint optimization) to discover optimal agent configurations and interactions. |
 | [maven-build-system](skills/coding/maven-build-system/SKILL.md) | Coding | Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects. |
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Coding | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. |
-| [mcp-client-integration](skills/coding/mcp-client-integration/SKILL.md) | Coding | Integrates MCP clients using Python SDK v2 and TypeScript SDK v2 to connect to MCP servers, manage tools/resources/prompts, handle transport (stdio/SSE), error recovery, and implement structured calling conventions in AI agent applications. |
 | [mcp-integration](skills/agent/mcp-integration/SKILL.md) | Agent | Integrates the Model Context Protocol (MCP) standard for LLM tool discovery and interaction, implementing MCP client-server architecture with stdio/HTTP transport, tool/resource/prompt types, and FastMCP SDK patterns. |
-| [mcp-production-patterns](skills/cncf/mcp-production-patterns/SKILL.md) | Cncf | Implements production-grade MCP deployments with patterns for latency optimization (stdio vs HTTP transports), stateful session management, caching strategies, observability (tracing, metrics), rate limiting, graceful degradation, and lessons from pr... |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. |
-| [mcp-security-authorization](skills/security/mcp-security-authorization/SKILL.md) | Security | Implements MCP security best practices including OAuth 2.1 PKCE, resource indicators, token management, tool poisoning prevention, secret management, attestation, audit logging, and defense-in-depth strategies against OWASP MCP Top 10 risks (token mi... |
-| [mcp-server-fastmcp-python](skills/coding/mcp-server-fastmcp-python/SKILL.md) | Coding | Implements FastMCP v3.x/4.0.0b1 server development using Python SDK v2 with Pydantic validation, transport selection, resource/tool/prompt management, and production-grade error handling for building MCP servers. |
-| [mcp-tool-design-patterns](skills/coding/mcp-tool-design-patterns/SKILL.md) | Coding | Designs effective MCP tools and resources following best practices including clear descriptions, bounded inputs/outputs, proper annotations (readOnlyHint, destructiveHint, idempotentHint), hierarchical resource templates, progressive discovery patter... |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. |
 | [memory-management](skills/agent/memory-management/SKILL.md) | Agent | Manages agent memory across short-term (conversation buffers), long-term (vector stores, persistent databases), and procedural (learned patterns) layers to maintain stateful context across extended agent interactions. |
 | [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Coding | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. |
@@ -3964,13 +3954,8 @@ MIT — All skills are freely available and redistributable.
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Coding | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | Implementation |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Agent | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Agent | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
-| [mcp-client-integration](skills/coding/mcp-client-integration/SKILL.md) | Coding | Integrates MCP clients using Python SDK v2 and TypeScript SDK v2 to connect to MCP servers, manage tools/resources/prompts, handle transport (stdio/SSE), error recovery, and implement structured calling conventions in AI agent applications. | Implementation |
 | [mcp-integration](skills/agent/mcp-integration/SKILL.md) | Agent | Integrates the Model Context Protocol (MCP) standard for LLM tool discovery and interaction, implementing MCP client-server architecture with stdio/HTTP transport, tool/resource/prompt types, and FastMCP SDK patterns. | Implementation |
-| [mcp-production-patterns](skills/cncf/mcp-production-patterns/SKILL.md) | Cncf | Implements production-grade MCP deployments with patterns for latency optimization (stdio vs HTTP transports), stateful session management, caching strategies, observability (tracing, metrics), rate limiting, graceful degradation, and lessons from pr... | Implementation |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | Implementation |
-| [mcp-security-authorization](skills/security/mcp-security-authorization/SKILL.md) | Security | Implements MCP security best practices including OAuth 2.1 PKCE, resource indicators, token management, tool poisoning prevention, secret management, attestation, audit logging, and defense-in-depth strategies against OWASP MCP Top 10 risks (token mi... | Implementation |
-| [mcp-server-fastmcp-python](skills/coding/mcp-server-fastmcp-python/SKILL.md) | Coding | Implements FastMCP v3.x/4.0.0b1 server development using Python SDK v2 with Pydantic validation, transport selection, resource/tool/prompt management, and production-grade error handling for building MCP servers. | Implementation |
-| [mcp-tool-design-patterns](skills/coding/mcp-tool-design-patterns/SKILL.md) | Coding | Designs effective MCP tools and resources following best practices including clear descriptions, bounded inputs/outputs, proper annotations (readOnlyHint, destructiveHint, idempotentHint), hierarchical resource templates, progressive discovery patter... | Implementation |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | Implementation |
 | [memory-management](skills/agent/memory-management/SKILL.md) | Agent | Manages agent memory across short-term (conversation buffers), long-term (vector stores, persistent databases), and procedural (learned patterns) layers to maintain stateful context across extended agent interactions. | Implementation |
 | [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Coding | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. | Implementation |
