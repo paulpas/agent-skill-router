@@ -14,14 +14,14 @@ export interface LinkResolverConfig {
   allowExternalLinks: boolean;
   maxDepth: number;
   skillBasePath: string;
-  maxExternalSizeKb?: number;        // default 10 - threshold before compression
-  compressionMode?: 'brief' | 'moderate' | 'skip';  // default 'brief'
-  jsRenderingEnabled?: boolean;      // default false
-  jsRenderTimeoutMs?: number;        // default 5000
-  jsRenderFallback?: boolean;        // default true
-  resolutionMode?: 'inline' | 'semantic' | 'compressed';  // default 'inline'
-  semanticTopK?: number;             // default 3
-  semanticSimilarityThreshold?: number;  // default 0.3
+  maxExternalSizeKb?: number; // default 10 - threshold before compression
+  compressionMode?: 'brief' | 'moderate' | 'skip'; // default 'brief'
+  jsRenderingEnabled?: boolean; // default false
+  jsRenderTimeoutMs?: number; // default 5000
+  jsRenderFallback?: boolean; // default true
+  resolutionMode?: 'inline' | 'semantic' | 'compressed'; // default 'inline'
+  semanticTopK?: number; // default 3
+  semanticSimilarityThreshold?: number; // default 0.3
 }
 
 interface ParsedLink {
@@ -74,10 +74,10 @@ export class MarkdownLinkResolver {
 
     // Resolve each link and build replacement map
     const replacements = new Map<string, string>();
-    
+
     for (const link of links) {
       if (replacements.has(link.fullMatch)) continue; // Skip duplicates
-      
+
       const resolved = await this.resolveSingleLink(link, skillFilePath, depth);
       if (resolved !== null) {
         replacements.set(link.fullMatch, resolved);
@@ -100,7 +100,7 @@ export class MarkdownLinkResolver {
     while ((match = linkRegex.exec(content)) !== null) {
       const [fullMatch, text, target] = match;
       const isExternal = target.startsWith('http://') || target.startsWith('https://');
-      
+
       links.push({ fullMatch, text, target, isExternal });
     }
 
@@ -112,14 +112,12 @@ export class MarkdownLinkResolver {
    * Returns formatted reference section or null if resolution fails.
    */
   private async resolveSingleLink(
-    link: ParsedLink, 
-    skillFilePath: string, 
-    depth: number
+    link: ParsedLink,
+    skillFilePath: string,
+    depth: number,
   ): Promise<string | null> {
     if (link.isExternal) {
-      return this.config.allowExternalLinks 
-        ? this.fetchExternalContent(link.target, depth)
-        : null;
+      return this.config.allowExternalLinks ? this.fetchExternalContent(link.target, depth) : null;
     }
 
     return this.resolveLocalLink(link, skillFilePath, depth);
@@ -131,7 +129,7 @@ export class MarkdownLinkResolver {
   private async resolveLocalLink(
     link: ParsedLink,
     skillFilePath: string,
-    depth: number
+    depth: number,
   ): Promise<string | null> {
     // Law 4: Fail Fast - resolve and validate path immediately
     const skillDir = path.dirname(skillFilePath);
@@ -141,18 +139,18 @@ export class MarkdownLinkResolver {
       // Handle relative paths from skill's directory
       resolvedPath = path.resolve(skillDir, link.target);
     } catch {
-      this.logger.warn('Failed to resolve link path', { 
-        target: link.target, 
-        skillFile: skillFilePath 
+      this.logger.warn('Failed to resolve link path', {
+        target: link.target,
+        skillFile: skillFilePath,
       });
       return null;
     }
 
     // Law 1: Guard clause - path traversal protection
     if (!this.isSafeLocalPath(resolvedPath)) {
-      this.logger.warn('Blocked unsafe link path (path traversal attempt)', { 
+      this.logger.warn('Blocked unsafe link path (path traversal attempt)', {
         target: link.target,
-        resolvedPath 
+        resolvedPath,
       });
       return null;
     }
@@ -195,9 +193,10 @@ export class MarkdownLinkResolver {
   private isSafeLocalPath(resolvedPath: string): boolean {
     const normalizedBase = path.resolve(this.config.skillBasePath);
     const normalizedPath = path.resolve(resolvedPath);
-    
-    return normalizedPath.startsWith(normalizedBase + path.sep) || 
-           normalizedPath === normalizedBase;
+
+    return (
+      normalizedPath.startsWith(normalizedBase + path.sep) || normalizedPath === normalizedBase
+    );
   }
 
   /**
@@ -208,9 +207,9 @@ export class MarkdownLinkResolver {
     try {
       return await fs.promises.readFile(filePath, 'utf-8');
     } catch (error) {
-      this.logger.debug('Failed to read referenced file', { 
+      this.logger.debug('Failed to read referenced file', {
         path: filePath,
-        error: error instanceof Error ? error.message : String(error)
+        error: error instanceof Error ? error.message : String(error),
       });
       return null;
     }
@@ -230,7 +229,7 @@ export class MarkdownLinkResolver {
     this.logger.debug('Fetching external web content', {
       url,
       depth: _depth,
-      mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static'
+      mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static',
     });
 
     // Step 1: Fetch content (with optional JS rendering)
@@ -260,7 +259,7 @@ export class MarkdownLinkResolver {
     this.logger.debug('External content retrieved', {
       url,
       size: rawContent.length,
-      mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static'
+      mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static',
     });
 
     // Step 2: Transform content to text
@@ -307,7 +306,8 @@ export class MarkdownLinkResolver {
     // Step 5: Over threshold - compress
     if (this.config.compressionMode === 'skip') {
       // Skip compression - truncate instead
-      const truncated = transformed.substring(0, maxBytes) + '\n\n... [content truncated - exceeds size limit]';
+      const truncated =
+        transformed.substring(0, maxBytes) + '\n\n... [content truncated - exceeds size limit]';
       const reference = this.formatReference(`External: ${url}`, truncated, url);
       if (this.debugContent) {
         this.logger.info('External content injected (truncated)', {
@@ -338,8 +338,12 @@ export class MarkdownLinkResolver {
     }
 
     // Step 7: LLM compression failed - fallback to truncation
-    this.logger.warn('LLM compression failed, falling back to truncation', { url, size: transformed.length });
-    const truncated = transformed.substring(0, maxBytes) + '\n\n... [content truncated - LLM compression failed]';
+    this.logger.warn('LLM compression failed, falling back to truncation', {
+      url,
+      size: transformed.length,
+    });
+    const truncated =
+      transformed.substring(0, maxBytes) + '\n\n... [content truncated - LLM compression failed]';
     const reference = this.formatReference(`External: ${url}`, truncated, url);
     if (this.debugContent) {
       this.logger.info('External content injected (fallback truncated)', {
@@ -364,7 +368,7 @@ export class MarkdownLinkResolver {
     try {
       const response = await fetch(url, {
         signal: controller.signal,
-        headers: { 'User-Agent': 'SkillRouter/1.0 (Link Resolver)' }
+        headers: { 'User-Agent': 'SkillRouter/1.0 (Link Resolver)' },
       });
       clearTimeout(timeout);
 
@@ -377,14 +381,23 @@ export class MarkdownLinkResolver {
       const text = await response.text();
       this.logger.debug('External page fetched', { url, size: text.length });
       if (text.length > 8_000_000) {
-        this.logger.warn('External content exceeds 8MB hard limit, skipping', { url, size: text.length });
+        this.logger.warn('External content exceeds 8MB hard limit, skipping', {
+          url,
+          size: text.length,
+        });
         return null;
       }
 
       return text;
     } catch (error) {
       clearTimeout(timeout);
-      this.logger.warn('Static fetch error', { url, error: error instanceof Error ? error.message : String(error) });
+      const cause = (error as { cause?: Error & { code?: string } })?.cause;
+      this.logger.warn('Static fetch error', {
+        url,
+        error: error instanceof Error ? error.message : String(error),
+        cause: cause?.message,
+        code: cause?.code,
+      });
       return null;
     }
   }
@@ -411,7 +424,13 @@ export class MarkdownLinkResolver {
 
       const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        // --disable-gpu: in-container Chromium's GPU process retries Vulkan/ANGLE
+        // init in a loop, stalling the first CDP command (Network.enable) until
+        // protocolTimeout expires; disabling the GPU process fixes the stall.
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
+        // Defensive bound: a stalled CDP handshake fails at 60 s instead of
+        // puppeteer's 180 s default, capping worst-case fallback latency.
+        protocolTimeout: 60000,
       });
 
       try {
@@ -421,11 +440,11 @@ export class MarkdownLinkResolver {
         // Navigate and wait for content
         await page.goto(url, {
           waitUntil: 'domcontentloaded',
-          timeout: timeoutMs
+          timeout: timeoutMs,
         });
 
         // Wait a bit for dynamic content
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         // Extract rendered HTML
         const html = await page.content();
@@ -433,7 +452,10 @@ export class MarkdownLinkResolver {
 
         // 8MB hard limit
         if (html.length > 8_000_000) {
-          this.logger.warn('JS-rendered content exceeds 8MB hard limit', { url, size: html.length });
+          this.logger.warn('JS-rendered content exceeds 8MB hard limit', {
+            url,
+            size: html.length,
+          });
           return null;
         }
 
@@ -448,7 +470,13 @@ export class MarkdownLinkResolver {
         });
       }
     } catch (error) {
-      this.logger.warn('JS rendering failed', { url, error: error instanceof Error ? error.message : String(error) });
+      const cause = (error as { cause?: Error & { code?: string } })?.cause;
+      this.logger.warn('JS rendering failed', {
+        url,
+        error: error instanceof Error ? error.message : String(error),
+        cause: cause?.message,
+        code: cause?.code,
+      });
       return null;
     }
   }
@@ -475,41 +503,47 @@ export class MarkdownLinkResolver {
     } catch (error) {
       this.logger.error('External content compression failed', {
         url,
-        error: error instanceof Error ? error.message : String(error)
+        error: error instanceof Error ? error.message : String(error),
       });
       return null;
     }
   }
 
   /**
-    * Strip common navigation/boilerplate HTML elements from content.
-    * Removes nav, footer, header, and aside elements which typically contain
-    * site-level navigation menus, sidebars, and footers rather than useful content.
-    */
-   private stripBoilerplate(html: string): string {
-      let text = html;
+   * Strip common navigation/boilerplate HTML elements from content.
+   * Removes nav, footer, header, and aside elements which typically contain
+   * site-level navigation menus, sidebars, and footers rather than useful content.
+   */
+  private stripBoilerplate(html: string): string {
+    let text = html;
 
-      // Strip named semantic HTML elements (primary navigation/boilerplate)
-      text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
-      text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
-      text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
-      text = text.split(/<aside[\s\S]*?<\/aside>/gi).join('');
+    // Strip named semantic HTML elements (primary navigation/boilerplate)
+    text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
+    text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
+    text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
+    text = text.split(/<aside[\s\S]*?<\/aside>/gi).join('');
 
-      // Strip common noise div patterns that contain sidebar/toc/related content
-      text = text.split(/<div\s+[^>]*class=["'][^"']*sidebar[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
-      text = text.split(/<div\s+[^>]*id=["']toc["'][^>]*>[\s\S]*?<\/div>/gi).join('');
-      text = text.split(/<div\s+[^>]*class=["'][^"']*related[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
-      text = text.split(/<div\s+[^>]*class=["'][^"']*widget[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
-      text = text.split(/<div\s+[^>]*class=["'][^"']*nav[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+    // Strip common noise div patterns that contain sidebar/toc/related content
+    text = text
+      .split(/<div\s+[^>]*class=["'][^"']*sidebar[^"']*["'][^>]*>[\s\S]*?<\/div>/gi)
+      .join('');
+    text = text.split(/<div\s+[^>]*id=["']toc["'][^>]*>[\s\S]*?<\/div>/gi).join('');
+    text = text
+      .split(/<div\s+[^>]*class=["'][^"']*related[^"']*["'][^>]*>[\s\S]*?<\/div>/gi)
+      .join('');
+    text = text
+      .split(/<div\s+[^>]*class=["'][^"']*widget[^"']*["'][^>]*>[\s\S]*?<\/div>/gi)
+      .join('');
+    text = text.split(/<div\s+[^>]*class=["'][^"']*nav[^"']*["'][^>]*>[\s\S]*?<\/div>/gi).join('');
 
-      return text;
-    }
+    return text;
+  }
 
-   /**
-    * Extract meaningful content from HTML, targeting a character limit.
-    * Removes scripts, styles, navigation, and extracts text with heading structure.
-    */
-   private extractKeyContent(html: string, targetChars: number): string {
+  /**
+   * Extract meaningful content from HTML, targeting a character limit.
+   * Removes scripts, styles, navigation, and extracts text with heading structure.
+   */
+  private extractKeyContent(html: string, targetChars: number): string {
     // Extract meaningful content from HTML
     let text = html;
 
@@ -550,7 +584,7 @@ export class MarkdownLinkResolver {
   /**
    * Transform external HTML/content to markdown-like format suitable for skills.
    * Strips HTML tags, preserves structure, adds source attribution.
-   * 
+   *
    * NOTE: This is a best-effort regex-based transformation. It handles common cases
    * but may fail on complex HTML (nested tags, attributes with > in values, etc.).
    * For production use with untrusted external content, consider using a proper
@@ -599,12 +633,12 @@ export class MarkdownLinkResolver {
    */
   private applyReplacements(content: string, replacements: Map<string, string>): string {
     let result = content;
-    
+
     for (const [original, replacement] of replacements) {
       // Use split/join to avoid String.replace interpreting $ characters specially
       result = result.split(original).join(replacement);
     }
-    
+
     return result;
   }
 
@@ -612,44 +646,44 @@ export class MarkdownLinkResolver {
    * Extract skill context from transformed content for semantic queries.
    * Uses title + description + first 500 chars of content.
    */
-   private extractSkillContext(content: string): string {
-     const lines = content.split('\n').filter(l => l.trim().length > 0);
+  private extractSkillContext(content: string): string {
+    const lines = content.split('\n').filter((l) => l.trim().length > 0);
 
-     // Find first H1 heading as the page title
-     const h1Match = lines.find(l => /^# /.test(l));
-     const title = h1Match ? h1Match.replace(/^#\s+/, '').trim() : '';
+    // Find first H1 heading as the page title
+    const h1Match = lines.find((l) => /^# /.test(l));
+    const title = h1Match ? h1Match.replace(/^#\s+/, '').trim() : '';
 
-     // Extract paragraphs that come AFTER the H1 heading (not before) to avoid sidebar contamination
-     let firstParagraph = '';
-     if (h1Match) {
-       const h1Index = lines.indexOf(h1Match);
-       // Find first non-heading, non-empty line after H1
-       for (let i = h1Index + 1; i < lines.length; i++) {
-         const line = lines[i];
-         if (!line.startsWith('#') && line.trim().length > 20) {
-           firstParagraph = line.trim();
-           break;
-         }
-       }
-     } else {
-       // Fallback: no H1 found, use the original logic
-       firstParagraph = lines.find(l => !l.startsWith('#') && l.trim().length > 20) || '';
-     }
+    // Extract paragraphs that come AFTER the H1 heading (not before) to avoid sidebar contamination
+    let firstParagraph = '';
+    if (h1Match) {
+      const h1Index = lines.indexOf(h1Match);
+      // Find first non-heading, non-empty line after H1
+      for (let i = h1Index + 1; i < lines.length; i++) {
+        const line = lines[i];
+        if (!line.startsWith('#') && line.trim().length > 20) {
+          firstParagraph = line.trim();
+          break;
+        }
+      }
+    } else {
+      // Fallback: no H1 found, use the original logic
+      firstParagraph = lines.find((l) => !l.startsWith('#') && l.trim().length > 20) || '';
+    }
 
-     // Extract a representative content block starting from H1 (not from arbitrary early noise)
-     let contentBlock = '';
-     if (h1Match) {
-       const h1Index = lines.indexOf(h1Match);
-       const afterH1 = lines.slice(h1Index).join('\n');
-       // Take up to ~500 chars starting from H1
-       contentBlock = afterH1.length > 500 ? afterH1.substring(0, 500) : afterH1;
-     } else {
-       // Fallback: use first 500 chars of full content
-       contentBlock = content.substring(0, 500);
-     }
+    // Extract a representative content block starting from H1 (not from arbitrary early noise)
+    let contentBlock = '';
+    if (h1Match) {
+      const h1Index = lines.indexOf(h1Match);
+      const afterH1 = lines.slice(h1Index).join('\n');
+      // Take up to ~500 chars starting from H1
+      contentBlock = afterH1.length > 500 ? afterH1.substring(0, 500) : afterH1;
+    } else {
+      // Fallback: use first 500 chars of full content
+      contentBlock = content.substring(0, 500);
+    }
 
-     return [title, firstParagraph, contentBlock].filter(Boolean).join(' ').trim();
-   }
+    return [title, firstParagraph, contentBlock].filter(Boolean).join(' ').trim();
+  }
 
   /**
    * Resolve external content using semantic chunking and retrieval.
@@ -658,7 +692,7 @@ export class MarkdownLinkResolver {
   private async resolveExternalSemantic(
     url: string,
     transformedContent: string,
-    skillContext: string
+    skillContext: string,
   ): Promise<string | null> {
     // Law 1: Early Exit — no embedder available
     if (!this.embedder) {
@@ -675,7 +709,10 @@ export class MarkdownLinkResolver {
 
     // DEBUG: Log chunk count for verification
     if (this.debugContent) {
-      const sampleHeading = chunks.slice(0, 3).map(c => c.headingPath.join(' > ')).join(', ');
+      const sampleHeading = chunks
+        .slice(0, 3)
+        .map((c) => c.headingPath.join(' > '))
+        .join(', ');
       this.logger.debug('Semantic resolution started', {
         url,
         totalChunks: chunks.length,
@@ -695,12 +732,12 @@ export class MarkdownLinkResolver {
         queryEmbedding,
         embeddedChunks,
         this.config.semanticTopK ?? 3,
-        this.config.semanticSimilarityThreshold ?? 0.3
+        this.config.semanticSimilarityThreshold ?? 0.3,
       );
 
       // DEBUG: Log semantic filter effectiveness for verification
       if (this.debugContent) {
-        const scored = embeddedChunks.map(ec => ({
+        const scored = embeddedChunks.map((ec) => ({
           result: ec,
           similarity: this.cosineSimilarity(queryEmbedding, ec.embedding),
         }));
@@ -712,10 +749,13 @@ export class MarkdownLinkResolver {
           discarded: chunks.length - relevantChunks.length,
           threshold: this.config.semanticSimilarityThreshold ?? 0.3,
           topK: this.config.semanticTopK ?? 3,
-          topSimilarities: scored.sort((a, b) => b.similarity - a.similarity).slice(0, 5).map(s => ({
-            heading: s.result.chunk.headingPath.join(' > '),
-            similarity: parseFloat(s.similarity.toFixed(4)),
-          })),
+          topSimilarities: scored
+            .sort((a, b) => b.similarity - a.similarity)
+            .slice(0, 5)
+            .map((s) => ({
+              heading: s.result.chunk.headingPath.join(' > '),
+              similarity: parseFloat(s.similarity.toFixed(4)),
+            })),
         });
       }
 
@@ -732,15 +772,11 @@ export class MarkdownLinkResolver {
       }
 
       const excerpts = relevantChunks
-        .map(c => `### ${c.chunk.headingPath.join(' > ')}\n\n${c.chunk.content}`)
+        .map((c) => `### ${c.chunk.headingPath.join(' > ')}\n\n${c.chunk.content}`)
         .join('\n\n---\n\n');
 
       // Format the final reference section that will be injected into the prompt
-      const reference = this.formatReference(
-        `External: ${url} (relevant excerpts)`,
-        excerpts,
-        url
-      );
+      const reference = this.formatReference(`External: ${url} (relevant excerpts)`, excerpts, url);
 
       // Log the actual text being injected for verification
       if (this.debugContent) {
@@ -771,20 +807,20 @@ export class MarkdownLinkResolver {
     queryEmbedding: number[],
     embeddedChunks: EmbeddingResult[],
     topK: number,
-    threshold: number
+    threshold: number,
   ): EmbeddingResult[] {
     // Compute cosine similarity for each chunk
-    const scored = embeddedChunks.map(ec => ({
+    const scored = embeddedChunks.map((ec) => ({
       result: ec,
       similarity: this.cosineSimilarity(queryEmbedding, ec.embedding),
     }));
 
     // Filter by threshold and sort by similarity descending
     return scored
-      .filter(s => s.similarity >= threshold)
+      .filter((s) => s.similarity >= threshold)
       .sort((a, b) => b.similarity - a.similarity)
       .slice(0, topK)
-      .map(s => s.result);
+      .map((s) => s.result);
   }
 
   /**
@@ -810,5 +846,4 @@ export class MarkdownLinkResolver {
 
     return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
   }
-
 }

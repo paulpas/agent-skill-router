@@ -64,7 +64,7 @@ ARG SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS=5000
 RUN printf '%s/v%s/main\n%s/v%s/community\n' \
     "$(if [ "${APK_USE_HTTPS}" = "true" ]; then echo https; else echo http; fi)://dl-cdn.alpinelinux.org/alpine" "${ALPINE_VERSION}" \
     "$(if [ "${APK_USE_HTTPS}" = "true" ]; then echo https; else echo http; fi)://dl-cdn.alpinelinux.org/alpine" "${ALPINE_VERSION}" \
-    > /etc/apk/repositories && apk --no-cache add git openssh-client
+    > /etc/apk/repositories && apk --no-cache add git openssh-client chromium
 
 WORKDIR /app
 
@@ -173,7 +173,7 @@ ENV JS_RENDERING_ENABLED=false
 ENV JS_RENDER_TIMEOUT_MS=5000
 ENV JS_RENDER_FALLBACK=true
 ENV LINK_RESOLUTION_MODE=inline
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 ENV SEMANTIC_TOP_K=3
 ENV SEMANTIC_SIMILARITY_THRESHOLD=0.3
 

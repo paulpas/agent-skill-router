@@ -4,6 +4,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import * as puppeteer from 'puppeteer';
 import { MarkdownLinkResolver, LinkResolverConfig } from '../core/MarkdownLinkResolver';
 import { Logger } from '../observability/Logger';
 
@@ -21,6 +22,11 @@ jest.mock('../observability/Logger', () => ({
     warn: jest.fn(),
     error: jest.fn(),
   })),
+}));
+
+// Mock Puppeteer so fetchWithJS tests never launch a real browser
+jest.mock('puppeteer', () => ({
+  launch: jest.fn(),
 }));
 
 const mockFs = fs.promises as jest.Mocked<typeof fs.promises>;
@@ -238,7 +244,7 @@ describe('MarkdownLinkResolver', () => {
           .mockResolvedValueOnce('L1: [l2](references/l2.md)') // depth 1
           .mockResolvedValueOnce('L2: [l3](references/l3.md)') // depth 2
           .mockResolvedValueOnce('L3: [l4](references/l4.md)') // depth 3
-          .mockResolvedValueOnce('L4: end');                    // depth 4 — at max, returns as-is
+          .mockResolvedValueOnce('L4: end'); // depth 4 — at max, returns as-is
 
         const result = await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
 
@@ -272,7 +278,8 @@ describe('MarkdownLinkResolver', () => {
           mockLogger,
         );
         const content = 'See [API docs](https://example.com/api) for details.';
-        const htmlResponse = '<html><body><h1>API Reference</h1><p>Endpoint details</p></body></html>';
+        const htmlResponse =
+          '<html><body><h1>API Reference</h1><p>Endpoint details</p></body></html>';
 
         const mockFetch = jest.fn().mockResolvedValue({
           ok: true,
@@ -390,6 +397,132 @@ describe('MarkdownLinkResolver', () => {
         expect(result).toContain('Reference: External: https://example.com/tiny');
         expect(result).toContain('small content here');
         expect(result).not.toContain('[small](https://example.com/tiny)');
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // fetch error logging — undici cause propagation
+    // -------------------------------------------------------------------------
+    describe('fetch error logging (undici cause)', () => {
+      it('logs undici cause code and message in Static fetch error', async () => {
+        const resolver = new MarkdownLinkResolver(
+          { ...baseConfig, allowExternalLinks: true },
+          mockLogger,
+        );
+        const content = 'See [docs](https://fastapi.tiangolo.com/)';
+
+        const fetchFailure = Object.assign(new Error('fetch failed'), {
+          cause: Object.assign(new Error('getaddrinfo EAI_AGAIN fastapi.tiangolo.com'), {
+            code: 'EAI_AGAIN',
+          }),
+        });
+        const mockFetch = jest.fn().mockRejectedValue(fetchFailure);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (globalThis as any).fetch = mockFetch;
+
+        await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+
+        expect(mockLogger.warn).toHaveBeenCalledWith(
+          'Static fetch error',
+          expect.objectContaining({
+            url: 'https://fastapi.tiangolo.com/',
+            error: 'fetch failed',
+            cause: 'getaddrinfo EAI_AGAIN fastapi.tiangolo.com',
+            code: 'EAI_AGAIN',
+          }),
+        );
+      });
+
+      it('logs undici cause code and message in JS rendering failed', async () => {
+        const resolver = new MarkdownLinkResolver(
+          {
+            ...baseConfig,
+            allowExternalLinks: true,
+            jsRenderingEnabled: true,
+            jsRenderFallback: false,
+          },
+          mockLogger,
+        );
+        const content = 'See [docs](https://fastapi.tiangolo.com/)';
+
+        const launchFailure = Object.assign(new Error('Failed to launch Chromium: ENOENT'), {
+          cause: Object.assign(new Error('spawn /usr/bin/chromium-browser ENOENT'), {
+            code: 'ENOENT',
+          }),
+        });
+        (puppeteer.launch as jest.Mock).mockRejectedValueOnce(launchFailure);
+
+        await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+
+        expect(mockLogger.warn).toHaveBeenCalledWith(
+          'JS rendering failed',
+          expect.objectContaining({
+            url: 'https://fastapi.tiangolo.com/',
+            error: 'Failed to launch Chromium: ENOENT',
+            cause: 'spawn /usr/bin/chromium-browser ENOENT',
+            code: 'ENOENT',
+          }),
+        );
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // puppeteer launch options — CDP stall fix
+    // In-container Chromium stalls the first CDP command (Network.enable) when
+    // the GPU process retries Vulkan/ANGLE init; --disable-gpu fixes it and a
+    // 60 s protocolTimeout bounds the worst case to the static fallback.
+    // -------------------------------------------------------------------------
+    describe('puppeteer launch options (CDP stall fix)', () => {
+      const mockRenderedBrowser = () => ({
+        newPage: jest.fn().mockResolvedValue({
+          setViewport: jest.fn().mockResolvedValue(undefined),
+          goto: jest.fn().mockResolvedValue(undefined),
+          content: jest.fn().mockResolvedValue('<html><body>rendered</body></html>'),
+        }),
+        close: jest.fn().mockResolvedValue(undefined),
+      });
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const launchOptionsOf = () => (puppeteer.launch as jest.Mock).mock.calls[0][0] as any;
+
+      it('passes --disable-gpu in launch args to prevent the in-container CDP stall', async () => {
+        const resolver = new MarkdownLinkResolver(
+          {
+            ...baseConfig,
+            allowExternalLinks: true,
+            jsRenderingEnabled: true,
+          },
+          mockLogger,
+        );
+        const content = 'See [docs](https://fastapi.tiangolo.com/)';
+
+        (puppeteer.launch as jest.Mock).mockResolvedValueOnce(mockRenderedBrowser());
+
+        await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+
+        expect(puppeteer.launch).toHaveBeenCalledTimes(1);
+        expect(launchOptionsOf().args).toEqual(
+          expect.arrayContaining(['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']),
+        );
+      });
+
+      it('sets protocolTimeout to 60000 as a defensive bound on the CDP handshake', async () => {
+        const resolver = new MarkdownLinkResolver(
+          {
+            ...baseConfig,
+            allowExternalLinks: true,
+            jsRenderingEnabled: true,
+          },
+          mockLogger,
+        );
+        const content = 'See [docs](https://fastapi.tiangolo.com/)';
+
+        (puppeteer.launch as jest.Mock).mockResolvedValueOnce(mockRenderedBrowser());
+
+        await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+
+        expect(puppeteer.launch).toHaveBeenCalledTimes(1);
+        expect(launchOptionsOf().protocolTimeout).toBe(60000);
       });
     });
 
