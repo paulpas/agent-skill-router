@@ -52,8 +52,24 @@ fi
 chmod 1777 /tmp
 chmod 777 /app
 
+# Merge host-supplied CA certificates (TLS-interception networks such as
+# Zscaler, Netskope, or Palo Alto) into the Node, Chromium (NSS), and
+# git/openssl trust stores. Sourced (not executed) so that the script's
+# `export NODE_EXTRA_CA_CERTS` reaches the appuser shell below. The script is
+# fully failure-safe (never changes shell options, never blocks startup);
+# `set +e` around it is a second safety layer against `set -e` above.
+set +e
+. /app/merge-extra-cas.sh
+set -e
+
 # Now switch to appuser and execute the CMD
 # The CMD is passed as arguments to this script
 # We need to pass them to su as a single command string
+# NOTE: `su` is used WITHOUT `-` (login mode), which preserves the caller's
+# environment variables — HOME/SHELL/USER/LOGNAME/PATH are reset for the
+# target user, but everything else (including NODE_EXTRA_CA_CERTS exported
+# above) is inherited by the su'd command. Verified empirically on
+# busybox su (Alpine): an exported var set before `su -s /bin/sh -c ...`
+# is visible inside the su'd shell.
 echo "Switching to appuser and running: $@"
 exec su -s /bin/sh -c "$*" appuser

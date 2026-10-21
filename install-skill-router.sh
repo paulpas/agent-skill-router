@@ -2230,7 +2230,40 @@ run_installation() {
   if [[ ${#SSH_VOLUMES[@]} -gt 0 ]]; then
     VOLUMES+=("${SSH_VOLUMES[@]}")
   fi
-  
+
+  # ── Host CA certificates (TLS-interception networks) ─────────────────────
+  # Corporate TLS interception (Zscaler, Netskope, Palo Alto, ...) re-signs
+  # HTTPS traffic with a product root CA the container does not trust. Mount
+  # host CAs into /etc/skill-router/extra-cas: the container entrypoint merges
+  # them into the Node, Chromium (NSS), and git/openssl trust stores at every
+  # start — zero-touch, no vendor paths hardcoded, no docker run flags to
+  # maintain. See docs/config-reference.md for the manual mount option.
+  if [[ "$(uname -s)" == "Darwin" ]]; then
+    # macOS: export ALL certs from the System keychain (corporate roots are
+    # installed there by MDM/corporate setups). Fallback: login keychain.
+    EXTRA_CA_BUNDLE="${HOME}/.agent-skill-router/extra-ca-bundle.pem"
+    mkdir -p "$(dirname "$EXTRA_CA_BUNDLE")" 2>/dev/null || true
+    info "Exporting macOS keychain CAs for TLS-interception support..."
+    if security find-certificate -a -p /Library/Keychains/System.keychain > "$EXTRA_CA_BUNDLE" 2>/dev/null && [[ -s "$EXTRA_CA_BUNDLE" ]]; then
+      CA_COUNT=$(grep -c "BEGIN CERTIFICATE" "$EXTRA_CA_BUNDLE" 2>/dev/null || true)
+      ok "Exported ${CA_COUNT:-0} host CA(s) from System keychain to $EXTRA_CA_BUNDLE"
+    elif security find-certificate -a -p "${HOME}/Library/Keychains/login.keychain-db" > "$EXTRA_CA_BUNDLE" 2>/dev/null && [[ -s "$EXTRA_CA_BUNDLE" ]]; then
+      CA_COUNT=$(grep -c "BEGIN CERTIFICATE" "$EXTRA_CA_BUNDLE" 2>/dev/null || true)
+      ok "Exported ${CA_COUNT:-0} host CA(s) from login keychain to $EXTRA_CA_BUNDLE"
+    else
+      EXTRA_CA_BUNDLE=""
+      info "could not export host keychain CAs (TLS-interception networks will need the manual mount documented in docs/config-reference.md)"
+    fi
+    if [[ -n "$EXTRA_CA_BUNDLE" && -s "$EXTRA_CA_BUNDLE" ]]; then
+      VOLUMES+=(-v "$EXTRA_CA_BUNDLE:/etc/skill-router/extra-cas/host-ca-bundle.pem:ro")
+    fi
+  elif [[ -d /usr/local/share/ca-certificates && -n "$(ls -A /usr/local/share/ca-certificates 2>/dev/null)" ]]; then
+    # Linux: CAs installed via the standard mechanism (copy .crt to
+    # /usr/local/share/ca-certificates + update-ca-certificates).
+    VOLUMES+=(-v /usr/local/share/ca-certificates:/etc/skill-router/extra-cas:ro)
+    ok "Mounting host CAs: /usr/local/share/ca-certificates -> /etc/skill-router/extra-cas"
+  fi
+
   # Run container
   info "Starting container..."
   

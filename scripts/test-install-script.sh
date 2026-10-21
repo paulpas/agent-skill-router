@@ -227,6 +227,22 @@ test_dialog_capture_safety() {
     assert_not_grep '^[[:space:]]*[A-Za-z_][A-Za-z0-9_]*=\$\(dialog_' "Dialog helper captures use conditional assignments"
 }
 
+test_ca_interception_support() {
+    echo ""
+    echo "────────────────────────────────────────────────────────────────────────────"
+    echo "Test 10: TLS-Interception CA Support (host CA export + mounts)"
+    echo "────────────────────────────────────────────────────────────────────────────"
+
+    assert_grep 'uname -s.*Darwin' "Installer detects macOS (Darwin) hosts"
+    assert_grep 'security find-certificate -a -p /Library/Keychains/System\.keychain' "Installer exports System keychain CAs on macOS"
+    assert_grep 'login\.keychain-db' "Installer falls back to the login keychain"
+    assert_grep 'extra-ca-bundle\.pem' "Installer writes the host CA bundle to a stable path"
+    assert_grep 'grep -c "BEGIN CERTIFICATE"' "Installer logs the exported certificate count"
+    assert_grep 'VOLUMES\+=\(-v "\$EXTRA_CA_BUNDLE:/etc/skill-router/extra-cas/host-ca-bundle\.pem:ro"\)' "macOS CA bundle is mounted read-only as a quoted array element"
+    assert_grep 'VOLUMES\+=\(-v /usr/local/share/ca-certificates:/etc/skill-router/extra-cas:ro\)' "Linux host CA dir is mounted read-only as a quoted array element"
+    assert_grep 'docs/config-reference\.md' "Export failure points at the documented manual mount"
+}
+
 test_security_features() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
@@ -262,6 +278,7 @@ main() {
     test_dialog_interactive_flow
     test_dialog_capture_safety
     test_security_features
+    test_ca_interception_support
 
     cleanup
 

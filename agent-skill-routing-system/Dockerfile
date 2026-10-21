@@ -64,7 +64,8 @@ ARG SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS=5000
 RUN printf '%s/v%s/main\n%s/v%s/community\n' \
     "$(if [ "${APK_USE_HTTPS}" = "true" ]; then echo https; else echo http; fi)://dl-cdn.alpinelinux.org/alpine" "${ALPINE_VERSION}" \
     "$(if [ "${APK_USE_HTTPS}" = "true" ]; then echo https; else echo http; fi)://dl-cdn.alpinelinux.org/alpine" "${ALPINE_VERSION}" \
-    > /etc/apk/repositories && apk --no-cache add git openssh-client chromium
+    > /etc/apk/repositories && \
+    apk --no-cache add git openssh-client chromium ca-certificates nss-tools openssl
 
 WORKDIR /app
 
@@ -254,6 +255,18 @@ RUN git config --global --add safe.directory /app/skills && \
 # Copy the root entrypoint script that will fix permissions
 COPY docker-entrypoint-root.sh /usr/local/bin/docker-entrypoint-root.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint-root.sh
+
+# Copy the CA-merge helper sourced by the entrypoint. At every container start
+# it scans well-known dirs for extra CA files (TLS-interception networks such
+# as Zscaler) and merges them into the Node, Chromium (NSS), and git/openssl
+# trust stores. Nothing vendor-specific; fully failure-safe.
+COPY merge-extra-cas.sh /app/merge-extra-cas.sh
+RUN chmod +x /app/merge-extra-cas.sh
+
+# Tests directory (shipped with a .gitkeep so bare builds always succeed; CI
+# and the install script stage scripts/test-merge-extra-cas.sh into tests/
+# before building so the suite runs inside the image).
+COPY tests/ /app/tests/
 
 # Set the entrypoint - this runs as root to fix permissions
 # The entrypoint script then switches to appuser before exec'ing the CMD

@@ -667,6 +667,59 @@ docker run -d \
 
 ---
 
+## TLS-interception / corporate proxy networks (Zscaler, Netskope, etc.)
+
+**The problem.** Corporate TLS-interception products (Zscaler, Netskope, Palo
+Alto TMS, ...) re-sign all HTTPS traffic with a product root CA. The container
+ships its own trust stores — Node's built-in CA list, Chromium's NSS database,
+and the openssl/git bundle — none of which include the interception root.
+External-link inlining then fails with `ERR_CERT_AUTHORITY_INVALID`
+(Chromium/Puppeteer) or `UNABLE_TO_GET_ISSUER_CERT_LOCALLY` (Node fetch), and
+git sync from GitHub fails the same way.
+
+**The automatic mechanism (zero-touch, no vendor hardcoding).**
+
+1. **macOS hosts** — `install-skill-router.sh` exports every certificate from
+   the System keychain to `~/.agent-skill-router/extra-ca-bundle.pem` at
+   install time (falling back to the login keychain) and mounts it read-only
+   at `/etc/skill-router/extra-cas/host-ca-bundle.pem`.
+2. **Linux hosts** — if `/usr/local/share/ca-certificates/` is non-empty (CAs
+   installed with the standard `update-ca-certificates` mechanism), the
+   installer mounts it read-only at `/etc/skill-router/extra-cas`.
+3. **Every container start** — the entrypoint sources
+   `/app/merge-extra-cas.sh`, which scans `/etc/skill-router/extra-cas` and
+   `/usr/local/share/ca-certificates` (covers OrbStack-injected and
+   admin-installed CAs), validates every `*.pem`/`*.crt`/`*.cer` file, and
+   merges the valid certificates into all three trust stores:
+   - **Node** — `NODE_EXTRA_CA_CERTS=/app/tls/extra-ca-bundle.pem`
+     (a pre-set `NODE_EXTRA_CA_CERTS` file is preserved at the front of the bundle)
+   - **Chromium/NSS** — imported into `/home/appuser/.pki/nssdb` via `certutil`
+   - **openssl/git** — copied to `/usr/local/share/ca-certificates/` and
+     regenerated with `update-ca-certificates --fresh`
+
+   The merge is fully failure-safe: missing directories, invalid files, or a
+   missing `certutil` log a `[CA-MERGE]` warning and never block startup.
+   Re-running the installer (or restarting the container) picks up new host
+   CAs automatically.
+
+**Manual option (other setups).** Mount any PEM file read-only and restart the
+container:
+
+```bash
+docker run -d \
+  ... \
+  -v /path/to/interception-root.pem:/etc/skill-router/extra-cas/interception-root.pem:ro \
+  skill-router:latest
+```
+
+**Deliberately NOT used.** `NODE_TLS_REJECT_UNAUTHORIZED=0` and
+`--ignore-certificate-errors` are intentionally NOT used anywhere: they disable
+TLS verification entirely and expose the container to real MITM attacks. The
+mechanism above adds the interception root to the trust stores while keeping
+full certificate-path verification active.
+
+---
+
 ## Related Documentation
 
 | Document                             | Purpose                               |

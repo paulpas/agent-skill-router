@@ -18,10 +18,19 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
+      - name: Stage CA merge test into build context
+        run: |
+          mkdir -p agent-skill-routing-system/tests
+          cp scripts/test-merge-extra-cas.sh agent-skill-routing-system/tests/test-merge-extra-cas.sh
+
       - name: Build Docker container
         working-directory: agent-skill-routing-system
         run: |
           docker build -t skill-router-smoke-test:latest .
+
+      - name: Run CA merge test inside built image
+        run: |
+          docker run --rm skill-router-smoke-test:latest sh /app/tests/test-merge-extra-cas.sh
 
       - name: Run container and test API
         run: |
