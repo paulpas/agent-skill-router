@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,331 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,334 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,331 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,334 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,17 +312,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-09-23 22:18:24 UTC  
-> **Total skills:** 1331  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1331 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-11-13 09:17:00 UTC  
+> **Total skills:** 1334  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1334 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1243 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1243 | Ranking penalty for conflicting query terms |
-| Response Profile | 1240 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1246 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1246 | Ranking penalty for conflicting query terms |
+| Response Profile | 1243 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -898,7 +898,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (611 skills)
+### Coding (612 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1445,6 +1445,7 @@ MIT — All skills are freely available and redistributable.
 | [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. | ssrf prevention, server-side request forgery, url validation, internal ip blocking, cloud metadata protection, dns rebinding, webhook security [tactical, enforcement] |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | stability ai, stabilityai, stable diffusion, sd3, stable image, core, stability api, how do i generate images stability api [tactical, generation] |
 | [static-analysis-linting-type-checking](skills/coding/static-analysis-linting-type-checking/SKILL.md) | Implements best practices for integrating static analysis, linting, and type checking into software development workflows ensuring code quality and robustness. | static analysis, code quality, linting, type checking, code review, how to ensure code quality, quality standards [tactical, educational] |
+| [ste-code-commenting](skills/coding/ste-code-commenting/SKILL.md) | Apply Simplified Technical English (STE) principles to inline code comments and docstrings, implementing safety-critical documentation standards in source code across Python, Go, Java, and C/C++ with term control, passive voice rules, and abbreviatio... | STE code comments, documentation strings, docstring standards, how do i document code, aviation code documentation, safety-critical code, code clarity [tactical, enforcement] |
 | [strategy-base](skills/coding/strategy-base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base [tactical, generation] |
 | [strategy-pattern](skills/coding/strategy-pattern/SKILL.md) | Implements the Strategy design pattern for runtime algorithm selection with interchangeable behavior interfaces, supporting context delegation, strategy factories, and dependency injection. | strategy pattern, algorithm selection, runtime behavior, interchangeable algorithms, polymorphic behavior, open closed principle, replace if elif chain, payment processing strategy [tactical, generation] |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | stripe, payment intents, checkout sessions, stripe subscriptions, stripe connect, webhook signature, how do i integrate stripe payments, payment processing [tactical, generation] |
@@ -1650,7 +1651,7 @@ MIT — All skills are freely available and redistributable.
 | [plaid-transactions](skills/payments/plaid-transactions/SKILL.md) | Implements transaction management features via the Plaid API (TransactionsGet, Categories) to retrieve, filter, and analyze user transaction data in financial applications. | plaid transactions, plaid transactions get, transaction history, transaction categorization, spending analysis, merchant data, bank statement sync [tactical] |
 
 
-### Programming (7 skills)
+### Programming (8 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1661,6 +1662,7 @@ MIT — All skills are freely available and redistributable.
 | [data-structures](skills/programming/data-structures/SKILL.md) | Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection. | data structures, hash table, balanced tree, AVL tree, trie, heap priority queue, linked list, graph traversal [educational, tactical] |
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | for loop, iteration, loop patterns, enumerate, range, iterator, list comprehension, index-based loop index-based loop [educational] |
 | [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | graph traversal, depth first search, DFS, breadth first search, BFS, connected components, shortest path unweighted, tree traversal components [educational] |
+| [ste-terminology-reference](skills/programming/ste-terminology-reference/SKILL.md) | Comprehensive reference of Simplified Technical English (STE) standardized vocabulary, term definitions, abbreviation mappings, and controlled language rules used in aviation, aerospace, maritime, and technical documentation standards. | STE, simplified technical english, aviation terminology, technical documentation language, how do i document code, controlled vocabulary, aerospace documentation [reference, enforcement] |
 
 
 ### Secrets-management (2 skills)
@@ -1791,20 +1793,21 @@ MIT — All skills are freely available and redistributable.
 | [your-routine](skills/trading/your-routine/SKILL.md) | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | trading routine, pre-market prep, post-market review, daily trading checklist, execution discipline, trading habits, trade journal, market preparation execution discipline [tactical] |
 
 
-### Writing (5 skills)
+### Writing (6 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | em dash, en dash, hyphen, dash typography, how do i type dashes, long dash, range notation, compound modifier dash [educational] |
 | [humanizer](skills/writing/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation write like human write like human [educational] |
 | [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | mermaid, mermaidjs, diagram, flowchart, sequence diagram, how do i create a diagram, github markdown diagram, architecture diagram a diagram [educational] |
+| [ste-documentation-checklist](skills/writing/ste-documentation-checklist/SKILL.md) | Pre-flight validation checklist for Simplified Technical English (STE) documentation compliance, including sentence structure rules, noun usage patterns, passive voice verification, and abbreviation standardization specific to safety-critical technic... | STE checklist, documentation validation, passive voice audit, sentence structure check, how do i check documentation, STE compliance, safety documentation [tactical, enforcement, review] |
 | [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | technical documentation, how do i write docs, README, API documentation, getting started guide, architecture overview, developer experience, docs-as-code getting started guide [educational] |
 | [vercel-writing-guidelines](skills/writing/vercel-writing-guidelines/SKILL.md) | Enforces clear, concise, and user-focused writing guidelines covering tone, grammar, structure, formatting, and inclusive language for technical documentation and product copy. | writing guidelines, technical writing, documentation style, content guidelines, writing style guide, developer documentation, api docs |
 
 ## Skills by Role
 
 
-### Implementation (Build Features) (901 skills)
+### Implementation (Build Features) (902 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2609,6 +2612,7 @@ MIT — All skills are freely available and redistributable.
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Coding | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
 | [static-analysis-linting-type-checking](skills/coding/static-analysis-linting-type-checking/SKILL.md) | Coding | Implements best practices for integrating static analysis, linting, and type checking into software development workflows ensuring code quality and robustness. |
+| [ste-code-commenting](skills/coding/ste-code-commenting/SKILL.md) | Coding | Apply Simplified Technical English (STE) principles to inline code comments and docstrings, implementing safety-critical documentation standards in source code across Python, Go, Java, and C/C++ with term control, passive voice rules, and abbreviatio... |
 | [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Electrical-engineering | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. |
 | [strategy-base](skills/coding/strategy-base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
@@ -2711,7 +2715,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-api](skills/coding/zoom-api/SKILL.md) | Coding | Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling. |
 
 
-### Reference (Learn & Understand) (183 skills)
+### Reference (Learn & Understand) (184 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2884,6 +2888,7 @@ MIT — All skills are freely available and redistributable.
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Coding | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." |
+| [ste-terminology-reference](skills/programming/ste-terminology-reference/SKILL.md) | Programming | Comprehensive reference of Simplified Technical English (STE) standardized vocabulary, term definitions, abbreviation mappings, and controlled language rules used in aviation, aerospace, maritime, and technical documentation standards. |
 | [strimzi](skills/cncf/strimzi/SKILL.md) | Cncf | "Provides Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments" |
 | [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writing | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. |
 | [tekton](skills/cncf/tekton/SKILL.md) | Cncf | "Provides Tekton in Cloud-Native Engineering - A cloud-native Pipeline resource" |
@@ -3144,7 +3149,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (8 skills)
+### Review (Audit & Validate) (9 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -3156,6 +3161,7 @@ MIT — All skills are freely available and redistributable.
 | [humanizer](skills/writing/humanizer/SKILL.md) | Writing | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [jvm-diagnostics](skills/coding/jvm-diagnostics/SKILL.md) | Coding | Diagnoses JVM production incidents including OutOfMemoryError root causes, thread deadlock detection, heap leak analysis via MAT, and crash log triage for Java 17+ applications. |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
+| [ste-documentation-checklist](skills/writing/ste-documentation-checklist/SKILL.md) | Writing | Pre-flight validation checklist for Simplified Technical English (STE) documentation compliance, including sentence structure rules, noun usage patterns, passive voice verification, and abbreviation standardization specific to safety-critical technic... |
 
 ## Complete Skills Index
 
@@ -4348,6 +4354,9 @@ MIT — All skills are freely available and redistributable.
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Agent | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. | Implementation |
 | [static-analysis-linting-type-checking](skills/coding/static-analysis-linting-type-checking/SKILL.md) | Coding | Implements best practices for integrating static analysis, linting, and type checking into software development workflows ensuring code quality and robustness. | Implementation |
+| [ste-code-commenting](skills/coding/ste-code-commenting/SKILL.md) | Coding | Apply Simplified Technical English (STE) principles to inline code comments and docstrings, implementing safety-critical documentation standards in source code across Python, Go, Java, and C/C++ with term control, passive voice rules, and abbreviatio... | Implementation |
+| [ste-documentation-checklist](skills/writing/ste-documentation-checklist/SKILL.md) | Writing | Pre-flight validation checklist for Simplified Technical English (STE) documentation compliance, including sentence structure rules, noun usage patterns, passive voice verification, and abbreviation standardization specific to safety-critical technic... | Review |
+| [ste-terminology-reference](skills/programming/ste-terminology-reference/SKILL.md) | Programming | Comprehensive reference of Simplified Technical English (STE) standardized vocabulary, term definitions, abbreviation mappings, and controlled language rules used in aviation, aerospace, maritime, and technical documentation standards. | Reference |
 | [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Electrical-engineering | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. | Implementation |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | Implementation |
 | [strategy-base](skills/coding/strategy-base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | Implementation |
