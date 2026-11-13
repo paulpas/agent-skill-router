@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-23T22:18:22.191188Z",
-  "totalSkills": 1336,
+  "generatedAt": "2026-11-13T15:17:20.605767Z",
+  "totalSkills": 1339,
   "domains": {
     "agent": 331,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
     "cncf": 203,
-    "coding": 609,
+    "coding": 610,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -20,19 +20,19 @@
     "maker": 3,
     "networking": 1,
     "payments": 5,
-    "programming": 7,
+    "programming": 8,
     "secrets-management": 4,
     "security": 6,
     "software": 3,
     "trading": 94,
-    "writing": 5
+    "writing": 6
   },
   "roles": {
-    "implementation": 906,
+    "implementation": 907,
     "orchestration": 238,
-    "reference": 183,
+    "reference": 184,
     "information": 1,
-    "review": 8
+    "review": 9
   },
   "skills": [
     {
@@ -28038,6 +28038,75 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/static-analysis-linting-type-checking/SKILL.md"
+    },
+    {
+      "name": "ste-code-commenting",
+      "domain": "coding",
+      "description": "Apply Simplified Technical English (STE) principles to inline code comments and docstrings, implementing safety-critical documentation standards in source code across Python, Go, Java, and C/C++ with term control, passive voice rules, and abbreviation standards.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "STE code comments",
+        "documentation strings",
+        "docstring standards",
+        "how do i document code",
+        "aviation code documentation",
+        "safety-critical code",
+        "code clarity"
+      ],
+      "relatedSkills": [
+        "ste-terminology-reference",
+        "ste-documentation-checklist"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ste-code-commenting/SKILL.md"
+    },
+    {
+      "name": "ste-documentation-checklist",
+      "domain": "writing",
+      "description": "Pre-flight validation checklist for Simplified Technical English (STE) documentation compliance, including sentence structure rules, noun usage patterns, passive voice verification, and abbreviation standardization specific to safety-critical technical documents.",
+      "role": "review",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "STE checklist",
+        "documentation validation",
+        "passive voice audit",
+        "sentence structure check",
+        "how do i check documentation",
+        "STE compliance",
+        "safety documentation"
+      ],
+      "relatedSkills": [
+        "ste-terminology-reference",
+        "ste-code-commenting"
+      ],
+      "version": "1.0.0",
+      "source": "skills/writing/ste-documentation-checklist/SKILL.md"
+    },
+    {
+      "name": "ste-terminology-reference",
+      "domain": "programming",
+      "description": "Comprehensive reference of Simplified Technical English (STE) standardized vocabulary, term definitions, abbreviation mappings, and controlled language rules used in aviation, aerospace, maritime, and technical documentation standards.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "STE",
+        "simplified technical english",
+        "aviation terminology",
+        "technical documentation language",
+        "how do i document code",
+        "controlled vocabulary",
+        "aerospace documentation"
+      ],
+      "relatedSkills": [
+        "ste-documentation-checklist",
+        "ste-code-commenting"
+      ],
+      "version": "1.0.0",
+      "source": "skills/programming/ste-terminology-reference/SKILL.md"
     },
     {
       "name": "stm32-embedded-systems",
